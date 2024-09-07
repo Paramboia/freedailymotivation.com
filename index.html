@@ -15,7 +15,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f7f7f7;
+            background-color: #1E2F41; /* Background color */
         }
 
         .logo {
@@ -28,7 +28,7 @@
 
         .title {
             font-size: 3em;
-            color: #333;
+            color: #fff; /* White text for contrast */
             margin-bottom: 30px;
         }
 
@@ -36,15 +36,51 @@
             background-color: #fff;
             padding: 20px;
             border-radius: 15px;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
+            width: 90%;
+            max-width: 700px; /* Larger width */
+            min-height: 250px; /* Increased height */
+            position: relative;
+            display: flex;
+            align-items: center; /* Vertically center the content */
+            justify-content: center; /* Horizontally center the content */
+            text-align: center; /* Center the text */
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         #quote {
-            font-size: 1.5em;
+            font-size: 1.6em; /* Larger text size */
             color: #555;
+            margin: 0;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .quote-button {
+            background-color: #e5e5e5; /* Grey platinum color */
+            border: none;
+            color: #333;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px; /* Auto-sizing for button */
+            height: 40px; /* Ensure square */
+        }
+
+        .quote-button:hover {
+            background-color: #ccc;
+        }
+
+        .quote-button i {
+            font-size: 1.2em;
         }
 
         .footer {
@@ -53,20 +89,36 @@
             color: #999;
         }
     </style>
+
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <!-- Logo Section -->
     <div class="logo">
-        <img src="logo_freedailymotivation_1.png" alt="Logo" id="logo">
+        <img src="logo.png" alt="Logo" id="logo">
     </div>
 
     <!-- Title Section -->
     <h1 class="title">Get Inspired</h1>
 
-    <!-- Quote Box -->
+    <!-- Quote Box with Buttons -->
     <div class="quote-box">
-        <p id="quote"></p>
+        <div id="quote">"The only way to do great work is to love what you do. – Steve Jobs"</div>
+
+        <!-- Buttons for New Quote and WhatsApp Share -->
+        <div class="button-container">
+            <!-- New Quote Button -->
+            <button class="quote-button" id="new-quote" title="New Quote">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+
+            <!-- WhatsApp Share Button -->
+            <button class="quote-button" id="share-whatsapp" title="Share on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </button>
+        </div>
     </div>
 
     <!-- Footer Section (optional) -->
@@ -74,7 +126,7 @@
         <p>New inspiration every day</p>
     </div>
 
-    <!-- Inline JavaScript to Rotate Daily Quotes -->
+    <!-- Inline JavaScript to Handle Buttons -->
     <script>
         const quotes = [
             "The only way to do great work is to love what you do. – Steve Jobs",
@@ -84,14 +136,30 @@
             "What lies behind us and what lies before us are tiny matters compared to what lies within us. – Ralph Waldo Emerson"
         ];
 
-        // Function to display a quote based on the current day
-        function getDailyQuote() {
-            const today = new Date();
-            const index = today.getDate() % quotes.length;  // Rotates quotes based on day of the month
-            document.getElementById('quote').textContent = quotes[index];
+        // Function to display a random quote
+        function getRandomQuote() {
+            const index = Math.floor(Math.random() * quotes.length);
+            return quotes[index];
         }
 
-        window.onload = getDailyQuote;
+        // Function to generate a new quote
+        function generateNewQuote() {
+            document.getElementById('quote').textContent = getRandomQuote();
+        }
+
+        // Function to share the current quote via WhatsApp
+        function shareViaWhatsApp() {
+            const quote = document.getElementById('quote').textContent;
+            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(quote)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Event listeners for buttons
+        document.getElementById('new-quote').addEventListener('click', generateNewQuote);
+        document.getElementById('share-whatsapp').addEventListener('click', shareViaWhatsApp);
+
+        // Initial Quote Load
+        window.onload = generateNewQuote;
     </script>
 
 </body>
