@@ -7,62 +7,64 @@
     
     <!-- Inline CSS for Minimalist Design -->
     <style>
-            body {
-            font-family: 'Montserrat', sans-serif; /* Elegant font choice */
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                margin: 0;
-                background-color: #f5f5f5; /* Light gray background for elegance */
-            }
-            
-            .logo {
-                margin-bottom: 20px;
-            }
-            
-            #logo {
-                width: 250px; /* Adjusted size for elegance */
-            }
-            
-            .title {
-                font-size: 3em; /* Larger title for emphasis */
-                color: #333; /* Darker text color for contrast */
-                margin-bottom: 20px;
-                font-weight: 700; /* Bold title for impact */
-            }
-            
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+#logo {
+    width: 150px; /* Adjusted logo size */
+}
+
+.title {
+    font-size: 3em; /* Larger title for emphasis */
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
 .quote-box {
     background-color: #fff;
-    padding: 40px; /* Adjust padding for a spacious feel */
-    border-radius: 20px; /* Slightly larger border radius for elegance */
-    width: 80%; /* Adjust width for a more contained look */
-    max-width: 600px; /* Increased max-width for more elongation */
-    min-height: 200px; /* Increased height for elongation */
+    padding: 40px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    min-height: 250px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    /* Added margin to keep spacing on smaller screens */
+    margin: 0 10px;
 }
-            
-            #quote {
-                font-size: 1.5em; /* Slightly larger text for readability */
-                color: #555;
-                margin: 0;
-                line-height: 1.5; /* Better line spacing for readability */
-            }
-            
-            .button-container {
-                position: absolute;
-                top: 15px; /* Adjusted position for balance */
-                right: 15px; /* Adjusted position for balance */
-                display: flex;
-                gap: 10px; /* Slightly increased gap for better spacing */
-            }
-            
+
+#quote {
+    font-size: 1.5em;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.button-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+}
+
 .quote-button {
     background-color: #e0e0e0;
     border: none;
@@ -72,16 +74,61 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px; /* Increased button size */
-    height: 50px; /* Increased button size */
-    overflow: hidden; /* Ensure image fits within button */
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .button-icon {
-    width: 30px; /* Increased icon size */
-    height: 30px; /* Increased icon size */
+    width: 30px;
+    height: 30px;
+}
+
+.quote-button:hover {
+    background-color: #ccc;
+    transform: scale(1.05);
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2em; /* Adjust title size for mobile */
+    }
+
+    #logo {
+        width: 120px; /* Adjust logo size for mobile */
+    }
+
+    .quote-box {
+        padding: 20px; /* Reduce padding for mobile */
+        width: 90%; /* Full width with margin on mobile */
+        max-width: none; /* Remove max-width constraint on mobile */
+        min-height: 200px; /* Adjust height for mobile */
+    }
+
+    .button-container {
+        top: 10px; /* Adjust button container position for mobile */
+        right: 10px;
+        gap: 8px; /* Reduced gap between buttons */
+    }
+
+    .quote-button {
+        width: 40px; /* Adjust button size for mobile */
+        height: 40px;
+    }
+
+    .button-icon {
+        width: 24px; /* Adjust icon size for mobile */
+        height: 24px;
+    }
 }
 
 .quote-button:hover {
