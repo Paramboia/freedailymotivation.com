@@ -197,6 +197,40 @@
             background-color: #666;
         }
 
+        .category-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .category-button {
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 20px;
+            width: 100px;
+            height: 40px;
+            font-size: 0.8em;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .category-button:hover {
+            background-color: #eee;
+            transform: scale(1.05);
+        }
+
+        .dark-mode .category-button {
+            background-color: #555;
+        }
+
+        .dark-mode .category-button:hover {
+            background-color: #666;
+        }
+
         .footer {
             margin-top: 30px;
             font-size: 0.9em;
@@ -267,72 +301,95 @@
                 <button class="quote-button" id="copy-quote" title="Copy to Clipboard" aria-label="Copy quote to clipboard">
                     <img src="copy-icon.png" alt="Copy Quote" class="button-icon">
                 </button>
-                <button class="quote-button" id="share-whatsapp" title="Share on WhatsApp" aria-label="Share on WhatsApp">
-                    <img src="whatsapp-icon.png" alt="Share on WhatsApp" class="button-icon">
+                <button class="quote-button" id="share-quote" title="Share on WhatsApp" aria-label="Share quote on WhatsApp">
+                    <img src="whatsapp-icon.png" alt="Share Quote" class="button-icon">
                 </button>
             </div>
         </div>
+
+        <div class="category-container">
+            <button class="category-button" id="category-motivation">Motivation</button>
+            <button class="category-button" id="category-inspiration">Inspiration</button>
+            <button class="category-button" id="category-success">Success</button>
+            <button class="category-button" id="category-life">Life</button>
+        </div>
     </div>
 
-    <div class="footer">
-        <p>Feel free to share the love</p>
-    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Free Daily Motivation. All rights reserved.</p>
+    </footer>
 
     <script>
-        // Array of quotes
-        const quotes = [
-            "The only way to do great work is to love what you do. – Steve Jobs",
-            "Believe you can and you're halfway there. – Theodore Roosevelt",
-            "It does not matter how slowly you go as long as you do not stop. – Confucius",
-            "Everything you've ever wanted is on the other side of fear. – George Addair",
-            "Success is not final, failure is not fatal: it is the courage to continue that counts. – Winston Churchill"
-        ];
+        const quotes = {
+            motivation: [
+                "The only way to do great work is to love what you do. – Steve Jobs",
+                "The harder you work for something, the greater you'll feel when you achieve it.",
+                "Push yourself, because no one else is going to do it for you."
+            ],
+            inspiration: [
+                "Success is not how high you have climbed, but how you make a positive difference to the world. – Roy T. Bennett",
+                "Your time is limited, don't waste it living someone else's life. – Steve Jobs",
+                "Inspiration exists, but it has to find you working. – Pablo Picasso"
+            ],
+            success: [
+                "Don't be afraid to give up the good to go for the great. – John D. Rockefeller",
+                "Success usually comes to those who are too busy to be looking for it. – Henry David Thoreau",
+                "The only place where success comes before work is in the dictionary. – Vidal Sassoon"
+            ],
+            life: [
+                "Life is what happens when you're busy making other plans. – John Lennon",
+                "In the end, we only regret the chances we didn’t take.",
+                "The purpose of our lives is to be happy. – Dalai Lama"
+            ]
+        };
 
-        // Function to get a random quote
-        function getRandomQuote() {
-            return quotes[Math.floor(Math.random() * quotes.length)];
+        const quoteElement = document.getElementById("quote");
+        const newQuoteButton = document.getElementById("new-quote");
+        const copyQuoteButton = document.getElementById("copy-quote");
+        const shareQuoteButton = document.getElementById("share-quote");
+        const categoryButtons = document.querySelectorAll(".category-button");
+
+        let currentCategory = 'motivation';
+
+        function getRandomQuote(category) {
+            const selectedQuotes = quotes[category];
+            return selectedQuotes[Math.floor(Math.random() * selectedQuotes.length)];
         }
 
-        // Function to update the quote with fade effect
         function updateQuote() {
-            const quoteElement = document.getElementById("quote");
+            const newQuote = getRandomQuote(currentCategory);
             quoteElement.style.opacity = 0;
             setTimeout(() => {
-                quoteElement.textContent = getRandomQuote();
+                quoteElement.textContent = newQuote;
                 quoteElement.style.opacity = 1;
-            }, 500);
+            }, 300);
         }
 
-        // Event listener for new quote button
-        document.getElementById("new-quote").addEventListener("click", updateQuote);
+        newQuoteButton.addEventListener("click", updateQuote);
 
-        // Copy to clipboard functionality
-        document.getElementById("copy-quote").addEventListener("click", function() {
-            var quoteText = document.getElementById("quote").innerText;
-            navigator.clipboard.writeText(quoteText).then(function() {
+        copyQuoteButton.addEventListener("click", () => {
+            navigator.clipboard.writeText(quoteElement.textContent).then(() => {
                 alert("Quote copied to clipboard!");
-            }).catch(function(err) {
-                alert("Failed to copy text: " + err);
             });
         });
 
-        // Dark mode toggle functionality
+        shareQuoteButton.addEventListener("click", () => {
+            const quote = quoteElement.textContent;
+            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(quote)}`;
+            window.open(whatsappUrl, "_blank");
+        });
+
+        categoryButtons.forEach(button => {
+            button.addEventListener("click", (e) => {
+                currentCategory = e.target.id.replace('category-', '');
+                updateQuote();
+            });
+        });
+
+        // Dark mode toggle
         const darkModeToggle = document.getElementById("dark-mode-toggle");
         darkModeToggle.addEventListener("click", () => {
             document.body.classList.toggle("dark-mode");
-            localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
-        });
-
-        // Check for saved dark mode preference
-        if (localStorage.getItem("darkMode") === "true") {
-            document.body.classList.add("dark-mode");
-        }
-
-        // WhatsApp share functionality
-        document.getElementById("share-whatsapp").addEventListener("click", function() {
-            var quoteText = document.getElementById("quote").innerText;
-            var whatsappUrl = "https://api.whatsapp.com/send?text=" + encodeURIComponent(quoteText);
-            window.open(whatsappUrl, "_blank");
         });
     </script>
 </body>
