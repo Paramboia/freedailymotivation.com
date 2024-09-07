@@ -19,8 +19,8 @@
             align-items: center;
             justify-content: space-between;
             padding: 10px 20px;
-            background-color: #333; /* Dark background for header */
-            color: #fff;
+            background-color: #d3d3d3; /* Light grey background for header */
+            color: #333;
             width: 100%;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -38,6 +38,7 @@
         .header h1 {
             font-size: 1.5em;
             margin: 0;
+            color: #333;
         }
 
         /* Menu Icon */
@@ -64,6 +65,7 @@
             max-width: 800px;
             min-height: 250px;
             margin: 0 auto;
+            position: relative; /* Make the button-container positioned inside */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -77,9 +79,10 @@
             line-height: 1.5;
         }
 
+        /* Button container inside the quote box */
         .button-container {
             position: absolute;
-            top: 15px;
+            bottom: 15px; /* Move buttons to the bottom inside the quote box */
             right: 15px;
             display: flex;
             gap: 10px;
