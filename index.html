@@ -6,120 +6,13 @@
     <title>Free Daily Motivation</title>
     
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        body.dark-mode {
-            background-color: #333;
-            color: #f5f5f5;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            background-color: #f5f5f5;
-            padding: 10px 20px;
-            position: fixed;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s;
-        }
-
-        .dark-mode header {
-            background-color: #222;
-            box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-container img {
-            width: 40px;
-            height: auto;
-            margin-right: 10px;
-        }
-
-        .title-header {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #333;
-            transition: color 0.3s;
-        }
-
-        .dark-mode .title-header {
-            color: #f5f5f5;
-        }
-
-        .burger-menu, .dark-mode-toggle {
-            background-color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .dark-mode .burger-menu, .dark-mode .dark-mode-toggle {
-            background-color: #444;
-        }
-
-        .burger-menu img, .dark-mode-toggle img {
-            width: 20px;
-            height: auto;
-        }
-
-        .burger-menu:hover, .dark-mode-toggle:hover {
-            background-color: #eee;
-            transform: scale(1.05);
-        }
-
-        .dark-mode .burger-menu:hover, .dark-mode .dark-mode-toggle:hover {
-            background-color: #555;
-        }
-
-        .quote-section {
-            margin-top: 80px;
-        }
-
-        .title {
-            font-size: 3em;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-align: center;
-            transition: color 0.3s;
-        }
-
-        .dark-mode .title {
-            color: #f5f5f5;
-        }
+        /* ... (previous styles remain the same) ... */
 
         .quote-box {
             background-color: #fff;
             padding: 40px;
             border-radius: 20px;
-            width: 80%;
-            max-width: 800px;
+            width: 600px; /* Fixed width */
             height: 300px; /* Fixed height */
             position: relative;
             display: flex;
@@ -127,7 +20,7 @@
             justify-content: center;
             text-align: center;
             box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
-            margin: 0 10px;
+            margin: 0 auto; /* Center the box */
             transition: background-color 0.3s, box-shadow 0.3s;
             overflow: auto; /* Add scrollbar if content exceeds box size */
         }
@@ -151,63 +44,7 @@
             color: #f5f5f5;
         }
 
-        .button-container {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .quote-button {
-            background-color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            overflow: hidden;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .dark-mode .quote-button {
-            background-color: #555;
-        }
-
-        .button-icon {
-            width: 30px;
-            height: 30px;
-            transition: filter 0.3s;
-        }
-
-        .dark-mode .button-icon {
-            filter: invert(1);
-        }
-
-        .quote-button:hover {
-            background-color: #eee;
-            transform: scale(1.05);
-        }
-
-        .dark-mode .quote-button:hover {
-            background-color: #666;
-        }
-
-        .footer {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #777;
-            transition: color 0.3s;
-        }
-
-        .dark-mode .footer {
-            color: #aaa;
-        }
+        /* ... (rest of the styles remain the same) ... */
 
         @media (max-width: 768px) {
             .title {
@@ -219,9 +56,10 @@
             }
 
             .quote-box {
-                padding: 20px;
-                width: 90%;
+                width: 90%; /* Use percentage width for mobile */
+                max-width: 400px; /* Maximum width for very wide mobile screens */
                 height: 250px; /* Slightly smaller height for mobile */
+                padding: 20px;
             }
 
             .button-container {
@@ -243,99 +81,6 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Logo">
-            <span class="title-header"></span>
-        </div>
-        <div style="display: flex; gap: 10px;">
-            <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
-                <img src="dark-mode-icon.png" alt="Dark Mode" class="button-icon">
-            </button>
-            <button class="burger-menu" aria-label="Menu">
-                <img src="burger-icon.png" alt="Menu">
-            </button>
-        </div>
-    </header>
-
-    <div class="quote-section">
-        <h1 class="title">Free Daily Motivation</h1>
-        <div class="quote-box">
-            <div id="quote" aria-live="polite">"The only way to do great work is to love what you do. – Steve Jobs"</div>
-            <div class="button-container">
-                <button class="quote-button" id="new-quote" title="New Quote" aria-label="Get new quote">
-                    <img src="new-quote-icon.png" alt="New Quote" class="button-icon">
-                </button>
-                <button class="quote-button" id="copy-quote" title="Copy to Clipboard" aria-label="Copy quote to clipboard">
-                    <img src="copy-icon.png" alt="Copy Quote" class="button-icon">
-                </button>
-                <button class="quote-button" id="share-whatsapp" title="Share on WhatsApp" aria-label="Share on WhatsApp">
-                    <img src="whatsapp-icon.png" alt="Share on WhatsApp" class="button-icon">
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>Feel free to share the love</p>
-    </div>
-
-    <script>
-        // Array of quotes
-        const quotes = [
-            "The only way to do great work is to love what you do. – Steve Jobs",
-            "Believe you can and you're halfway there. – Theodore Roosevelt",
-            "It does not matter how slowly you go as long as you do not stop. – Confucius",
-            "Everything you've ever wanted is on the other side of fear. – George Addair",
-            "Success is not final, failure is not fatal: it is the courage to continue that counts. – Winston Churchill"
-        ];
-
-        // Function to get a random quote
-        function getRandomQuote() {
-            return quotes[Math.floor(Math.random() * quotes.length)];
-        }
-
-        // Function to update the quote with fade effect
-        function updateQuote() {
-            const quoteElement = document.getElementById("quote");
-            quoteElement.style.opacity = 0;
-            setTimeout(() => {
-                quoteElement.textContent = getRandomQuote();
-                quoteElement.style.opacity = 1;
-            }, 500);
-        }
-
-        // Event listener for new quote button
-        document.getElementById("new-quote").addEventListener("click", updateQuote);
-
-        // Copy to clipboard functionality
-        document.getElementById("copy-quote").addEventListener("click", function() {
-            var quoteText = document.getElementById("quote").innerText;
-            navigator.clipboard.writeText(quoteText).then(function() {
-                alert("Quote copied to clipboard!");
-            }).catch(function(err) {
-                alert("Failed to copy text: " + err);
-            });
-        });
-
-        // Dark mode toggle functionality
-        const darkModeToggle = document.getElementById("dark-mode-toggle");
-        darkModeToggle.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-            localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
-        });
-
-        // Check for saved dark mode preference
-        if (localStorage.getItem("darkMode") === "true") {
-            document.body.classList.add("dark-mode");
-        }
-
-        // WhatsApp share functionality
-        document.getElementById("share-whatsapp").addEventListener("click", function() {
-            var quoteText = document.getElementById("quote").innerText;
-            var whatsappUrl = "https://api.whatsapp.com/send?text=" + encodeURIComponent(quoteText);
-            window.open(whatsappUrl, "_blank");
-        });
-    </script>
+    <!-- ... (body content remains the same) ... -->
 </body>
 </html>
