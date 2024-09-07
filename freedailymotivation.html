@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Inspired</title>
+    
+    <!-- Inline CSS for Minimalist Design -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        #logo {
+            width: 100px;
+        }
+
+        .title {
+            font-size: 3em;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .quote-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #quote {
+            font-size: 1.5em;
+            color: #555;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo Section -->
+    <div class="logo">
+        <img src="logo.png" alt="Logo" id="logo">
+    </div>
+
+    <!-- Title Section -->
+    <h1 class="title">Get Inspired</h1>
+
+    <!-- Quote Box -->
+    <div class="quote-box">
+        <p id="quote"></p>
+    </div>
+
+    <!-- Footer Section (optional) -->
+    <div class="footer">
+        <p>New inspiration every day</p>
+    </div>
+
+    <!-- Inline JavaScript to Rotate Daily Quotes -->
+    <script>
+        const quotes = [
+            "The only way to do great work is to love what you do. – Steve Jobs",
+            "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
+            "Success is not the key to happiness. Happiness is the key to success. – Albert Schweitzer",
+            "Believe you can and you're halfway there. – Theodore Roosevelt",
+            "What lies behind us and what lies before us are tiny matters compared to what lies within us. – Ralph Waldo Emerson"
+        ];
+
+        // Function to display a quote based on the current day
+        function getDailyQuote() {
+            const today = new Date();
+            const index = today.getDate() % quotes.length;  // Rotates quotes based on day of the month
+            document.getElementById('quote').textContent = quotes[index];
+        }
+
+        window.onload = getDailyQuote;
+    </script>
+
+</body>
+</html>
