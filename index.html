@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Daily Motivation</title>
+    <title>Get Inspired</title>
     
-    <!-- CSS for Minimalist Design -->
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -15,75 +14,59 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f5f5f5; /* Background color */
+            background-color: #f5f5f5;
         }
 
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
+        /* Smaller header with matching background */
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            background-color: #f5f5f5; /* Same color as body */
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            background-color: #f5f5f5; /* Same color as the rest of the page */
+            padding: 10px 20px; /* Reduced padding */
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
 
-        .logo {
+        .logo-container {
             display: flex;
             align-items: center;
         }
 
-        .logo img {
-            width: 50px; /* Small-medium size */
+        .logo-container img {
+            width: 40px; /* Small-medium size for the logo */
+            height: auto;
             margin-right: 10px;
         }
 
-        .logo-title {
-            font-size: 1.8em;
-            color: #333;
-            font-weight: 700;
-        }
-
-        .menu-icon {
-            cursor: pointer;
-            width: 30px;
-        }
-
-        /* Side menu styling */
-        .side-menu {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #333;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .side-menu a {
-            padding: 10px 20px;
-            text-decoration: none;
+        .title-header {
             font-size: 1.5em;
-            color: #f5f5f5;
-            display: block;
-            transition: 0.3s;
+            font-weight: bold;
+            color: #333;
         }
 
-        .side-menu a:hover {
-            background-color: #575757;
-        }
-
-        .side-menu .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 36px;
-            color: #fff;
+        .burger-menu {
             cursor: pointer;
+        }
+
+        .burger-menu img {
+            width: 30px;
+            height: auto;
+        }
+
+        .quote-section {
+            margin-top: 80px; /* Add margin to avoid overlapping with the header */
+        }
+
+        .title {
+            font-size: 3em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-align: center;
         }
 
         .quote-box {
@@ -100,7 +83,6 @@
             text-align: center;
             box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
             margin: 0 10px;
-            margin-top: 150px; /* Adjusted for header space */
         }
 
         #quote {
@@ -144,16 +126,32 @@
             transform: scale(1.05);
         }
 
-        /* Media Query for Mobile Devices */
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
         @media (max-width: 768px) {
             .title {
-                font-size: 2em; /* Adjust title size for mobile */
+                font-size: 2em;
+            }
+
+            #logo {
+                width: 120px;
             }
 
             .quote-box {
                 padding: 20px;
                 width: 90%;
+                max-width: none;
                 min-height: 200px;
+            }
+
+            .button-container {
+                top: 10px;
+                right: 10px;
+                gap: 8px;
             }
 
             .quote-button {
@@ -167,83 +165,39 @@
             }
         }
     </style>
-
-    <!-- FontAwesome for Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="header">
-        <div class="logo">
+    <!-- Header with logo, title, and burger menu -->
+    <header>
+        <div class="logo-container">
             <img src="logo.png" alt="Logo">
-            <h1 class="logo-title">Free Daily Motivation</h1>
+            <span class="title-header">Free Daily Motivation</span>
         </div>
-        <img src="menu-icon.png" alt="Menu" class="menu-icon" onclick="openMenu()">
+        <div class="burger-menu">
+            <img src="burger-icon.png" alt="Menu">
+        </div>
     </header>
 
-    <!-- Side Menu -->
-    <div id="sideMenu" class="side-menu">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </div>
-
-    <!-- Quote Box with Buttons -->
-    <div class="quote-box">
-        <div id="quote">"The only way to do great work is to love what you do. – Steve Jobs"</div>
-
-        <!-- Buttons for New Quote and WhatsApp Share -->
-        <div class="button-container">
-            <button class="quote-button" id="new-quote" title="New Quote">
-                <img src="new-quote-icon.png" alt="New Quote" class="button-icon">
-            </button>
-
-            <button class="quote-button" id="share-whatsapp" title="Share on WhatsApp">
-                <img src="whatsapp-icon.png" alt="Share on WhatsApp" class="button-icon">
-            </button>
+    <!-- Quote Section -->
+    <div class="quote-section">
+        <h1 class="title">Get Inspired</h1>
+        <div class="quote-box">
+            <div id="quote">"The only way to do great work is to love what you do. – Steve Jobs"</div>
+            <div class="button-container">
+                <button class="quote-button" id="new-quote" title="New Quote">
+                    <img src="new-quote-icon.png" alt="New Quote" class="button-icon">
+                </button>
+                <button class="quote-button" id="share-whatsapp" title="Share on WhatsApp">
+                    <img src="whatsapp-icon.png" alt="Share on WhatsApp" class="button-icon">
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- Footer Section (optional) -->
     <div class="footer">
         <p>Feel free to share the love</p>
     </div>
-
-    <!-- JavaScript to Handle Menu & Buttons -->
-    <script>
-        // Open side menu
-        function openMenu() {
-            document.getElementById("sideMenu").style.width = "250px";
-        }
-
-        // Close side menu
-        function closeMenu() {
-            document.getElementById("sideMenu").style.width = "0";
-        }
-
-        const quotes = [
-            "The only way to do great work is to love what you do. – Steve Jobs",
-            "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
-            "Success is not the key to happiness. Happiness is the key to success. – Albert Schweitzer",
-            "Believe you can and you're halfway there. – Theodore Roosevelt",
-            "What lies behind us and what lies before us are tiny matters compared to what lies within us. – Ralph Waldo Emerson"
-        ];
-
-        // Generate a new quote
-        document.getElementById('new-quote').addEventListener('click', function() {
-            const index = Math.floor(Math.random() * quotes.length);
-            document.getElementById('quote').textContent = quotes[index];
-        });
-
-        // Share the current quote on WhatsApp
-        document.getElementById('share-whatsapp').addEventListener('click', function() {
-            const quote = document.getElementById('quote').textContent;
-            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(quote)}`;
-            window.open(whatsappUrl, '_blank');
-        });
-    </script>
 
 </body>
 </html>
