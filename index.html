@@ -3,61 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Inspired</title>
+    <title>Free Daily Motivation</title>
     
+    <!-- CSS for Minimalist Design -->
     <style>
-        /* Global Style */
         body {
             font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             margin: 0;
-            background-color: #fff; /* Previous background color */
+            background-color: #f5f5f5; /* Background color */
         }
 
-        /* Header Styling */
         .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 20px;
-            background-color: #fff; /* Changed header background to white */
-            color: #333;
+            position: fixed;
+            top: 0;
             width: 100%;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f5f5f5; /* Same color as body */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Align logo and title to the left */
-        .header-logo {
+        .logo {
             display: flex;
             align-items: center;
         }
 
-        .header-logo img {
-            width: 80px; /* Adjust logo size */
-            margin-right: 15px;
+        .logo img {
+            width: 50px; /* Small-medium size */
+            margin-right: 10px;
         }
 
-        .header-logo h1 {
-            font-size: 1.5em;
-            margin: 0;
-            color: #333;
-        }
-
-        /* Menu Icon on the far right */
-        .menu-icon {
+        .logo-title {
             font-size: 1.8em;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            width: 30px;
+        }
+
+        /* Side menu styling */
+        .side-menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .side-menu a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.5em;
+            color: #f5f5f5;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .side-menu a:hover {
+            background-color: #575757;
+        }
+
+        .side-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            color: #fff;
             cursor: pointer;
         }
 
-        /* Page Title Section */
-        .title {
-            font-size: 2.5em;
-            color: #333;
-            font-weight: 700;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        /* Quote Box Styling */
         .quote-box {
             background-color: #fff;
             padding: 40px;
@@ -65,25 +93,26 @@
             width: 80%;
             max-width: 800px;
             min-height: 250px;
-            margin: 0 auto;
-            position: relative; /* Make the button-container positioned inside */
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 10px;
+            margin-top: 150px; /* Adjusted for header space */
         }
 
         #quote {
             font-size: 1.5em;
             color: #555;
+            margin: 0;
             line-height: 1.5;
         }
 
-        /* Button container inside the quote box */
         .button-container {
             position: absolute;
-            bottom: 15px; /* Move buttons to the bottom inside the quote box */
+            top: 15px;
             right: 15px;
             display: flex;
             gap: 10px;
@@ -100,13 +129,9 @@
             justify-content: center;
             width: 50px;
             height: 50px;
+            overflow: hidden;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .quote-button:hover {
-            background-color: #ccc;
-            transform: scale(1.05);
         }
 
         .button-icon {
@@ -114,17 +139,15 @@
             height: 30px;
         }
 
-        .footer {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #777;
-            text-align: center;
+        .quote-button:hover {
+            background-color: #ccc;
+            transform: scale(1.05);
         }
 
-        /* Responsive Styling */
+        /* Media Query for Mobile Devices */
         @media (max-width: 768px) {
-            .header-logo h1 {
-                font-size: 1.2em;
+            .title {
+                font-size: 2em; /* Adjust title size for mobile */
             }
 
             .quote-box {
@@ -144,47 +167,62 @@
             }
         }
     </style>
+
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <!-- Header Section -->
     <header class="header">
-        <div class="header-logo">
+        <div class="logo">
             <img src="logo.png" alt="Logo">
-            <h1>Free Daily Motivation</h1>
+            <h1 class="logo-title">Free Daily Motivation</h1>
         </div>
-        <div class="menu-icon">
-            <i class="fas fa-bars"></i> <!-- Menu Burger Icon -->
-        </div>
+        <img src="menu-icon.png" alt="Menu" class="menu-icon" onclick="openMenu()">
     </header>
 
-    <!-- Title Section -->
-    <h2 class="title">Get Inspired</h2>
+    <!-- Side Menu -->
+    <div id="sideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
 
     <!-- Quote Box with Buttons -->
     <div class="quote-box">
         <div id="quote">"The only way to do great work is to love what you do. – Steve Jobs"</div>
 
+        <!-- Buttons for New Quote and WhatsApp Share -->
         <div class="button-container">
-            <!-- New Quote Button -->
             <button class="quote-button" id="new-quote" title="New Quote">
                 <img src="new-quote-icon.png" alt="New Quote" class="button-icon">
             </button>
 
-            <!-- WhatsApp Share Button -->
             <button class="quote-button" id="share-whatsapp" title="Share on WhatsApp">
                 <img src="whatsapp-icon.png" alt="Share on WhatsApp" class="button-icon">
             </button>
         </div>
     </div>
 
-    <!-- Footer Section -->
+    <!-- Footer Section (optional) -->
     <div class="footer">
         <p>Feel free to share the love</p>
     </div>
 
+    <!-- JavaScript to Handle Menu & Buttons -->
     <script>
-        // Quotes Array
+        // Open side menu
+        function openMenu() {
+            document.getElementById("sideMenu").style.width = "250px";
+        }
+
+        // Close side menu
+        function closeMenu() {
+            document.getElementById("sideMenu").style.width = "0";
+        }
+
         const quotes = [
             "The only way to do great work is to love what you do. – Steve Jobs",
             "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
@@ -193,27 +231,18 @@
             "What lies behind us and what lies before us are tiny matters compared to what lies within us. – Ralph Waldo Emerson"
         ];
 
-        // Function to display a random quote
-        function getRandomQuote() {
-            const index = Math.floor(Math.random() * quotes.length);
-            return quotes[index];
-        }
-
-        // Event listeners for buttons
+        // Generate a new quote
         document.getElementById('new-quote').addEventListener('click', function() {
-            document.getElementById('quote').textContent = getRandomQuote();
+            const index = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').textContent = quotes[index];
         });
 
+        // Share the current quote on WhatsApp
         document.getElementById('share-whatsapp').addEventListener('click', function() {
             const quote = document.getElementById('quote').textContent;
             const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(quote)}`;
             window.open(whatsappUrl, '_blank');
         });
-
-        // Initial Quote Load
-        window.onload = function() {
-            document.getElementById('quote').textContent = getRandomQuote();
-        };
     </script>
 
 </body>
