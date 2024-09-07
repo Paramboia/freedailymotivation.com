@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Inspired</title>
+    <title>Free Daily Motivation</title>
     
     <style>
         body {
@@ -189,7 +189,7 @@
     <header>
         <div class="logo-container">
             <img src="logo.png" alt="Logo">
-            <span class="title-header">Free Daily Motivation</span>
+            <span class="title-header"></span>
         </div>
         <div class="burger-menu">
             <img src="burger-icon.png" alt="Menu">
@@ -205,6 +205,10 @@
                 <button class="quote-button" id="new-quote" title="New Quote">
                     <img src="new-quote-icon.png" alt="New Quote" class="button-icon">
                 </button>
+                <!-- New Copy and Paste Button -->
+                <button class="quote-button" id="copy-quote" title="Copy to Clipboard">
+                    <img src="copy-icon.png" alt="Copy Quote" class="button-icon">
+                </button>
                 <button class="quote-button" id="share-whatsapp" title="Share on WhatsApp">
                     <img src="whatsapp-icon.png" alt="Share on WhatsApp" class="button-icon">
                 </button>
@@ -215,6 +219,18 @@
     <div class="footer">
         <p>Feel free to share the love</p>
     </div>
+
+    <!-- Add JavaScript for Copy to Clipboard functionality -->
+    <script>
+        document.getElementById("copy-quote").addEventListener("click", function() {
+            var quoteText = document.getElementById("quote").innerText;
+            navigator.clipboard.writeText(quoteText).then(function() {
+                alert("Quote copied to clipboard!");
+            }).catch(function(err) {
+                alert("Failed to copy text: " + err);
+            });
+        });
+    </script>
 
 </body>
 </html>
