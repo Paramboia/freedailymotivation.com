@@ -115,21 +115,21 @@
         }
 
         .quote-box {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            width: 80%;
-            max-width: 800px;
-            height: 300px; /* Fixed height */
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
-            margin: 0 10px;
-            transition: background-color 0.3s, box-shadow 0.3s;
-            overflow: auto; /* Add scrollbar if content exceeds box size */
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 20px;
+        width: 80%;
+        max-width: 800px;
+        min-height: 150px; /* Minimum height to ensure it's not too small */
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+        margin: 0 10px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        overflow: auto; /* Keeps scrollbar if needed */
         }
 
         .dark-mode .quote-box {
