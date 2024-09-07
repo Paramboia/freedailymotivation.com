@@ -120,7 +120,7 @@
             border-radius: 20px;
             width: 80%;
             max-width: 800px;
-            min-height: 250px;
+            height: 300px; /* Fixed height */
             position: relative;
             display: flex;
             align-items: center;
@@ -129,6 +129,7 @@
             box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
             margin: 0 10px;
             transition: background-color 0.3s, box-shadow 0.3s;
+            overflow: auto; /* Add scrollbar if content exceeds box size */
         }
 
         .dark-mode .quote-box {
@@ -142,6 +143,8 @@
             margin: 0;
             line-height: 1.5;
             transition: opacity 0.5s, color 0.3s;
+            max-width: 100%; /* Ensure text doesn't overflow horizontally */
+            padding: 0 20px; /* Add some padding on the sides */
         }
 
         .dark-mode #quote {
@@ -218,8 +221,7 @@
             .quote-box {
                 padding: 20px;
                 width: 90%;
-                max-width: none;
-                min-height: 200px;
+                height: 250px; /* Slightly smaller height for mobile */
             }
 
             .button-container {
