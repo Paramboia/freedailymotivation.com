@@ -325,7 +325,7 @@
             <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
                 <img src="dark-mode-icon.png" alt="Dark Mode" class="button-icon">
             </button>
-            <button class="info-menu" aria-label="Menu">
+            <button class="info-menu" id="info-menu" aria-label="Menu">
                 <img src="info-icon.png" alt="Menu">
             </button>
         </div>
@@ -433,6 +433,12 @@
     darkModeToggle.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
     });
+
+    const infoMenuButton = document.getElementById("info-menu");
+    infoMenuButton.addEventListener("click", () => {
+        window.location.href = "about-us.html";
+    });
+    
 </script>
 </body>
 </html>
