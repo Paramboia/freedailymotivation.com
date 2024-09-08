@@ -331,264 +331,79 @@
         <p>&copy; 2024 Free Daily Motivation. All rights reserved.</p>
     </footer>
 
-    <script>
-        const quotes = {
-            business: [
-                "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
-                "Success is not how high you have climbed, but how you make a positive difference to the world. - Anonymous",
-                "Don't be afraid to give up the good to go for the great. - John D. Rockefeller",
-                "The secret to success is to know something nobody else knows. - Aristotle Onassis",
-                "The best revenge is massive success. - Frank Sinatra",
-                "Success is not the result of spontaneous combustion. You must set yourself on fire. - Arnold H. Glasow",
-                "The only place where success comes before work is in the dictionary. - Vidal Sassoon",
-                "Success is walking from failure to failure with no loss of enthusiasm. - Winston Churchill",
-                "Opportunities are usually disguised as hard work, so most people don't recognize them. - Ann Landers",
-                "The way to get started is to quit talking and begin doing. - Walt Disney",
-                "The secret of success is to do the common things uncommonly well. - John D. Rockefeller",
-                "Don’t wait. The time will never be just right. - Napoleon Hill",
-                "The best preparation for tomorrow is doing your best today. - H. Jackson Brown Jr.",
-                "Hard work beats talent when talent doesn't work hard. - Kevin Durant",
-                "Success usually comes to those who are too busy to be looking for it. - Henry David Thoreau",
-                "The function of leadership is to produce more leaders, not more followers. - Ralph Nader",
-                "Success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome. - Booker T. Washington",
-                "If you are not willing to risk the usual, you will have to settle for the ordinary. - Jim Rohn",
-                "Don’t be afraid to give up the good to go for the great. - John D. Rockefeller",
-                "In the middle of difficulty lies opportunity. - Albert Einstein",
-                "The best way to predict the future is to create it. - Peter Drucker",
-                "Your most unhappy customers are your greatest source of learning. - Bill Gates",
-                "If you really look closely, most overnight successes took a long time. - Steve Jobs",
-                "Success is not the key to happiness. Happiness is the key to success. - Albert Schweitzer",
-                "The harder I work, the luckier I get. - Samuel Goldwyn",
-                "It does not matter how slowly you go as long as you do not stop. - Confucius",
-                "You miss 100% of the shots you don't take. - Wayne Gretzky",
-                "Success is the sum of small efforts, repeated day in and day out. - Robert Collier",
-                "If you want to achieve greatness stop asking for permission. - Anonymous",
-                "There are no secrets to success. It is the result of preparation, hard work, and learning from failure. - Colin Powell",
-                "Success is not in what you have, but who you are. - Bo Bennett",
-                "The successful warrior is the average man, with laser-like focus. - Bruce Lee",
-                "Success is going from failure to failure without losing your enthusiasm. - Winston Churchill",
-                "Give us the tools and we will finish the job. - Winston Churchill",
-                "The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will. - Vince Lombardi",
-                "Don’t let yesterday take up too much of today. - Will Rogers",
-                "The only way to do great work is to love what you do. - Steve Jobs",
-                "Focus is about saying no. - Steve Jobs",
-                "The best way to find yourself is to lose yourself in the service of others. - Mahatma Gandhi",
-                "Success is how high you bounce when you hit bottom. - George S. Patton",
-                "I find that the harder I work, the more luck I seem to have. - Thomas Jefferson",
-                "If you want something you’ve never had, you must be willing to do something you’ve never done. - Thomas Jefferson",
-                "Success is not the absence of failure; it’s the persistence through failure. - Aisha Tyler",
-                "The road to success and the road to failure are almost exactly the same. - Colin R. Davis",
-                "Success is not measured by what you accomplish, but the opposition you have encountered. - Anonymous",
-                "The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh",
-                "Opportunities don't happen, you create them. - Chris Grosser",
-                "Success is stumbling from failure to failure with no loss of enthusiasm. - Winston Churchill",
-                "You can’t build a reputation on what you are going to do. - Henry Ford",
-                "Do not wait to strike till the iron is hot, but make it hot by striking. - William Butler Yeats",
-                "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill"
-            ],
-            sport: [
-                "You have to expect things of yourself before you can do them. - Michael Jordan",
-                "Talent wins games, but teamwork and intelligence wins championships. - Michael Jordan",
-                "The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh",
-                "The more you practice, the luckier you get. - Gary Player",
-                "To be the best, you must be able to handle the worst. - Wilson Kanadi",
-                "Hard work beats talent when talent doesn't work hard. - Kevin Durant",
-                "Success is no accident. It is hard work, perseverance, learning, studying, sacrifice, and most of all, love of what you are doing or learning to do. - Pelé",
-                "The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will. - Vince Lombardi",
-                "You miss 100% of the shots you don't take. - Wayne Gretzky",
-                "It’s not whether you get knocked down, it’s whether you get up. - Vince Lombardi",
-                "Champions keep playing until they get it right. - Billie Jean King",
-                "The harder the battle, the sweeter the victory. - Les Brown",
-                "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
-                "The only way to prove that you’re a good sport is to lose. - Ernie Banks",
-                "Winning isn’t everything, but wanting to win is. - Vince Lombardi",
-                "Never let the fear of striking out keep you from playing the game. - Babe Ruth",
-                "It’s not the size of the dog in the fight, it’s the size of the fight in the dog. - Mark Twain",
-                "Success is how high you bounce when you hit bottom. - George S. Patton",
-                "Don’t count the days, make the days count. - Muhammad Ali",
-                "The only person you are destined to become is the person you decide to be. - Ralph Waldo Emerson",
-                "If you can believe it, the mind can achieve it. - Ronnie Lott",
-                "Winning is not everything, but wanting to win is. - Vince Lombardi",
-                "You miss 100% of the shots you don’t take. - Wayne Gretzky",
-                "It is not the mountain we conquer but ourselves. - Sir Edmund Hillary",
-                "What you get by achieving your goals is not as important as what you become by achieving your goals. - Zig Ziglar",
-                "The best way to predict the future is to create it. - Peter Drucker",
-                "Hard work beats talent when talent doesn’t work hard. - Kevin Durant",
-                "You can’t win unless you learn how to lose. - Kareem Abdul-Jabbar",
-                "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
-                "Every champion was once a contender that refused to give up. - Rocky Balboa",
-                "The more you sweat in practice, the less you bleed in battle. - Richard Marcinko",
-                "You have to believe in yourself when no one else does. - Serena Williams",
-                "Persistence is the most powerful force on earth, it can move mountains. - Albert Einstein",
-                "The more I practice, the luckier I get. - Gary Player",
-                "The harder the conflict, the greater the triumph. - George Washington",
-                "If you don’t have confidence, you’ll always find a way not to win. - Carl Lewis",
-                "There is no substitute for hard work. - Thomas Edison",
-                "Champions are made from something they have deep inside them—a desire, a dream, a vision. - Muhammad Ali",
-                "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill"
-            ],
-            science: [
-                "Science is the great antidote to the poison of enthusiasm and superstition. - Adam Smith",
-                "The good thing about science is that it's true whether or not you believe in it. - Neil deGrasse Tyson",
-                "The only way to do great work is to love what you do. - Steve Jobs",
-                "The unexamined life is not worth living. - Socrates",
-                "To invent, you need a good imagination and a pile of junk. - Thomas Edison",
-                "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge. - Stephen Hawking",
-                "The important thing is not to stop questioning. Curiosity has its own reason for existing. - Albert Einstein",
-                "Science is a way of thinking much more than it is a body of knowledge. - Carl Sagan",
-                "Everything we call real is made of things that cannot be regarded as real. - Niels Bohr",
-                "The universe is under no obligation to make sense to you. - Neil deGrasse Tyson",
-                "We cannot solve problems with the kind of thinking we employed when we came up with them. - Albert Einstein",
-                "The best way to predict the future is to invent it. - Alan Kay",
-                "Science is not only a disciple of reason but, also, one of romance and passion. - Stephen Hawking",
-                "The more I learn, the more I realize how much I don't know. - Albert Einstein",
-                "In science, there are no shortcuts to truth. - Karl Popper",
-                "The mind that opens to a new idea never returns to its original size. - Albert Einstein",
-                "Science and everyday life cannot and should not be separated. - Rosalind Franklin",
-                "What we know is a drop, what we don’t know is an ocean. - Isaac Newton",
-                "The most beautiful experience we can have is the mysterious. It is the fundamental emotion that stands at the cradle of true art and true science. - Albert Einstein",
-                "Science is a way to keep yourself from getting bored while you are waiting for something to change. - Mary Roach",
-                "There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle. - Albert Einstein",
-                "It is not that I'm so smart. But I stay with the questions much longer. - Albert Einstein",
-                "The most incomprehensible thing about the universe is that it is comprehensible. - Albert Einstein",
-                "To every action, there is always opposed an equal reaction. - Isaac Newton",
-                "Science is a wonderful thing if one does not have to earn one's living at it. - Albert Einstein",
-                "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
-                "Without data, you're just another person with an opinion. - W. Edwards Deming",
-                "A scientist is not just a person who knows about science but is someone who can observe and think about the natural world in a new way. - Carl Sagan",
-                "The important thing is to never stop questioning. - Albert Einstein",
-                "The universe does not care what we believe. - Neil deGrasse Tyson",
-                "Science is the search for truth, not the search for validation. - Albert Einstein",
-                "Science is a way of looking at the world. - Richard Dawkins",
-                "The greatest discovery of all time is that a person can change his future by merely changing his attitude. - Oprah Winfrey",
-                "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
-                "What we know is a drop, what we don't know is an ocean. - Isaac Newton",
-                "Science is a way of keeping oneself from getting bored while waiting for something to change. - Mary Roach",
-                "Science is the belief in the ignorance of experts. - Richard Feynman",
-                "Science and art are not separate. They are not two worlds. They are part of the same world. - Bruce Mau",
-                "The pursuit of truth is more precious than its possession. - Albert Einstein",
-                "Science is the key to our future, and if you don’t believe in science, then you’re holding back the future. - Bill Nye",
-                "The more you know, the more you realize you don't know. - Aristotle",
-                "To understand the universe is to understand oneself. - Stephen Hawking",
-                "The greatest obstacle to discovery is not ignorance—it is the illusion of knowledge. - Daniel Boorstin",
-                "Science is a process of learning how to be ignorant and not how to be smart. - Richard Feynman",
-                "The goal of science is to discover the truth, not to conform to what others think is true. - Richard Feynman",
-                "Science is a way to keep yourself from getting bored while waiting for something to change. - Mary Roach",
-                "A scientist is a person who has a large number of ideas and knows how to test them. - Robert A. Heinlein",
-                "The more I learn, the more I realize how much I don’t know. - Albert Einstein",
-                "The beauty of a living thing is not the atoms that go into it, but the way those atoms are put together. - Carl Sagan"
-            ],
-            life: [
-                "Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth. - Marcus Aurelius",
-                "We don’t see things as they are, we see them as we are. - Anaïs Nin",
-                "The only thing necessary for the triumph of evil is for good men to do nothing. - Edmund Burke",
-                "The greatest wealth is to live content with little. - Plato",
-                "Life is a journey that must be traveled no matter how bad the roads and accommodations. - Oliver Goldsmith",
-                "Live in the sunshine, swim the sea, drink the wild air. - Ralph Waldo Emerson",
-                "The mind is everything. What you think you become. - Buddha",
-                "Life is what happens when you’re busy making other plans. - John Lennon",
-                "To live is the rarest thing in the world. Most people exist, that is all. - Oscar Wilde",
-                "You can’t go back and change the beginning, but you can start where you are and change the ending. - C.S. Lewis",
-                "The way you get meaning into your life is to devote yourself to loving others, devote yourself to your community around you, and devote yourself to creating something that gives you purpose and meaning. - Mitch Albom",
-                "Life is really simple, but we insist on making it complicated. - Confucius",
-                "The journey of a thousand miles begins with one step. - Lao Tzu",
-                "The best way to find yourself is to lose yourself in the service of others. - Mahatma Gandhi",
-                "You must be the change you wish to see in the world. - Mahatma Gandhi",
-                "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well. - Ralph Waldo Emerson",
-                "Act as if what you do makes a difference. It does. - William James",
-                "Life isn’t about finding yourself. Life is about creating yourself. - George Bernard Shaw",
-                "Success is not the key to happiness. Happiness is the key to success. - Albert Schweitzer",
-                "The only impossible journey is the one you never begin. - Tony Robbins",
-                "You only live once, but if you do it right, once is enough. - Mae West",
-                "Success usually comes to those who are too busy to be looking for it. - Henry David Thoreau",
-                "Do what you can, with what you have, where you are. - Theodore Roosevelt",
-                "You are never too old to set another goal or to dream a new dream. - C.S. Lewis",
-                "The best way to predict the future is to create it. - Peter Drucker",
-                "Your time is limited, so don’t waste it living someone else’s life. - Steve Jobs",
-                "Happiness is not something ready made. It comes from your own actions. - Dalai Lama",
-                "Life is short, and it is up to you to make it sweet. - Sarah Louise Delany",
-                "In the end, it's not the years in your life that count. It's the life in your years. - Abraham Lincoln",
-                "Life is either a daring adventure or nothing at all. - Helen Keller",
-                "The best revenge is massive success. - Frank Sinatra",
-                "Believe you can and you're halfway there. - Theodore Roosevelt",
-                "The only way to have a friend is to be one. - Ralph Waldo Emerson",
-                "The only thing we have to fear is fear itself. - Franklin D. Roosevelt",
-                "Everything has beauty, but not everyone can see. - Confucius",
-                "When life gives you lemons, make lemonade. - Elbert Hubbard",
-                "What you get by achieving your goals is not as important as what you become by achieving your goals. - Zig Ziglar",
-                "The definition of insanity is doing the same thing yet expecting different results. - Albert Einstein",
-                "You must do the things you think you cannot do. - Eleanor Roosevelt"
-            ]
-        };
+<script>
+    let quotes = {};
+    let currentCategory = 'business';
 
-        const quoteElement = document.getElementById("quote");
-        const newQuoteButton = document.getElementById("new-quote");
-        const copyQuoteButton = document.getElementById("copy-quote");
-        const shareQuoteButton = document.getElementById("share-quote");
-        const categoryButtons = document.querySelectorAll(".category-button");
+    // Fetch the quotes from the JSON file
+    fetch('quotes.json')
+        .then(response => response.json())
+        .then(data => {
+            quotes = data;
+            updateQuote();
+        })
+        .catch(error => console.error('Error fetching quotes:', error));
 
-        // Function to update the selected state of buttons
-        function updateCategoryButtons(selectedCategory) {
-            categoryButtons.forEach(button => {
-                if (button.id === `category-${selectedCategory}`) {
-                    button.classList.add("selected");
-                } else {
-                    button.classList.remove("selected");
-                }
-            });
-        }
-        
-        // Update category button selection on click
+    const quoteElement = document.getElementById("quote");
+    const newQuoteButton = document.getElementById("new-quote");
+    const copyQuoteButton = document.getElementById("copy-quote");
+    const shareQuoteButton = document.getElementById("share-quote");
+    const categoryButtons = document.querySelectorAll(".category-button");
+
+    // Function to update the selected state of buttons
+    function updateCategoryButtons(selectedCategory) {
         categoryButtons.forEach(button => {
-            button.addEventListener("click", (e) => {
-                currentCategory = e.target.id.replace('category-', '');
-                updateQuote();
-                updateCategoryButtons(currentCategory);
-            });
+            if (button.id === `category-${selectedCategory}`) {
+                button.classList.add("selected");
+            } else {
+                button.classList.remove("selected");
+            }
         });
-        
-        let currentCategory = 'business';
+    }
 
-        function getRandomQuote(category) {
-            const selectedQuotes = quotes[category];
-            return selectedQuotes[Math.floor(Math.random() * selectedQuotes.length)];
-        }
+    // Function to get a random quote from the selected category
+    function getRandomQuote(category) {
+        const selectedQuotes = quotes[category];
+        return selectedQuotes[Math.floor(Math.random() * selectedQuotes.length)];
+    }
 
-        function updateQuote() {
-            const newQuote = getRandomQuote(currentCategory);
-            quoteElement.style.opacity = 0;
-            setTimeout(() => {
-                quoteElement.textContent = newQuote;
-                quoteElement.style.opacity = 1;
-            }, 300);
-        }
+    // Function to update the displayed quote
+    function updateQuote() {
+        const newQuote = getRandomQuote(currentCategory);
+        quoteElement.style.opacity = 0;
+        setTimeout(() => {
+            quoteElement.textContent = newQuote;
+            quoteElement.style.opacity = 1;
+        }, 300);
+    }
 
-        newQuoteButton.addEventListener("click", updateQuote);
+    newQuoteButton.addEventListener("click", updateQuote);
 
-        copyQuoteButton.addEventListener("click", () => {
-            navigator.clipboard.writeText(quoteElement.textContent).then(() => {
-                alert("Quote copied to clipboard!");
-            });
+    copyQuoteButton.addEventListener("click", () => {
+        navigator.clipboard.writeText(quoteElement.textContent).then(() => {
+            alert("Quote copied to clipboard!");
         });
+    });
 
-        shareQuoteButton.addEventListener("click", () => {
-            const quote = quoteElement.textContent;
-            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(quote)}`;
-            window.open(whatsappUrl, "_blank");
-        });
+    shareQuoteButton.addEventListener("click", () => {
+        const quote = quoteElement.textContent;
+        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(quote)}`;
+        window.open(whatsappUrl, "_blank");
+    });
 
-        categoryButtons.forEach(button => {
-            button.addEventListener("click", (e) => {
-                currentCategory = e.target.id.replace('category-', '');
-                updateQuote();
-            });
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            currentCategory = e.target.id.replace('category-', '');
+            updateQuote();
+            updateCategoryButtons(currentCategory);
         });
+    });
 
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById("dark-mode-toggle");
-        darkModeToggle.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-        });
-    </script>
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+    });
+</script>
 </body>
 </html>
