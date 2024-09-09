@@ -120,14 +120,20 @@
         .content-section a {
             display: inline-block;
             margin-top: 20px;
+            padding: 10px 20px;
             font-size: 1.1em;
-            color: #ff6b6b;
+            color: #fff;
+            background-color: #ff6b6b; /* Button background color */
             text-decoration: none;
             font-weight: bold;
+            border-radius: 12px; /* Rounded square */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
         }
-
+        
         .content-section a:hover {
-            text-decoration: underline;
+            background-color: #ff9a9e; /* Change color on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
         }
 
         .footer {
