@@ -136,7 +136,11 @@
         }
 
         .quote-section {
-            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%; /* Ensure the section takes the full width */
         }
 
         .title {
@@ -295,14 +299,17 @@
 
             .quote-box {
                 padding: 20px;
-                width: 90%; /* Make it responsive */
-                max-width: 300%; /* Ensure it doesn't exceed viewport width */
-                height: 250px; /* Slightly smaller height for mobile */
+                width: 90%; /* Make it responsive to the viewport width */
+                max-width: 100%; /* Ensure it doesn't exceed viewport width */
+                box-sizing: border-box; /* Ensure padding is included in the width calculation */
+                height: 350px; /* Increased height for mobile */
+                margin: 0 auto; /* Center the box horizontally */
+                position: relative;
             }
 
             .button-container {
-                top: 10px;
-                right: 10px;
+                top: 20px; /* Ensure button container fits well in the increased height */
+                right: 20px;
                 gap: 8px;
             }
 
