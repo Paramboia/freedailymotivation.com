@@ -425,7 +425,9 @@
 
     shareQuoteButton.addEventListener("click", () => {
         const quote = quoteElement.textContent;
-        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(quote)}`;
+        const extraLine = "Visit www.freedailymotivation.com for more inspirational quotes!";
+        const message = `${quote}\n\n${extraLine} ✨`; 
+        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, "_blank");
     });
 
