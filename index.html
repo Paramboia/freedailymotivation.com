@@ -546,65 +546,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     // Function to show the pop-up with overlay
     function showPopup() {
-        const isDarkMode = document.body.classList.contains('dark-mode');  // Check if dark mode is active
+    const isDarkMode = document.body.classList.contains('dark-mode');  // Check if dark mode is active
 
-        // Create overlay
-        const overlay = document.createElement('div');
-        overlay.id = 'overlay';
-        overlay.style.position = 'fixed';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';  // Semi-transparent background
-        overlay.style.backdropFilter = 'blur(5px)';  // Blur effect
-        overlay.style.zIndex = '9998';
-        document.body.appendChild(overlay);
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';  // Semi-transparent background
+    overlay.style.backdropFilter = 'blur(5px)';  // Blur effect
+    overlay.style.zIndex = '9998';
+    document.body.appendChild(overlay);
 
-        // Create popup
-        const popup = document.createElement('div');
-        popup.style.position = 'fixed';
-        popup.style.top = '50%';
-        popup.style.left = '50%';
-        popup.style.transform = 'translate(-50%, -50%)';
-        popup.style.padding = '20px';
-        popup.style.backgroundColor = isDarkMode ? '#000' : '#fff';  // Dark mode or light mode background
-        popup.style.color = isDarkMode ? '#fff' : '#000';  // Dark mode or light mode text color
-        popup.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
-        popup.style.borderRadius = '10px';
-        popup.style.textAlign = 'center';
-        popup.style.zIndex = '9999';
+    // Create popup
+    const popup = document.createElement('div');
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.padding = '20px';
+    popup.style.backgroundColor = isDarkMode ? '#000' : '#fff';  // Dark mode or light mode background
+    popup.style.color = isDarkMode ? '#fff' : '#000';  // Dark mode or light mode text color
+    popup.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+    popup.style.borderRadius = '10px';
+    popup.style.textAlign = 'center';
+    popup.style.zIndex = '9999';
 
-        // Main message
-        const message = document.createElement('p');
-        message.textContent = 'Having fun? Don’t forget to save this page as favorite! ⭐';
-        message.style.fontSize = '18px';
-        message.style.marginBottom = '20px';
+    // Main message
+    const message = document.createElement('p');
+    message.textContent = 'Having fun? Don’t forget to save this page as favorite! ⭐';
+    message.style.fontSize = '18px';
+    message.style.marginBottom = '10px';  // Slightly less margin
 
-        // Additional paragraph
-        const additionalMessage = document.createElement('p');
-        additionalMessage.textContent = 'Since you are still reading this, feel free to share some motivation with your loved ones!';
-        additionalMessage.style.fontSize = '16px';
-        additionalMessage.style.marginBottom = '20px';
+    // New additional paragraph
+    const additionalMessage = document.createElement('p');
+    additionalMessage.textContent = 'Since you are still reading this, feel free to share some motivation with your loved ones!';
+    additionalMessage.style.fontSize = '16px';
+    additionalMessage.style.marginBottom = '20px';
 
-        // Close button
-        const closeButton = document.createElement('button');
-        closeButton.textContent = 'Close';
-        closeButton.style.padding = '10px 20px';
-        closeButton.style.backgroundColor = '#ff6b6b';
-        closeButton.style.color = '#fff';
-        closeButton.style.border = 'none';
-        closeButton.style.borderRadius = '5px';
-        closeButton.style.cursor = 'pointer';
+    // Close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close';
+    closeButton.style.padding = '10px 20px';
+    closeButton.style.backgroundColor = '#ff6b6b';
+    closeButton.style.color = '#fff';
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '5px';
+    closeButton.style.cursor = 'pointer';
 
-        closeButton.addEventListener('click', () => {
-            document.body.removeChild(popup);
-            document.body.removeChild(overlay);  // Remove overlay
-        });
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(popup);
+        document.body.removeChild(overlay);  // Remove overlay
+    });
 
-        popup.appendChild(message);
-        popup.appendChild(closeButton);
-        document.body.appendChild(popup);
+    // Append everything to the popup
+    popup.appendChild(message);
+    popup.appendChild(additionalMessage);  // Append the new paragraph
+    popup.appendChild(closeButton);
+
+    // Append popup to the body
+    document.body.appendChild(popup);
     }
 
     // Function to track user clicks
