@@ -554,13 +554,20 @@ function showPopup() {
     overlay.style.position = 'fixed';
     overlay.style.top = '0';
     overlay.style.left = '0';
-    overlay.style.width = '100vw';  // Ensure full viewport width
-    overlay.style.height = '100vh'; // Ensure full viewport height
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';  // Semi-transparent background
-    overlay.style.backdropFilter = 'blur(5px)';  // Blur effect
-    overlay.style.webkitBackdropFilter = 'blur(5px)';  // Safari compatibility for mobile
+    overlay.style.width = '100vw';  // Full viewport width
+    overlay.style.height = '100vh'; // Full viewport height
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';  // Semi-transparent background for fallback
     overlay.style.zIndex = '9998';
-    overlay.style.pointerEvents = 'none';  // Ensure the user can only interact with the popup, not the overlay
+    overlay.style.pointerEvents = 'none';  // User cannot interact with the overlay
+    
+    // Apply blur effect or fallback
+    if ('backdropFilter' in overlay.style || 'webkitBackdropFilter' in overlay.style) {
+        overlay.style.backdropFilter = 'blur(5px)';  // Blur effect
+        overlay.style.webkitBackdropFilter = 'blur(5px)';  // Safari support for mobile
+    } else {
+        overlay.style.opacity = '0.9';  // Fallback opacity for older browsers
+    }
+
     document.body.appendChild(overlay);
 
     // Create popup
