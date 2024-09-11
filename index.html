@@ -568,9 +568,15 @@ function showPopup() {
     overlay.style.width = '100%';
     overlay.style.height = '100%';
     overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    overlay.style.backdropFilter = 'blur(5px)';  // Apply blur
-    overlay.style.webkitBackdropFilter = 'blur(5px)';  // Mobile compatibility
+    
+    // Use both backdrop-filter and a fallback opacity for mobile
+    overlay.style.backdropFilter = 'blur(5px)';  // Primary blur
+    overlay.style.webkitBackdropFilter = 'blur(5px)';  // WebKit for mobile Safari
     overlay.style.zIndex = '9998';
+
+    // Add a fallback opacity in case blur doesn't work
+    overlay.style.opacity = '0.9';  // Semi-transparent effect as a fallback
+
     document.body.appendChild(overlay);
 
     // Create popup
