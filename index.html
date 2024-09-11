@@ -409,6 +409,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 display: none;
                 backdrop-filter: blur(5px); /* Optional: Apply a blur effect */
             }
+
+#popup {
+    width: 80%; /* Default width for desktop */
+    max-width: 600px;
+}
+
+@media (max-width: 768px) {
+    #popup {
+        width: 90%; /* Increased width for mobile */
+    }
+}
             
         }
     </style>
@@ -546,7 +557,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     // Function to show the pop-up with overlay
 function showPopup() {
-    const isDarkMode = document.body.classList.contains('dark-mode');  // Check if dark mode is active
+    const isDarkMode = document.body.classList.contains('dark-mode');
 
     // Create overlay
     const overlay = document.createElement('div');
@@ -554,31 +565,24 @@ function showPopup() {
     overlay.style.position = 'fixed';
     overlay.style.top = '0';
     overlay.style.left = '0';
-    overlay.style.width = '100vw';  // Full viewport width
-    overlay.style.height = '100vh'; // Full viewport height
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';  // Semi-transparent background for fallback
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    overlay.style.backdropFilter = 'blur(5px)';  // Apply blur
+    overlay.style.webkitBackdropFilter = 'blur(5px)';  // Mobile compatibility
     overlay.style.zIndex = '9998';
-    overlay.style.pointerEvents = 'none';  // User cannot interact with the overlay
-    
-    // Apply blur effect or fallback
-    if ('backdropFilter' in overlay.style || 'webkitBackdropFilter' in overlay.style) {
-        overlay.style.backdropFilter = 'blur(5px)';  // Blur effect
-        overlay.style.webkitBackdropFilter = 'blur(5px)';  // Safari support for mobile
-    } else {
-        overlay.style.opacity = '0.9';  // Fallback opacity for older browsers
-    }
-
     document.body.appendChild(overlay);
 
     // Create popup
     const popup = document.createElement('div');
+    popup.id = 'popup';
     popup.style.position = 'fixed';
     popup.style.top = '50%';
     popup.style.left = '50%';
     popup.style.transform = 'translate(-50%, -50%)';
     popup.style.padding = '20px';
-    popup.style.backgroundColor = isDarkMode ? '#000' : '#fff';  // Dark mode or light mode background
-    popup.style.color = isDarkMode ? '#fff' : '#000';  // Dark mode or light mode text color
+    popup.style.backgroundColor = isDarkMode ? '#000' : '#fff';
+    popup.style.color = isDarkMode ? '#fff' : '#000';
     popup.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
     popup.style.borderRadius = '10px';
     popup.style.textAlign = 'center';
@@ -588,9 +592,9 @@ function showPopup() {
     const message = document.createElement('p');
     message.textContent = 'Having fun? Save this page so you can find us anytime! ⭐';
     message.style.fontSize = '18px';
-    message.style.marginBottom = '10px';  // Slightly less margin
+    message.style.marginBottom = '10px';
 
-    // New additional paragraph
+    // Additional message
     const additionalMessage = document.createElement('p');
     additionalMessage.textContent = 'Since you are still here, go ahead and share some motivation with your loved ones!';
     additionalMessage.style.fontSize = '16px';
@@ -608,17 +612,15 @@ function showPopup() {
 
     closeButton.addEventListener('click', () => {
         document.body.removeChild(popup);
-        document.body.removeChild(overlay);  // Remove overlay
+        document.body.removeChild(overlay);
     });
 
-    // Append everything to the popup
     popup.appendChild(message);
-    popup.appendChild(additionalMessage);  // Append the new paragraph
+    popup.appendChild(additionalMessage);
     popup.appendChild(closeButton);
 
-    // Append popup to the body
     document.body.appendChild(popup);
-    }
+}
 
     // Function to track user clicks
     let clickCount = 0;
