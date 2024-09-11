@@ -561,33 +561,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     overlay.style.zIndex = '9998';
     document.body.appendChild(overlay);
 
-    // Create popup
+    // Function to show the pop-up
+    function showPopup() {
     const popup = document.createElement('div');
     popup.style.position = 'fixed';
     popup.style.top = '50%';
     popup.style.left = '50%';
     popup.style.transform = 'translate(-50%, -50%)';
     popup.style.padding = '20px';
-    popup.style.backgroundColor = isDarkMode ? '#000' : '#fff';  // Dark mode or light mode background
-    popup.style.color = isDarkMode ? '#fff' : '#000';  // Dark mode or light mode text color
+    popup.style.backgroundColor = '#fff';
     popup.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
     popup.style.borderRadius = '10px';
     popup.style.textAlign = 'center';
     popup.style.zIndex = '9999';
+    popup.style.width = '80%'; // Adjust for mobile
+    popup.style.maxWidth = '400px'; // Ensure a max width
+    popup.style.boxSizing = 'border-box'; // Make sure padding is included in width calculation
 
-    // Main message
     const message = document.createElement('p');
-    message.textContent = 'Having fun? Don’t forget to save this page as favorite! ⭐';
+    message.textContent = 'Having fun? Save this page so you can find us anytime! ⭐';
     message.style.fontSize = '18px';
-    message.style.marginBottom = '10px';  // Slightly less margin
+    message.style.marginBottom = '10px';
 
-    // New additional paragraph
-    const additionalMessage = document.createElement('p');
-    additionalMessage.textContent = 'Since you are still reading this, feel free to share some motivation with your loved ones!';
-    additionalMessage.style.fontSize = '16px';
-    additionalMessage.style.marginBottom = '20px';
+    const secondMessage = document.createElement('p');
+    secondMessage.textContent = 'Since you are still here, go ahead and share some motivation with your loved ones!';
+    secondMessage.style.fontSize = '16px';
+    secondMessage.style.marginBottom = '20px';
 
-    // Close button
     const closeButton = document.createElement('button');
     closeButton.textContent = 'Close';
     closeButton.style.padding = '10px 20px';
@@ -599,29 +599,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     closeButton.addEventListener('click', () => {
         document.body.removeChild(popup);
-        document.body.removeChild(overlay);  // Remove overlay
+        document.body.style.filter = ''; // Remove blur effect
     });
 
-    // Append everything to the popup
     popup.appendChild(message);
-    popup.appendChild(additionalMessage);  // Append the new paragraph
+    popup.appendChild(secondMessage);
     popup.appendChild(closeButton);
-
-    // Append popup to the body
     document.body.appendChild(popup);
+
+    // Apply blur effect to the background
+    document.body.style.filter = 'blur(5px)';
     }
 
-    // Function to track user clicks
-    let clickCount = 0;
-    function handleClick() {
-        clickCount++;
-        if (clickCount === 3) {
-            showPopup();
-        }
+// Function to track user clicks
+function handleClick() {
+    clickCount++;
+    if (clickCount === 3) {
+        showPopup();
     }
+}
 
-    // Attach the click event listener to the document
-    document.addEventListener('click', handleClick);
+// Attach the click event listener to the document
+document.addEventListener('click', handleClick);
+ 
 </script>
 </body>
 </html>
