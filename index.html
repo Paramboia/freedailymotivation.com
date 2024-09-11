@@ -337,66 +337,83 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 height: 24px;
             }
 
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    visibility: hidden; /* Hidden by default */
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
+            .popup {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+                visibility: hidden; /* Hidden by default */
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+            
+            .popup.show {
+                visibility: visible;
+                opacity: 1;
+            }
+            
+            .popup-content {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+                max-width: 400px;
+                width: 100%;
+            }
+            
+            .popup-content h2 {
+                font-size: 1.8em;
+                margin-bottom: 10px;
+            }
+            
+            .popup-content p {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+            }
+            
+            .popup-content button {
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1em;
+            }
+            
+            .popup-content button:hover {
+                background-color: #0056b3;
+            }
+            
+            /* Hidden class to hide the pop-up */
+            .hidden {
+                visibility: hidden;
+                opacity: 0;
+            }
 
-.popup.show {
-    visibility: visible;
-    opacity: 1;
-}
-
-.popup-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 100%;
-}
-
-.popup-content h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-.popup-content p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.popup-content button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.popup-content button:hover {
-    background-color: #0056b3;
-}
-
-/* Hidden class to hide the pop-up */
-.hidden {
-    visibility: hidden;
-    opacity: 0;
-}
+            /* Styles for the pop-up box */
+            #bookmark-popup {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #f1c40f; /* Use a bright color, like yellow */
+                color: #333; /* Dark text for contrast */
+                border-radius: 12px;
+                padding: 20px;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+                z-index: 9999;
+                display: none;
+                width: 300px;
+                text-align: center;
+            }
             
         }
     </style>
@@ -532,6 +549,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         window.location.href = "about-us.html";
     });
 
+    // Function to show the pop-up
     let clickCount = 0;
 
     // Function to show the pop-up
