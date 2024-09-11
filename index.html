@@ -567,25 +567,15 @@ function showPopup() {
     overlay.style.left = '0';
     overlay.style.width = '100%';
     overlay.style.height = '100%';
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // Darker background for better visibility
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    
+    // Use both backdrop-filter and a fallback opacity for mobile
+    overlay.style.backdropFilter = 'blur(5px)';  // Primary blur
+    overlay.style.webkitBackdropFilter = 'blur(5px)';  // WebKit for mobile Safari
     overlay.style.zIndex = '9998';
 
-    // Attempt to add blur effect, falling back to opacity if not supported
-    const blurStyles = `
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-    `;
-    
-    const opacityStyle = `
-        background-color: rgba(0, 0, 0, 0.7);
-    `;
-
-    // Test for backdrop-filter support
-    if ('CSS' in window && CSS.supports('backdrop-filter', 'blur(5px)')) {
-        overlay.style.cssText += blurStyles;
-    } else {
-        overlay.style.cssText += opacityStyle;
-    }
+    // Add a fallback opacity in case blur doesn't work
+    overlay.style.opacity = '0.9';  // Semi-transparent effect as a fallback
 
     document.body.appendChild(overlay);
 
@@ -597,14 +587,12 @@ function showPopup() {
     popup.style.left = '50%';
     popup.style.transform = 'translate(-50%, -50%)';
     popup.style.padding = '20px';
-    popup.style.backgroundColor = isDarkMode ? 'rgba(0, 0, 0, 0.9)' : 'rgba(255, 255, 255, 0.9)';
+    popup.style.backgroundColor = isDarkMode ? '#000' : '#fff';
     popup.style.color = isDarkMode ? '#fff' : '#000';
-    popup.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3)';
+    popup.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
     popup.style.borderRadius = '10px';
     popup.style.textAlign = 'center';
     popup.style.zIndex = '9999';
-    popup.style.maxWidth = '90%';
-    popup.style.width = '300px';
 
     // Main message
     const message = document.createElement('p');
