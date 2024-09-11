@@ -575,11 +575,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         popup.style.textAlign = 'center';
         popup.style.zIndex = '9999';
 
+        // Main message
         const message = document.createElement('p');
         message.textContent = 'Having fun? Don’t forget to save this page as favorite! ⭐';
         message.style.fontSize = '18px';
         message.style.marginBottom = '20px';
 
+        // Additional paragraph
+        const additionalMessage = document.createElement('p');
+        additionalMessage.textContent = 'Since you are still reading this, feel free to share some motivation with your loved ones!';
+        additionalMessage.style.fontSize = '16px';
+        additionalMessage.style.marginBottom = '20px';
+
+        // Close button
         const closeButton = document.createElement('button');
         closeButton.textContent = 'Close';
         closeButton.style.padding = '10px 20px';
