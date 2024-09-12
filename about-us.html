@@ -172,20 +172,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .home-button {
-            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
             background-color: transparent;
             border: none;
             padding: 10px;
-            font-weight: bold;
-            color: #333;
-            border-radius: 50%;
+            border-radius: 12px; /* Round square shape */
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
         
-        .dark-mode .home-button {
-            color: #f5f5f5;
+        .home-button img {
+            width: 20px;
+            height: auto;
+        }
+        
+        .dark-mode .home-button img {
+            filter: invert(1);
         }
         
         .home-button:hover {
@@ -203,11 +210,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Free Daily Motivation Logo">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div class="logo-container">
+                <img src="logo.png" alt="Free Daily Motivation Logo">
+            </div>
+            <a href="index.html" aria-label="Home" class="home-button">
+                <img src="house-icon.png" alt="Home Icon">
+            </a>
         </div>
         <div style="display: flex; gap: 10px;">
-            <a href="index.html" aria-label="Home" class="home-button">Home</a>
             <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
                 <img src="dark-mode-icon.png" alt="Dark Mode Icon" class="button-icon">
             </button>
