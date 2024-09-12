@@ -175,11 +175,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
+            gap: 5px; /* Space between icon and text */
+            width: auto;
             height: 40px;
             background-color: transparent;
             border: none;
-            padding: 10px;
+            padding: 10px 15px;
             border-radius: 12px; /* Round square shape */
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
@@ -189,6 +190,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .home-button img {
             width: 20px;
             height: auto;
+        }
+        
+        .home-button span {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .dark-mode .home-button span {
+            color: #f5f5f5;
         }
         
         .dark-mode .home-button img {
@@ -216,6 +227,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <a href="index.html" aria-label="Home" class="home-button">
                 <img src="house-icon.png" alt="Home Icon">
+                <span>Home</span>
             </a>
         </div>
         <div style="display: flex; gap: 10px;">
