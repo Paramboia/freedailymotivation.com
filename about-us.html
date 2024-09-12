@@ -170,6 +170,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .site-link:hover {
             text-decoration: underline;
         }
+
+        .home-button {
+            text-decoration: none;
+            background-color: transparent;
+            border: none;
+            padding: 10px;
+            font-weight: bold;
+            color: #333;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark-mode .home-button {
+            color: #f5f5f5;
+        }
+        
+        .home-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
         
     </style>
 </head>
@@ -185,6 +207,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <img src="logo.png" alt="Free Daily Motivation Logo">
         </div>
         <div style="display: flex; gap: 10px;">
+            <a href="index.html" aria-label="Home" class="home-button">Home</a>
             <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
                 <img src="dark-mode-icon.png" alt="Dark Mode Icon" class="button-icon">
             </button>
