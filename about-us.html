@@ -17,7 +17,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
     <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Poppins:wght@700&display=swap" rel="stylesheet">
 
     
     <style>
@@ -55,6 +55,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             z-index: 100;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s;
+        }
+
+        /* Apply Poppins font only to About Us title and text */
+        .content-section h1,
+        .content-section p {
+            font-family: 'Poppins', sans-serif; /* Apply Poppins font */
         }
         
         header .logo-container img {
@@ -119,10 +125,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-align: center;
         }
 
-        .content-section h1, .content-section p {
-            font-family: 'Poppins', sans-serif; /* Apply Poppins font */
-        }
-        
         .content-section h1 {
             font-size: 2em;
             color: #333;
