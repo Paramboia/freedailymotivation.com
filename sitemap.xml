@@ -3,8 +3,16 @@
   <url>
     <loc>https://freedailymotivation.com/</loc>
     <lastmod>2024-09-09</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <url>
+  <loc>https://freedailymotivation.com/about-us</loc>
+  <lastmod>2024-09-09</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+  
   <!-- Add more <url> entries for other pages -->
 </urlset>
