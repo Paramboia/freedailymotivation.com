@@ -17,36 +17,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PQ8LSCWN');</script>
 <!-- End Google Tag Manager -->
 
-    <script>
-    // Function to push event to GTM's dataLayer
-    function trackButtonClick(buttonName) {
-        dataLayer.push({
-            'event': 'button_click',
-            'button_name': buttonName
-        });
-    }
-
-    // Example of tracking "New Quote" button
-    document.getElementById('new-quote').addEventListener('click', function() {
-        trackButtonClick('new_quote');
-    });
-
-    // Example of tracking "Copy Quote" button
-    document.getElementById('copy-quote').addEventListener('click', function() {
-        trackButtonClick('copy_quote');
-    });
-
-    // Example of tracking "Info Menu" button
-    document.getElementById('info-menu').addEventListener('click', function() {
-        trackButtonClick('info_menu');
-    });
-
-    // Example of tracking "Dark Mode" toggle button
-    document.getElementById('dark-mode-toggle').addEventListener('click', function() {
-        trackButtonClick('dark_mode_toggle');
-    });
-</script>
-
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap">
     
