@@ -300,19 +300,10 @@ function fetchQuotes() {
                 // Create a link for each author
                 const authorLink = document.createElement('a');
                 authorLink.textContent = author.name;
-                authorLink.href = `famous-quotes/${author.name.toLowerCase().replace(/ /g, '-')}.html`;
-                authorLink.style.fontSize = '0.9em';
-                authorLink.style.color = '#000';
-                authorLink.style.textDecoration = 'none';
+                authorLink.href = `inspirational-quotes-famous/${author.name.toLowerCase().replace(/ /g, '-')}.html`;
+                authorLink.style.color = 'inherit'; // Use the parent element's text color
+                authorLink.style.textDecoration = 'none'; // Remove underline
                 authorLink.style.marginRight = '15px';
-
-                // Optional: Add a subtle hover effect
-                authorLink.addEventListener('mouseover', () => {
-                    authorLink.style.textDecoration = 'underline';
-                });
-                authorLink.addEventListener('mouseout', () => {
-                    authorLink.style.textDecoration = 'none';
-                });
 
                 // Append the author link to the container
                 authorContainer.appendChild(authorLink);
