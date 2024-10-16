@@ -277,13 +277,12 @@ infoMenuButton.addEventListener("click", () => {
 });
 
 // Function to fetch and display quotes from authors.json
-function fetchQuotes() {
-    fetch('authors.json')
-        .then(response => response.json())
-        .then(data => {
-            const contentSection = document.querySelector('.content-section');
-
-            data.authors.forEach(author => {
+fetch('authors.json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // Check if data is fetched
+        const contentSection = document.querySelector('.content-section');
+        data.authors.forEach(author => {
                 // Create an author section
                 const authorSection = document.createElement('div');
                 authorSection.classList.add('author-section');
