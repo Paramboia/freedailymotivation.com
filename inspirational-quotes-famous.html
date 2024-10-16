@@ -297,15 +297,25 @@ function fetchQuotes() {
             authorContainer.style.lineHeight = '1.6';
 
             data.authors.forEach(author => {
-                // Create a simple text span for each author
-                const authorSpan = document.createElement('span');
-                authorSpan.textContent = author.name;
-                authorSpan.style.fontSize = '0.9em';
-                authorSpan.style.color = '#000';
-                authorSpan.style.marginRight = '15px';
+                // Create a link for each author
+                const authorLink = document.createElement('a');
+                authorLink.textContent = author.name;
+                authorLink.href = `famous-quotes/${author.name.toLowerCase().replace(/ /g, '-')}.html`;
+                authorLink.style.fontSize = '0.9em';
+                authorLink.style.color = '#000';
+                authorLink.style.textDecoration = 'none';
+                authorLink.style.marginRight = '15px';
 
-                // Append the author span to the container
-                authorContainer.appendChild(authorSpan);
+                // Optional: Add a subtle hover effect
+                authorLink.addEventListener('mouseover', () => {
+                    authorLink.style.textDecoration = 'underline';
+                });
+                authorLink.addEventListener('mouseout', () => {
+                    authorLink.style.textDecoration = 'none';
+                });
+
+                // Append the author link to the container
+                authorContainer.appendChild(authorLink);
             });
 
             // Append the author container to the content section
