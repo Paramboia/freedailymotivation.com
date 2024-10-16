@@ -16,141 +16,79 @@
     })(window,document,'script','dataLayer','GTM-PQ8LSCWN');</script>
     <!-- End Google Tag Manager -->
 
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #ff6b6b, #fbc2eb, #a18cd1, #ff9a9e, #fcb69f);
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite;
-            transition: background 0.3s, color 0.3s;
+<style>
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: inherit;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo-container img {
+        width: 40px;
+        height: auto;
+    }
+
+    .site-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .home-button {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .home-button img {
+        width: 20px;
+        height: auto;
+    }
+
+    .dark-mode-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dark-mode-toggle img {
+        width: 24px;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .site-title {
+            display: none;
         }
+    }
+</style>
 
-        body.dark-mode {
-            background: linear-gradient(135deg, #000000, #1c1c1c, #000000);
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite;
-            color: #f5f5f5;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            background: inherit;
-            padding: 10px 20px;
-            position: fixed;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s;
-        }
-
-        header .logo-container img {
-            width: 40px;
-            height: auto;
-            margin-right: 10px;
-        }
-
-        .title-header {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #333;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .dark-mode .title-header {
-            color: #f5f5f5;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .content-section {
-            margin-top: 80px;
-            padding: 20px;
-            text-align: center;
-            max-width: 1200px;
-        }
-
-        .content-section h1 {
-            font-size: 2em;
-            color: #333;
-        }
-
-        .content-section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .content-section li {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .content-section a {
-            color: #ff6b6b;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .content-section a:hover {
-            color: #ff9a9e;
-        }
-
-        .dark-mode .content-section a {
-            color: #f5f5f5;
-        }
-
-        .dark-mode .content-section a:hover {
-            color: #ff9a9e;
-        }
-
-        footer {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #777;
-            transition: color 0.3s;
-        }
-
-        .dark-mode footer {
-            color: #aaa;
-        }
-
-        @keyframes gradientAnimation {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQ8LSCWN"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <header>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <div class="logo-container">
-                <img src="logo.webp" alt="Free Daily Motivation Logo">
-            </div>
-            <a href="index.html" aria-label="Home" class="home-button">
-                <img src="house-icon.webp" alt="Home Icon">
-                <span>Home</span>
-            </a>
-        </div>
-        <div style="display: flex; gap: 10px;">
-            <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
-                <img src="dark-mode-icon.webp" alt="Dark Mode Icon" class="dark-mode-icon">
-            </button>
-        </div>
-    </header>
+<header>
+    <div class="logo-container">
+        <img src="logo.webp" alt="Free Daily Motivation Logo">
+        <span class="site-title">Free Daily Motivation</span>
+    </div>
+    <nav>
+        <a href="index.html" aria-label="Home" class="home-button">
+            <img src="house-icon.webp" alt="Home Icon">
+            <span>Home</span>
+        </a>
+    </nav>
+    <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
+        <img src="dark-mode-icon.webp" alt="Dark Mode Icon" class="dark-mode-icon">
+    </button>
+</header>
 
     <div class="content-section">
         <h1>Quotes by Author</h1>
