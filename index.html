@@ -579,14 +579,18 @@ function showPopup() {
     overlay.style.width = '100%';
     overlay.style.height = '100%';
     overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    
-    // Use both backdrop-filter and a fallback opacity for mobile
-    overlay.style.backdropFilter = 'blur(5px)';  // Primary blur
-    overlay.style.webkitBackdropFilter = 'blur(5px)';  // WebKit for mobile Safari
     overlay.style.zIndex = '9998';
 
-    // Add a fallback opacity in case blur doesn't work
-    overlay.style.opacity = '0.9';  // Semi-transparent effect as a fallback
+    // Apply different styles based on screen size
+    if (window.innerWidth > 768) {
+        // Desktop styles
+        overlay.style.backdropFilter = 'blur(5px)';
+        overlay.style.webkitBackdropFilter = 'blur(5px)';
+        overlay.style.opacity = '0.9';
+    } else {
+        // Mobile styles
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // Darker background for mobile
+    }
 
     document.body.appendChild(overlay);
 
@@ -604,6 +608,8 @@ function showPopup() {
     popup.style.borderRadius = '10px';
     popup.style.textAlign = 'center';
     popup.style.zIndex = '9999';
+    popup.style.width = window.innerWidth > 768 ? '80%' : '90%'; // Adjust width for mobile
+    popup.style.maxWidth = '600px';
 
     // Main message
     const message = document.createElement('p');
