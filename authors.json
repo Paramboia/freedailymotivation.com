@@ -1,0 +1,26 @@
+{
+  "authors": [
+    {
+      "name": "Franklin D. Roosevelt",
+      "quotes": [
+        "The only thing we have to fear is fear itself.",
+        "In politics, nothing happens by accident. If it happens, you can bet it was planned that way."
+      ]
+    },
+    {
+      "name": "Winston Churchill",
+      "quotes": [
+        "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        "If you’re going through hell, keep going."
+      ]
+    },
+    {
+      "name": "Albert Einstein",
+      "quotes": [
+        "Life is like riding a bicycle. To keep your balance, you must keep moving.",
+        "Imagination is more important than knowledge."
+      ]
+    }
+    // Add more authors and quotes here...
+  ]
+}
