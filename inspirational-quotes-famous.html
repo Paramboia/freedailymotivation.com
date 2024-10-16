@@ -276,39 +276,6 @@ infoMenuButton.addEventListener("click", () => {
     window.location.href = "about-us.html";
 });
 
-// Function to create the author CTA buttons
-function createAuthorCTA(author) {
-    const authorCTA = document.createElement('a');
-    authorCTA.textContent = `View Quotes by ${author.name}`;
-    authorCTA.href = `inspirational-quotes-famous/${author.name.toLowerCase().replace(/ /g, '-')}.html`;
-    
-    // Apply consistent styling to the CTA
-    authorCTA.classList.add('author-cta');
-    authorCTA.style.display = 'inline-block';
-    authorCTA.style.marginTop = '10px';
-    authorCTA.style.padding = '10px 20px';
-    authorCTA.style.fontSize = '1em';
-    authorCTA.style.color = '#fff';
-    authorCTA.style.backgroundColor = '#ff6b6b';
-    authorCTA.style.textDecoration = 'none';
-    authorCTA.style.fontWeight = 'bold';
-    authorCTA.style.borderRadius = '12px';
-    authorCTA.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
-    authorCTA.style.transition = 'background-color 0.3s, transform 0.3s';
-    
-    // Add hover effects
-    authorCTA.addEventListener('mouseover', () => {
-        authorCTA.style.backgroundColor = '#ff9a9e';
-        authorCTA.style.transform = 'scale(1.05)';
-    });
-    authorCTA.addEventListener('mouseout', () => {
-        authorCTA.style.backgroundColor = '#ff6b6b';
-        authorCTA.style.transform = 'scale(1)';
-    });
-
-    return authorCTA;
-}
-
 // Function to fetch and display quotes from authors.json
 function fetchQuotes() {
     fetch('authors.json')
@@ -319,34 +286,30 @@ function fetchQuotes() {
             // Add the new title
             const titleElement = document.createElement('h2');
             titleElement.textContent = "Check out the top inspirational quotes from famous people!";
-            titleElement.style.color = '#333'; // Adjust the color if needed
-            titleElement.style.marginTop = '40px'; // Add some space above the title
-            titleElement.style.fontSize = '1.5em'; // Adjust font size
+            titleElement.style.color = '#333';
+            titleElement.style.marginTop = '40px';
+            titleElement.style.fontSize = '1.5em';
             contentSection.appendChild(titleElement);
 
+            // Create a container for the author names
+            const authorContainer = document.createElement('div');
+            authorContainer.style.marginTop = '20px';
+            authorContainer.style.lineHeight = '1.6';
+
             data.authors.forEach(author => {
-                // Create an author link in a smaller text style
-                const authorLink = document.createElement('a');
-                authorLink.textContent = author.name;
-                authorLink.href = `famous-quotes/${author.name.toLowerCase().replace(/ /g, '-')}.html`; // Assumes your subpages follow this pattern
-                authorLink.style.display = 'inline-block';
-                authorLink.style.marginTop = '10px';
-                authorLink.style.fontSize = '0.9em'; // Smaller font size
-                authorLink.style.color = '#007bff'; // Link color
-                authorLink.style.textDecoration = 'none'; // No underline by default
-                authorLink.style.marginRight = '15px'; // Space between links
+                // Create a simple text span for each author
+                const authorSpan = document.createElement('span');
+                authorSpan.textContent = author.name;
+                authorSpan.style.fontSize = '0.9em';
+                authorSpan.style.color = '#000';
+                authorSpan.style.marginRight = '15px';
 
-                // Add hover effect to underline on hover
-                authorLink.addEventListener('mouseover', () => {
-                    authorLink.style.textDecoration = 'underline';
-                });
-                authorLink.addEventListener('mouseout', () => {
-                    authorLink.style.textDecoration = 'none';
-                });
-
-                // Append the author link to the content section
-                contentSection.appendChild(authorLink);
+                // Append the author span to the container
+                authorContainer.appendChild(authorSpan);
             });
+
+            // Append the author container to the content section
+            contentSection.appendChild(authorContainer);
         })
         .catch(error => {
             console.error('Error fetching quotes:', error);
