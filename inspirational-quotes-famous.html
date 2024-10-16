@@ -16,63 +16,110 @@
     })(window,document,'script','dataLayer','GTM-PQ8LSCWN');</script>
     <!-- End Google Tag Manager -->
 
-<style>
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background: inherit;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .logo-container img {
-        width: 40px;
-        height: auto;
-    }
-
-    .site-title {
-        font-size: 1.2em;
-        font-weight: bold;
-        color: #333;
-    }
-
-    .home-button {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        text-decoration: none;
-        color: #333;
-    }
-
-    .home-button img {
-        width: 20px;
-        height: auto;
-    }
-
-    .dark-mode-toggle {
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    .dark-mode-toggle img {
-        width: 24px;
-        height: auto;
-    }
-
-    @media (max-width: 768px) {
-        .site-title {
-            display: none;
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
         }
-    }
-</style>
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: inherit;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-container img {
+            width: 40px;
+            height: auto;
+        }
+
+        .site-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .home-button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .home-button img {
+            width: 20px;
+            height: auto;
+        }
+
+        .dark-mode-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dark-mode-toggle img {
+            width: 24px;
+            height: auto;
+        }
+
+        .content-section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-section ul li {
+            margin: 10px 0;
+        }
+
+        .content-section ul li a {
+            text-decoration: none;
+            color: #007BFF; /* Bootstrap primary color */
+            transition: color 0.3s;
+        }
+
+        .content-section ul li a:hover {
+            color: #0056b3; /* Darker shade on hover */
+        }
+
+        @media (max-width: 768px) {
+            .site-title {
+                display: none;
+            }
+
+            .content-section {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
 
 <header>
     <div class="logo-container">
@@ -90,164 +137,164 @@
     </button>
 </header>
 
-    <div class="content-section">
-        <h1>Quotes by Author</h1>
-        <ul>
-<li><a href="#Franklin D. Roosevelt">Franklin D. Roosevelt</a></li>
-<li><a href="#Anonymous">Anonymous</a></li>
-<li><a href="#John D. Rockefeller">John D. Rockefeller</a></li>
-<li><a href="#Aristotle Onassis">Aristotle Onassis</a></li>
-<li><a href="#Frank Sinatra">Frank Sinatra</a></li>
-<li><a href="#Arnold H. Glasow">Arnold H. Glasow</a></li>
-<li><a href="#Vidal Sassoon">Vidal Sassoon</a></li>
-<li><a href="#Winston Churchill">Winston Churchill</a></li>
-<li><a href="#Ann Landers">Ann Landers</a></li>
-<li><a href="#Walt Disney">Walt Disney</a></li>
-<li><a href="#Napoleon Hill">Napoleon Hill</a></li>
-<li><a href="#H. Jackson Brown Jr.">H. Jackson Brown Jr.</a></li>
-<li><a href="#Kevin Durant">Kevin Durant</a></li>
-<li><a href="#Henry David Thoreau">Henry David Thoreau</a></li>
-<li><a href="#Ralph Nader">Ralph Nader</a></li>
-<li><a href="#Booker T. Washington">Booker T. Washington</a></li>
-<li><a href="#Jim Rohn">Jim Rohn</a></li>
-<li><a href="#Albert Einstein">Albert Einstein</a></li>
-<li><a href="#Peter Drucker">Peter Drucker</a></li>
-<li><a href="#Bill Gates">Bill Gates</a></li>
-<li><a href="#Steve Jobs">Steve Jobs</a></li>
-<li><a href="#Albert Schweitzer">Albert Schweitzer</a></li>
-<li><a href="#Samuel Goldwyn">Samuel Goldwyn</a></li>
-<li><a href="#Confucius">Confucius</a></li>
-<li><a href="#Wayne Gretzky">Wayne Gretzky</a></li>
-<li><a href="#Robert Collier">Robert Collier</a></li>
-<li><a href="#Colin Powell">Colin Powell</a></li>
-<li><a href="#Bo Bennett">Bo Bennett</a></li>
-<li><a href="#Bruce Lee">Bruce Lee</a></li>
-<li><a href="#Vince Lombardi">Vince Lombardi</a></li>
-<li><a href="#Will Rogers">Will Rogers</a></li>
-<li><a href="#Mahatma Gandhi">Mahatma Gandhi</a></li>
-<li><a href="#George S. Patton">George S. Patton</a></li>
-<li><a href="#Thomas Jefferson">Thomas Jefferson</a></li>
-<li><a href="#Aisha Tyler">Aisha Tyler</a></li>
-<li><a href="#Colin R. Davis">Colin R. Davis</a></li>
-<li><a href="#Charles Kingsleigh">Charles Kingsleigh</a></li>
-<li><a href="#Chris Grosser">Chris Grosser</a></li>
-<li><a href="#Henry Ford">Henry Ford</a></li>
-<li><a href="#William Butler Yeats">William Butler Yeats</a></li>
-<li><a href="#Gary Vaynerchuk">Gary Vaynerchuk</a></li>
-<li><a href="#Joe Rogan">Joe Rogan</a></li>
-<li><a href="#Marcus Aurelius">Marcus Aurelius</a></li>
-<li><a href="#Anaïs Nin">Anaïs Nin</a></li>
-<li><a href="#Edmund Burke">Edmund Burke</a></li>
-<li><a href="#Plato">Plato</a></li>
-<li><a href="#Oliver Goldsmith">Oliver Goldsmith</a></li>
-<li><a href="#Ralph Waldo Emerson">Ralph Waldo Emerson</a></li>
-<li><a href="#Buddha">Buddha</a></li>
-<li><a href="#John Lennon">John Lennon</a></li>
-<li><a href="#Oscar Wilde">Oscar Wilde</a></li>
-<li><a href="#C.S. Lewis">C.S. Lewis</a></li>
-<li><a href="#Mitch Albom">Mitch Albom</a></li>
-<li><a href="#Lao Tzu">Lao Tzu</a></li>
-<li><a href="#William James">William James</a></li>
-<li><a href="#George Bernard Shaw">George Bernard Shaw</a></li>
-<li><a href="#Tony Robbins">Tony Robbins</a></li>
-<li><a href="#Mae West">Mae West</a></li>
-<li><a href="#Theodore Roosevelt">Theodore Roosevelt</a></li>
-<li><a href="#Dalai Lama">Dalai Lama</a></li>
-<li><a href="#Sarah Louise Delany">Sarah Louise Delany</a></li>
-<li><a href="#Abraham Lincoln">Abraham Lincoln</a></li>
-<li><a href="#Helen Keller">Helen Keller</a></li>
-<li><a href="#Elbert Hubbard">Elbert Hubbard</a></li>
-<li><a href="#Zig Ziglar">Zig Ziglar</a></li>
-<li><a href="#Eleanor Roosevelt">Eleanor Roosevelt</a></li>
-<li><a href="#Adam Smith">Adam Smith</a></li>
-<li><a href="#Neil deGrasse Tyson">Neil deGrasse Tyson</a></li>
-<li><a href="#Socrates">Socrates</a></li>
-<li><a href="#Thomas Edison">Thomas Edison</a></li>
-<li><a href="#Stephen Hawking">Stephen Hawking</a></li>
-<li><a href="#Carl Sagan">Carl Sagan</a></li>
-<li><a href="#Niels Bohr">Niels Bohr</a></li>
-<li><a href="#Alan Kay">Alan Kay</a></li>
-<li><a href="#Karl Popper">Karl Popper</a></li>
-<li><a href="#Rosalind Franklin">Rosalind Franklin</a></li>
-<li><a href="#Isaac Newton">Isaac Newton</a></li>
-<li><a href="#Mary Roach">Mary Roach</a></li>
-<li><a href="#Nelson Mandela">Nelson Mandela</a></li>
-<li><a href="#W. Edwards Deming">W. Edwards Deming</a></li>
-<li><a href="#Richard Dawkins">Richard Dawkins</a></li>
-<li><a href="#Oprah Winfrey">Oprah Winfrey</a></li>
-<li><a href="#Richard Feynman">Richard Feynman</a></li>
-<li><a href="#Bruce Mau">Bruce Mau</a></li>
-<li><a href="#Bill Nye">Bill Nye</a></li>
-<li><a href="#Aristotle">Aristotle</a></li>
-<li><a href="#Daniel Boorstin">Daniel Boorstin</a></li>
-<li><a href="#Robert A. Heinlein">Robert A. Heinlein</a></li>
-<li><a href="#Michael Jordan">Michael Jordan</a></li>
-<li><a href="#Gary Player">Gary Player</a></li>
-<li><a href="#Wilson Kanadi">Wilson Kanadi</a></li>
-<li><a href="#Pelé">Pelé</a></li>
-<li><a href="#Billie Jean King">Billie Jean King</a></li>
-<li><a href="#Les Brown">Les Brown</a></li>
-<li><a href="#Ernie Banks">Ernie Banks</a></li>
-<li><a href="#Babe Ruth">Babe Ruth</a></li>
-<li><a href="#Mark Twain">Mark Twain</a></li>
-<li><a href="#Muhammad Ali">Muhammad Ali</a></li>
-<li><a href="#Ronnie Lott">Ronnie Lott</a></li>
-<li><a href="#Sir Edmund Hillary">Sir Edmund Hillary</a></li>
-<li><a href="#Kareem Abdul-Jabbar">Kareem Abdul-Jabbar</a></li>
-<li><a href="#Rocky Balboa">Rocky Balboa</a></li>
-<li><a href="#Richard Marcinko">Richard Marcinko</a></li>
-<li><a href="#Serena Williams">Serena Williams</a></li>
-<li><a href="#George Washington">George Washington</a></li>
-<li><a href="#Carl Lewis">Carl Lewis</a></li>
-<li><a href="#Alan Watts">Alan Watts</a></li>
-<li><a href="#Warren Buffett">Warren Buffett</a></li>
-<li><a href="#Charlie Munger">Charlie Munger</a></li>
-<li><a href="#Robert Arnott">Robert Arnott</a></li>
-<li><a href="#Ben Graham">Ben Graham</a></li>
-<li><a href="#Phillip Fisher">Phillip Fisher</a></li>
-<li><a href="#Sir John Templeton">Sir John Templeton</a></li>
-<li><a href="#Richard Branson">Richard Branson</a></li>
-<li><a href="#Howard Marks">Howard Marks</a></li>
-<li><a href="#Ken Fisher">Ken Fisher</a></li>
-<li><a href="#John Bogle">John Bogle</a></li>
-<li><a href="#Joel Greenblatt">Joel Greenblatt</a></li>
-<li><a href="#Shelby Cullom Davis">Shelby Cullom Davis</a></li>
-<li><a href="#Peter Lynch">Peter Lynch</a></li>
-<li><a href="#George Soros">George Soros</a></li>
-<li><a href="#John Kenneth Galbraith">John Kenneth Galbraith</a></li>
-<li><a href="#Old Wall Street saying">Old Wall Street saying</a></li>
-<li><a href="#Benjamin Graham">Benjamin Graham</a></li>
-<li><a href="#Paul Samuelson">Paul Samuelson</a></li>
-<li><a href="#David Tepper">David Tepper</a></li>
-<li><a href="#Michael Moritz">Michael Moritz</a></li>
-<li><a href="#Bill Gurley">Bill Gurley</a></li>
-<li><a href="#Fred Wilson">Fred Wilson</a></li>
-<li><a href="#Jim Breyer">Jim Breyer</a></li>
-<li><a href="#Marc Andreessen">Marc Andreessen</a></li>
-<li><a href="#Peter Thiel">Peter Thiel</a></li>
-<li><a href="#Peter Thie">Peter Thie</a></li>
-<li><a href="#Jeff Bezos">Jeff Bezos</a></li>
-<li><a href="#Tom Brady">Tom Brady</a></li>
-<li><a href="#Pablo Picasso">Pablo Picasso</a></li>
-<li><a href="#Henri Matisse">Henri Matisse</a></li>
-<li><a href="#Marc Chagall">Marc Chagall</a></li>
-<li><a href="#Henry Moore">Henry Moore</a></li>
-<li><a href="#Jerzy Kosinski">Jerzy Kosinski</a></li>
-<li><a href="#Edgar Degas">Edgar Degas</a></li>
-<li><a href="#Vincent van Gogh">Vincent van Gogh</a></li>
-<li><a href="#Jackson Pollock">Jackson Pollock</a></li>
-<li><a href="#Georgia O'Keeffe">Georgia O'Keeffe</a></li>
-<li><a href="#Stella Adler">Stella Adler</a></li>
-<li><a href="#Wassily Kandinsky">Wassily Kandinsky</a></li>
-<li><a href="#Thomas Merton">Thomas Merton</a></li>
-<li><a href="#Twyla Tharp">Twyla Tharp</a></li>
-<li><a href="#Neil Armstrong">Neil Armstrong</a></li>
-<li><a href="#John F. Kennedy">John F. Kennedy</a></li>
-<li><a href="#Martin Luther King Jr.">Martin Luther King Jr.</a></li>
-<li><a href="#Edwin Hubble">Edwin Hubble</a></li>
-<li><a href="#G.K. Chesterton">G.K. Chesterton</a></li>
-<li><a href="#Peter Bernstein">Peter Bernstein</a></li>
-        </ul>
+<div class="content-section">
+    <h1>Quotes by Author</h1>
+    <ul>
+        <li><a href="#Franklin D. Roosevelt">Franklin D. Roosevelt</a></li>
+        <li><a href="#Anonymous">Anonymous</a></li>
+        <li><a href="#John D. Rockefeller">John D. Rockefeller</a></li>
+        <li><a href="#Aristotle Onassis">Aristotle Onassis</a></li>
+        <li><a href="#Frank Sinatra">Frank Sinatra</a></li>
+        <li><a href="#Arnold H. Glasow">Arnold H. Glasow</a></li>
+        <li><a href="#Vidal Sassoon">Vidal Sassoon</a></li>
+        <li><a href="#Winston Churchill">Winston Churchill</a></li>
+        <li><a href="#Ann Landers">Ann Landers</a></li>
+        <li><a href="#Walt Disney">Walt Disney</a></li>
+        <li><a href="#Napoleon Hill">Napoleon Hill</a></li>
+        <li><a href="#H. Jackson Brown Jr.">H. Jackson Brown Jr.</a></li>
+        <li><a href="#Kevin Durant">Kevin Durant</a></li>
+        <li><a href="#Henry David Thoreau">Henry David Thoreau</a></li>
+        <li><a href="#Ralph Nader">Ralph Nader</a></li>
+        <li><a href="#Booker T. Washington">Booker T. Washington</a></li>
+        <li><a href="#Jim Rohn">Jim Rohn</a></li>
+        <li><a href="#Albert Einstein">Albert Einstein</a></li>
+        <li><a href="#Peter Drucker">Peter Drucker</a></li>
+        <li><a href="#Bill Gates">Bill Gates</a></li>
+        <li><a href="#Steve Jobs">Steve Jobs</a></li>
+        <li><a href="#Albert Schweitzer">Albert Schweitzer</a></li>
+        <li><a href="#Samuel Goldwyn">Samuel Goldwyn</a></li>
+        <li><a href="#Confucius">Confucius</a></li>
+        <li><a href="#Wayne Gretzky">Wayne Gretzky</a></li>
+        <li><a href="#Robert Collier">Robert Collier</a></li>
+        <li><a href="#Colin Powell">Colin Powell</a></li>
+        <li><a href="#Bo Bennett">Bo Bennett</a></li>
+        <li><a href="#Bruce Lee">Bruce Lee</a></li>
+        <li><a href="#Vince Lombardi">Vince Lombardi</a></li>
+        <li><a href="#Will Rogers">Will Rogers</a></li>
+        <li><a href="#Mahatma Gandhi">Mahatma Gandhi</a></li>
+        <li><a href="#George S. Patton">George S. Patton</a></li>
+        <li><a href="#Thomas Jefferson">Thomas Jefferson</a></li>
+        <li><a href="#Aisha Tyler">Aisha Tyler</a></li>
+        <li><a href="#Colin R. Davis">Colin R. Davis</a></li>
+        <li><a href="#Charles Kingsleigh">Charles Kingsleigh</a></li>
+        <li><a href="#Chris Grosser">Chris Grosser</a></li>
+        <li><a href="#Henry Ford">Henry Ford</a></li>
+        <li><a href="#William Butler Yeats">William Butler Yeats</a></li>
+        <li><a href="#Gary Vaynerchuk">Gary Vaynerchuk</a></li>
+        <li><a href="#Joe Rogan">Joe Rogan</a></li>
+        <li><a href="#Marcus Aurelius">Marcus Aurelius</a></li>
+        <li><a href="#Anaïs Nin">Anaïs Nin</a></li>
+        <li><a href="#Edmund Burke">Edmund Burke</a></li>
+        <li><a href="#Plato">Plato</a></li>
+        <li><a href="#Oliver Goldsmith">Oliver Goldsmith</a></li>
+        <li><a href="#Ralph Waldo Emerson">Ralph Waldo Emerson</a></li>
+        <li><a href="#Buddha">Buddha</a></li>
+        <li><a href="#John Lennon">John Lennon</a></li>
+        <li><a href="#Oscar Wilde">Oscar Wilde</a></li>
+        <li><a href="#C.S. Lewis">C.S. Lewis</a></li>
+        <li><a href="#Mitch Albom">Mitch Albom</a></li>
+        <li><a href="#Lao Tzu">Lao Tzu</a></li>
+        <li><a href="#William James">William James</a></li>
+        <li><a href="#George Bernard Shaw">George Bernard Shaw</a></li>
+        <li><a href="#Tony Robbins">Tony Robbins</a></li>
+        <li><a href="#Mae West">Mae West</a></li>
+        <li><a href="#Theodore Roosevelt">Theodore Roosevelt</a></li>
+        <li><a href="#Dalai Lama">Dalai Lama</a></li>
+        <li><a href="#Sarah Louise Delany">Sarah Louise Delany</a></li>
+        <li><a href="#Abraham Lincoln">Abraham Lincoln</a></li>
+        <li><a href="#Helen Keller">Helen Keller</a></li>
+        <li><a href="#Elbert Hubbard">Elbert Hubbard</a></li>
+        <li><a href="#Zig Ziglar">Zig Ziglar</a></li>
+        <li><a href="#Eleanor Roosevelt">Eleanor Roosevelt</a></li>
+        <li><a href="#Adam Smith">Adam Smith</a></li>
+        <li><a href="#Neil deGrasse Tyson">Neil deGrasse Tyson</a></li>
+        <li><a href="#Socrates">Socrates</a></li>
+        <li><a href="#Thomas Edison">Thomas Edison</a></li>
+        <li><a href="#Stephen Hawking">Stephen Hawking</a></li>
+        <li><a href="#Carl Sagan">Carl Sagan</a></li>
+        <li><a href="#Niels Bohr">Niels Bohr</a></li>
+        <li><a href="#Alan Kay">Alan Kay</a></li>
+        <li><a href="#Karl Popper">Karl Popper</a></li>
+        <li><a href="#Rosalind Franklin">Rosalind Franklin</a></li>
+        <li><a href="#Isaac Newton">Isaac Newton</a></li>
+        <li><a href="#Mary Roach">Mary Roach</a></li>
+        <li><a href="#Nelson Mandela">Nelson Mandela</a></li>
+        <li><a href="#W. Edwards Deming">W. Edwards Deming</a></li>
+        <li><a href="#Richard Dawkins">Richard Dawkins</a></li>
+        <li><a href="#Oprah Winfrey">Oprah Winfrey</a></li>
+        <li><a href="#Richard Feynman">Richard Feynman</a></li>
+        <li><a href="#Bruce Mau">Bruce Mau</a></li>
+        <li><a href="#Bill Nye">Bill Nye</a></li>
+        <li><a href="#Aristotle">Aristotle</a></li>
+        <li><a href="#Daniel Boorstin">Daniel Boorstin</a></li>
+        <li><a href="#Robert A. Heinlein">Robert A. Heinlein</a></li>
+        <li><a href="#Michael Jordan">Michael Jordan</a></li>
+        <li><a href="#Gary Player">Gary Player</a></li>
+        <li><a href="#Wilson Kanadi">Wilson Kanadi</a></li>
+        <li><a href="#Pelé">Pelé</a></li>
+        <li><a href="#Billie Jean King">Billie Jean King</a></li>
+        <li><a href="#Les Brown">Les Brown</a></li>
+        <li><a href="#Ernie Banks">Ernie Banks</a></li>
+        <li><a href="#Babe Ruth">Babe Ruth</a></li>
+        <li><a href="#Mark Twain">Mark Twain</a></li>
+        <li><a href="#Muhammad Ali">Muhammad Ali</a></li>
+        <li><a href="#Ronnie Lott">Ronnie Lott</a></li>
+        <li><a href="#Sir Edmund Hillary">Sir Edmund Hillary</a></li>
+        <li><a href="#Kareem Abdul-Jabbar">Kareem Abdul-Jabbar</a></li>
+        <li><a href="#Rocky Balboa">Rocky Balboa</a></li>
+        <li><a href="#Richard Marcinko">Richard Marcinko</a></li>
+        <li><a href="#Serena Williams">Serena Williams</a></li>
+        <li><a href="#George Washington">George Washington</a></li>
+        <li><a href="#Carl Lewis">Carl Lewis</a></li>
+        <li><a href="#Alan Watts">Alan Watts</a></li>
+        <li><a href="#Warren Buffett">Warren Buffett</a></li>
+        <li><a href="#Charlie Munger">Charlie Munger</a></li>
+        <li><a href="#Robert Arnott">Robert Arnott</a></li>
+        <li><a href="#Ben Graham">Ben Graham</a></li>
+        <li><a href="#Phillip Fisher">Phillip Fisher</a></li>
+        <li><a href="#Sir John Templeton">Sir John Templeton</a></li>
+        <li><a href="#Richard Branson">Richard Branson</a></li>
+        <li><a href="#Howard Marks">Howard Marks</a></li>
+        <li><a href="#Ken Fisher">Ken Fisher</a></li>
+        <li><a href="#John Bogle">John Bogle</a></li>
+        <li><a href="#Joel Greenblatt">Joel Greenblatt</a></li>
+        <li><a href="#Shelby Cullom Davis">Shelby Cullom Davis</a></li>
+        <li><a href="#Peter Lynch">Peter Lynch</a></li>
+        <li><a href="#George Soros">George Soros</a></li>
+        <li><a href="#John Kenneth Galbraith">John Kenneth Galbraith</a></li>
+        <li><a href="#Old Wall Street saying">Old Wall Street saying</a></li>
+        <li><a href="#Benjamin Graham">Benjamin Graham</a></li>
+        <li><a href="#Paul Samuelson">Paul Samuelson</a></li>
+        <li><a href="#David Tepper">David Tepper</a></li>
+        <li><a href="#Michael Moritz">Michael Moritz</a></li>
+        <li><a href="#Bill Gurley">Bill Gurley</a></li>
+        <li><a href="#Fred Wilson">Fred Wilson</a></li>
+        <li><a href="#Jim Breyer">Jim Breyer</a></li>
+        <li><a href="#Marc Andreessen">Marc Andreessen</a></li>
+        <li><a href="#Peter Thiel">Peter Thiel</a></li>
+        <li><a href="#Peter Thie">Peter Thie</a></li>
+        <li><a href="#Jeff Bezos">Jeff Bezos</a></li>
+        <li><a href="#Tom Brady">Tom Brady</a></li>
+        <li><a href="#Pablo Picasso">Pablo Picasso</a></li>
+        <li><a href="#Henri Matisse">Henri Matisse</a></li>
+        <li><a href="#Marc Chagall">Marc Chagall</a></li>
+        <li><a href="#Henry Moore">Henry Moore</a></li>
+        <li><a href="#Jerzy Kosinski">Jerzy Kosinski</a></li>
+        <li><a href="#Edgar Degas">Edgar Degas</a></li>
+        <li><a href="#Vincent van Gogh">Vincent van Gogh</a></li>
+        <li><a href="#Jackson Pollock">Jackson Pollock</a></li>
+        <li><a href="#Georgia O'Keeffe">Georgia O'Keeffe</a></li>
+        <li><a href="#Stella Adler">Stella Adler</a></li>
+        <li><a href="#Wassily Kandinsky">Wassily Kandinsky</a></li>
+        <li><a href="#Thomas Merton">Thomas Merton</a></li>
+        <li><a href="#Twyla Tharp">Twyla Tharp</a></li>
+        <li><a href="#Neil Armstrong">Neil Armstrong</a></li>
+        <li><a href="#John F. Kennedy">John F. Kennedy</a></li>
+        <li><a href="#Martin Luther King Jr.">Martin Luther King Jr.</a></li>
+        <li><a href="#Edwin Hubble">Edwin Hubble</a></li>
+        <li><a href="#G.K. Chesterton">G.K. Chesterton</a></li>
+        <li><a href="#Peter Bernstein">Peter Bernstein</a></li>
+    </ul>
     </div>
 
     <footer>
