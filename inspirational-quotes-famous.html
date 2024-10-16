@@ -319,34 +319,36 @@ function fetchQuotes() {
         .then(data => {
             const contentSection = document.querySelector('.content-section');
 
-            data.authors.forEach(author => {
-                // Create an author section
-                const authorSection = document.createElement('div');
-                authorSection.classList.add('author-section');
-                authorSection.style.margin = '20px 0';
+            // Add the new title
+            const titleElement = document.createElement('h2');
+            titleElement.textContent = "Check out the top inspirational quotes from famous people!";
+            titleElement.style.color = '#333'; // Adjust the color if needed
+            titleElement.style.marginTop = '40px'; // Add some space above the title
+            titleElement.style.fontSize = '1.5em'; // Adjust font size
+            contentSection.appendChild(titleElement);
 
-                // Create and append the author's name as a link
+            data.authors.forEach(author => {
+                // Create an author link in a smaller text style
                 const authorLink = document.createElement('a');
                 authorLink.textContent = author.name;
-                authorLink.href = `inspirational-quotes-famous/${author.name.toLowerCase().replace(/ /g, '-')}.html`; // Subpage pattern
-                authorLink.style.fontSize = '1.2em';
-                authorLink.style.color = '#333'; // Adjust color as needed
-                authorLink.style.textDecoration = 'none';
-                authorLink.style.fontWeight = 'normal';
+                authorLink.href = `famous-quotes/${author.name.toLowerCase().replace(/ /g, '-')}.html`; // Assumes your subpages follow this pattern
+                authorLink.style.display = 'inline-block';
+                authorLink.style.marginTop = '10px';
+                authorLink.style.fontSize = '0.9em'; // Smaller font size
+                authorLink.style.color = '#007bff'; // Link color
+                authorLink.style.textDecoration = 'none'; // No underline by default
+                authorLink.style.marginRight = '15px'; // Space between links
 
-                // Add hover effect
+                // Add hover effect to underline on hover
                 authorLink.addEventListener('mouseover', () => {
-                    authorLink.style.color = '#ff6b6b';
+                    authorLink.style.textDecoration = 'underline';
                 });
                 authorLink.addEventListener('mouseout', () => {
-                    authorLink.style.color = '#333';
+                    authorLink.style.textDecoration = 'none';
                 });
 
-                // Append the link to the author section
-                authorSection.appendChild(authorLink);
-
-                // Append the author section to the content section
-                contentSection.appendChild(authorSection);
+                // Append the author link to the content section
+                contentSection.appendChild(authorLink);
             });
         })
         .catch(error => {
