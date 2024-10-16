@@ -276,13 +276,47 @@ infoMenuButton.addEventListener("click", () => {
     window.location.href = "about-us.html";
 });
 
+// Function to create the author CTA buttons
+function createAuthorCTA(author) {
+    const authorCTA = document.createElement('a');
+    authorCTA.textContent = `View Quotes by ${author.name}`;
+    authorCTA.href = `famous-quotes/${author.name.toLowerCase().replace(/ /g, '-')}.html`;
+    
+    // Apply consistent styling to the CTA
+    authorCTA.classList.add('author-cta');
+    authorCTA.style.display = 'inline-block';
+    authorCTA.style.marginTop = '10px';
+    authorCTA.style.padding = '10px 20px';
+    authorCTA.style.fontSize = '1em';
+    authorCTA.style.color = '#fff';
+    authorCTA.style.backgroundColor = '#ff6b6b';
+    authorCTA.style.textDecoration = 'none';
+    authorCTA.style.fontWeight = 'bold';
+    authorCTA.style.borderRadius = '12px';
+    authorCTA.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+    authorCTA.style.transition = 'background-color 0.3s, transform 0.3s';
+    
+    // Add hover effects
+    authorCTA.addEventListener('mouseover', () => {
+        authorCTA.style.backgroundColor = '#ff9a9e';
+        authorCTA.style.transform = 'scale(1.05)';
+    });
+    authorCTA.addEventListener('mouseout', () => {
+        authorCTA.style.backgroundColor = '#ff6b6b';
+        authorCTA.style.transform = 'scale(1)';
+    });
+
+    return authorCTA;
+}
+
 // Function to fetch and display quotes from authors.json
-fetch('authors.json')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data); // Check if data is fetched
-        const contentSection = document.querySelector('.content-section');
-        data.authors.forEach(author => {
+function fetchQuotes() {
+    fetch('authors.json')
+        .then(response => response.json())
+        .then(data => {
+            const contentSection = document.querySelector('.content-section');
+
+            data.authors.forEach(author => {
                 // Create an author section
                 const authorSection = document.createElement('div');
                 authorSection.classList.add('author-section');
@@ -294,34 +328,10 @@ fetch('authors.json')
                 authorName.style.color = '#333'; // Adjust color if needed
                 authorSection.appendChild(authorName);
 
-                // Create and append a button/link for the author
-                const authorCTA = document.createElement('a');
-                authorCTA.textContent = `View Quotes by ${author.name}`;
-                authorCTA.href = `famous-quotes/${author.name.toLowerCase().replace(/ /g, '-')}.html`; // Assumes your subpages follow this pattern
-                authorCTA.classList.add('author-cta');
-                authorCTA.style.display = 'inline-block';
-                authorCTA.style.marginTop = '10px';
-                authorCTA.style.padding = '10px 20px';
-                authorCTA.style.fontSize = '1em';
-                authorCTA.style.color = '#fff';
-                authorCTA.style.backgroundColor = '#ff6b6b'; // Button background color
-                authorCTA.style.textDecoration = 'none';
-                authorCTA.style.fontWeight = 'bold';
-                authorCTA.style.borderRadius = '12px';
-                authorCTA.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
-                authorCTA.style.transition = 'background-color 0.3s, transform 0.3s';
-
-                // Add hover effect
-                authorCTA.addEventListener('mouseover', () => {
-                    authorCTA.style.backgroundColor = '#ff9a9e';
-                    authorCTA.style.transform = 'scale(1.05)';
-                });
-                authorCTA.addEventListener('mouseout', () => {
-                    authorCTA.style.backgroundColor = '#ff6b6b';
-                    authorCTA.style.transform = 'scale(1)';
-                });
-
-                // Append the CTA to the author section
+                // Create the CTA button using the helper function
+                const authorCTA = createAuthorCTA(author);
+                
+                // Append the CTA button to the author section
                 authorSection.appendChild(authorCTA);
 
                 // Append the author section to the content section
@@ -334,9 +344,7 @@ fetch('authors.json')
 }
 
 // Fetch and display the quotes when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-    fetchQuotes();
-});
+document.addEventListener('DOMContentLoaded', fetchQuotes);
 </script>
     
 </body>
