@@ -3,22 +3,443 @@
     {
       "name": "Franklin D. Roosevelt",
       "quotes": [
-        "The only thing we have to fear is fear itself.",
-        "In politics, nothing happens by accident. If it happens, you can bet it was planned that way."
+        "The only limit to our realization of tomorrow is our doubts of today.",
+        "The only thing we have to fear is fear itself."
+      ]
+    },
+    {
+      "name": "Anonymous",
+      "quotes": [
+        "Success is not how high you have climbed, but how you make a positive difference to the world.",
+        "If you want to achieve greatness stop asking for permission.",
+        "We might be wrong, but we are not confused",
+        "If you do not know what we want to achieve, how can you learn from it",
+        "Becoming is better than being",
+        "Scarcity is the Mother of Innovation",
+        "Team work, makes dream work",
+        "Alone you may go fast, but together we go further"
+      ]
+    },
+    {
+      "name": "John D. Rockefeller",
+      "quotes": [
+        "Don't be afraid to give up the good to go for the great.",
+        "The secret of success is to do the common things uncommonly well."
+      ]
+    },
+    {
+      "name": "Aristotle Onassis",
+      "quotes": [
+        "The secret to success is to know something nobody else knows."
+      ]
+    },
+    {
+      "name": "Frank Sinatra",
+      "quotes": [
+        "The best revenge is massive success."
+      ]
+    },
+    {
+      "name": "Arnold H. Glasow",
+      "quotes": [
+        "Success is not the result of spontaneous combustion. You must set yourself on fire."
+      ]
+    },
+    {
+      "name": "Vidal Sassoon",
+      "quotes": [
+        "The only place where success comes before work is in the dictionary."
       ]
     },
     {
       "name": "Winston Churchill",
       "quotes": [
+        "Success is walking from failure to failure with no loss of enthusiasm.",
         "Success is not final, failure is not fatal: It is the courage to continue that counts.",
-        "If you’re going through hell, keep going."
+        "Give us the tools and we will finish the job.",
+        "Success is stumbling from failure to failure with no loss of enthusiasm."
+      ]
+    },
+    {
+      "name": "Ann Landers",
+      "quotes": [
+        "Opportunities are usually disguised as hard work, so most people don't recognize them."
+      ]
+    },
+    {
+      "name": "Walt Disney",
+      "quotes": [
+        "The way to get started is to quit talking and begin doing."
+      ]
+    },
+    {
+      "name": "Napoleon Hill",
+      "quotes": [
+        "Don't wait. The time will never be just right."
+      ]
+    },
+    {
+      "name": "H. Jackson Brown Jr.",
+      "quotes": [
+        "The best preparation for tomorrow is doing your best today."
+      ]
+    },
+    {
+      "name": "Kevin Durant",
+      "quotes": [
+        "Hard work beats talent when talent doesn't work hard."
+      ]
+    },
+    {
+      "name": "Henry David Thoreau",
+      "quotes": [
+        "Success usually comes to those who are too busy to be looking for it."
+      ]
+    },
+    {
+      "name": "Ralph Nader",
+      "quotes": [
+        "The function of leadership is to produce more leaders, not more followers."
+      ]
+    },
+    {
+      "name": "Booker T. Washington",
+      "quotes": [
+        "Success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome."
+      ]
+    },
+    {
+      "name": "Jim Rohn",
+      "quotes": [
+        "If you are not willing to risk the usual, you will have to settle for the ordinary."
       ]
     },
     {
       "name": "Albert Einstein",
       "quotes": [
-        "Life is like riding a bicycle. To keep your balance, you must keep moving.",
-        "Imagination is more important than knowledge."
+        "In the middle of difficulty lies opportunity.",
+        "The only way to achieve the impossible is to believe it is possible.",
+        "We cannot solve problems with the kind of thinking we employed when we came up with them.",
+        "The more I learn, the more I realize how much I don't know.",
+        "The mind that opens to a new idea never returns to its original size.",
+        "The most beautiful experience we can have is the mysterious. It is the fundamental emotion that stands at the cradle of true art and true science.",
+        "It is not that I'm so smart. But I stay with the questions much longer.",
+        "The most incomprehensible thing about the universe is that it is comprehensible.",
+        "Science is a wonderful thing if one does not have to earn one's living at it.",
+        "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+        "The important thing is to never stop questioning.",
+        "Science is the search for truth, not the search for validation.",
+        "The pursuit of truth is more precious than its possession.",
+        "Persistence is the most powerful force on earth, it can move mountains."
+      ]
+    },
+    {
+      "name": "Peter Drucker",
+      "quotes": [
+        "The best way to predict the future is to create it."
+      ]
+    },
+    {
+      "name": "Bill Gates",
+      "quotes": [
+        "Your most unhappy customers are your greatest source of learning."
+      ]
+    },
+    {
+      "name": "Steve Jobs",
+      "quotes": [
+        "If you really look closely, most overnight successes took a long time.",
+        "The only way to do great work is to love what you do.",
+        "Focus is about saying no."
+      ]
+    },
+    {
+      "name": "Albert Schweitzer",
+      "quotes": [
+        "Success is not the key to happiness. Happiness is the key to success."
+      ]
+    },
+    {
+      "name": "Samuel Goldwyn",
+      "quotes": [
+        "The harder I work, the luckier I get."
+      ]
+    },
+    {
+      "name": "Confucius",
+      "quotes": [
+        "It does not matter how slowly you go as long as you do not stop.",
+        "Life is really simple, but we insist on making it complicated.",
+        "Everything has beauty, but not everyone can see."
+      ]
+    },
+    {
+      "name": "Wayne Gretzky",
+      "quotes": [
+        "You miss 100% of the shots you don't take."
+      ]
+    },
+    {
+      "name": "Robert Collier",
+      "quotes": [
+        "Success is the sum of small efforts, repeated day in and day out."
+      ]
+    },
+    {
+      "name": "Colin Powell",
+      "quotes": [
+        "There are no secrets to success. It is the result of preparation, hard work, and learning from failure."
+      ]
+    },
+    {
+      "name": "Bo Bennett",
+      "quotes": [
+        "Success is not in what you have, but who you are."
+      ]
+    },
+    {
+      "name": "Bruce Lee",
+      "quotes": [
+        "The successful warrior is the average man, with laser-like focus."
+      ]
+    },
+    {
+      "name": "Vince Lombardi",
+      "quotes": [
+        "The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will.",
+        "Winning isn't everything, but wanting to win is."
+      ]
+    },
+    {
+      "name": "Will Rogers",
+      "quotes": [
+        "Don't let yesterday take up too much of today.",
+        "You've got to go out on a limb sometimes because that's where the fruit is"
+      ]
+    },
+    {
+      "name": "Mahatma Gandhi",
+      "quotes": [
+        "The best way to find yourself is to lose yourself in the service of others.",
+        "You must be the change you wish to see in the world."
+      ]
+    },
+    {
+      "name": "George S. Patton",
+      "quotes": [
+        "Success is how high you bounce when you hit bottom."
+      ]
+    },
+    {
+      "name": "Thomas Jefferson",
+      "quotes": [
+        "I find that the harder I work, the more luck I seem to have.",
+        "If you want something you've never had, you must be willing to do something you've never done."
+      ]
+    },
+    {
+      "name": "Aisha Tyler",
+      "quotes": [
+        "Success is not the absence of failure; it's the persistence through failure."
+      ]
+    },
+    {
+      "name": "Colin R. Davis",
+      "quotes": [
+        "The road to success and the road to failure are almost exactly the same."
+      ]
+    },
+    {
+      "name": "Charles Kingsleigh",
+      "quotes": [
+        "The only way to achieve the impossible is to believe it is possible."
+      ]
+    },
+    {
+      "name": "Chris Grosser",
+      "quotes": [
+        "Opportunities don't happen, you create them."
+      ]
+    },
+    {
+      "name": "Henry Ford",
+      "quotes": [
+        "You can't build a reputation on what you are going to do."
+      ]
+    },
+    {
+      "name": "William Butler Yeats",
+      "quotes": [
+        "Do not wait to strike till the iron is hot, but make it hot by striking."
+      ]
+    },
+    {
+      "name": "Gary Vaynerchuk",
+      "quotes": [
+        "You have to understand your own personal DNA. Don't do things because I do them or Steve Jobs or Mark Cuban tried it. You need to know your personal brand and stay true to it",
+        "The reason I was able to grow my business is that I recognized that marketing is about storytelling",
+        "I'm not worried about being fancy. I'm worried about being impactful",
+        "The best marketing strategy ever: Care",
+        "Business is much like a sport; you need to hustle, strategize, and outwork your competition",
+        "Ideas are worthless without execution",
+        "No matter what you do, your job is to tell your story",
+        "Don't be scared to break things. Don't be scared to make mistakes",
+        "The market doesn't care about your feelings. It cares about value",
+        "The person who gives the value first wins",
+        "Skills are cheap. Passion is priceless",
+        "Stop hanging around people who don't want to win",
+        "Without hustle, talent will only carry you so far",
+        "Your legacy is being written by yourself. Make the right decisions",
+        "Too many people play defense. I play offense",
+        "The best thing you can do is invest in your own happiness",
+        "Patience is the secret weapon to success in business and life",
+        "Life is long. Play the long game"
+      ]
+    },
+    {
+      "name": "Joe Rogan",
+      "quotes": [
+        "Work for that feeling that you have accomplished something",
+        "The universe rewards calculated risk and passion",
+        "Greatness and madness are next-door neighbors, and they often borrow each other's sugar",
+        "Be the hero of your own story",
+        "One of the most fascinating lessons I've absorbed about life is that the struggle is good",
+        "The key to happiness doesn't lay in numbers in a bank account but in the way we make others feel",
+        "There's a direct correlation between positive energy and positive results",
+        "If you can control your mind, you can control your whole life",
+        "A happy life is one of contribution, not consumption",
+        "The road to success is paved with failure",
+        "Discipline equals freedom",
+        "Science is just exploring the unknown",
+        "Curiosity is the fuel for science",
+        "If you attach your identity to ideas, you're lost",
+        "Once you understand what excellence is all about, you see how excellence manifests itself in any discipline",
+        "You can't measure heart, and you can't measure desire",
+        "The mind is the most important aspect of achieving anything"
+      ]
+    },
+    {
+      "name": "Marcus Aurelius",
+      "quotes": [
+        "Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth."
+      ]
+    },
+    {
+      "name": "Anaïs Nin",
+      "quotes": [
+        "We don't see things as they are, we see them as we are."
+      ]
+    },
+    {
+      "name": "Edmund Burke",
+      "quotes": [
+        "The only thing necessary for the triumph of evil is for good men to do nothing."
+      ]
+    },
+    {
+      "name": "Plato",
+      "quotes": [
+        "The greatest wealth is to live content with little."
+      ]
+    },
+    {
+      "name": "Oliver Goldsmith",
+      "quotes": [
+        "Life is a journey that must be traveled no matter how bad the roads and accommodations."
+      ]
+    },
+    {
+      "name": "Ralph Waldo Emerson",
+      "quotes": [
+        "Live in the sunshine, swim the sea, drink the wild air.",
+        "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.",
+        "Every artist was first an amateur"
+      ]
+    },
+    {
+      "name": "Buddha",
+      "quotes": [
+        "The mind is everything. What you think you become."
+      ]
+    },
+    {
+      "name": "John Lennon",
+      "quotes": [
+        "Life is what happens when you're busy making other plans."
+      ]
+    },
+    {
+      "name": "Oscar Wilde",
+      "quotes": [
+        "To live is the rarest thing in the world. Most people exist, that is all."
+      ]
+    },
+    {
+      "name": "C.S. Lewis",
+      "quotes": [
+        "You can't go back and change the beginning, but you can start where you are and change the ending.",
+        "You are never too old to set another goal or to dream a new dream."
+      ]
+    },
+    {
+      "name": "Mitch Albom",
+      "quotes": [
+        "The way you get meaning into your life is to devote yourself to loving others, devote yourself to your community around you, and devote yourself to creating something that gives you purpose and meaning."
+      ]
+    },
+    {
+      "name": "Lao Tzu",
+      "quotes": [
+        "The journey of a thousand miles begins with one step."
+      ]
+    },
+    {
+      "name": "William James",
+      "quotes": [
+        "Act as if what you do makes a difference. It does."
+      ]
+    },
+    {
+      "name": "George Bernard Shaw",
+      "quotes": [
+        "Life isn't about finding yourself. Life is about creating yourself."
+      ]
+    },
+    {
+      "name": "Tony Robbins",
+      "quotes": [
+        "The only impossible journey is the one you never begin."
+      ]
+    },
+    {
+      "name": "Mae West",
+      "quotes": [
+        "You only live once, but if you do it right, once is enough."
+      ]
+    },
+    {
+      "name": "Theodore Roosevelt",
+      "quotes": [
+        "Do what you can, with what you have, where you are.",
+        "Believe you can and you're halfway there."
+      ]
+    },
+    {
+      "name": "Dalai Lama",
+      "quotes": [
+        "Happiness is not something ready made. It comes from your own actions."
+      ]
+    },
+    {
+      "name": "Sarah Louise Delany",
+      "quotes": [
+        "Life is short, and it is up to you to make it sweet."
+      ]
+    },
+    {
+      "name": "Abraham Lincoln",
+      "quotes": [
+        "In the end, it's not the years in your life that count. It's the life in your years."
       ]
     }
   ]
