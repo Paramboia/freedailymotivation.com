@@ -254,11 +254,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </header>
 
-    <div class="content-section">
-        <h1>Famous Inspirational Quotes</h1>
-        <p>Looking for the perfect quote to inspire your next big move or connect with like-minded thinkers? Free Daily Motivation has you covered! With thousands of famous quotes at your fingertips, you’ll discover insights from legends like Albert Einstein, Steve Jobs, and Oprah Winfrey. Whether you're looking to enhance your social media posts, presentations, or personal mindset, our platform makes it easy to find and share quotes that resonate with your goals. Explore categories like business, sport, and life, and let Free Daily Motivation fuel your journey to success.</p>
-        <a href="index.html">Find Quotes</a>
-    </div>
+<div class="content-section">
+    <h1>Famous Inspirational Quotes</h1>
+    <p>Looking for the perfect quote to inspire your next big move or connect with like-minded thinkers? Free Daily Motivation has you covered! With thousands of famous quotes at your fingertips, you’ll discover insights from legends like Albert Einstein, Steve Jobs, and Oprah Winfrey. Whether you're looking to enhance your social media posts, presentations, or personal mindset, our platform makes it easy to find and share quotes that resonate with your goals. Explore categories like business, sport, and life, and let Free Daily Motivation fuel your journey to success.</p>
+    <a href="index.html">Find Quotes</a>
+
+    <!-- New Title for Authors Section -->
+    <h2 style="margin-top: 40px;">Check out the top inspirational quotes from famous people!</h2>
+</div>
 
     <footer class="footer">
         <p>&copy; 2024 Free Daily Motivation. All rights reserved.</p>
@@ -322,17 +325,25 @@ function fetchQuotes() {
                 authorSection.classList.add('author-section');
                 authorSection.style.margin = '20px 0';
 
-                // Create and append the author's name
-                const authorName = document.createElement('h2');
-                authorName.textContent = author.name;
-                authorName.style.color = '#333'; // Adjust color if needed
-                authorSection.appendChild(authorName);
+                // Create and append the author's name as a link
+                const authorLink = document.createElement('a');
+                authorLink.textContent = author.name;
+                authorLink.href = `famous-quotes/${author.name.toLowerCase().replace(/ /g, '-')}.html`; // Subpage pattern
+                authorLink.style.fontSize = '1.2em';
+                authorLink.style.color = '#333'; // Adjust color as needed
+                authorLink.style.textDecoration = 'none';
+                authorLink.style.fontWeight = 'normal';
 
-                // Create the CTA button using the helper function
-                const authorCTA = createAuthorCTA(author);
-                
-                // Append the CTA button to the author section
-                authorSection.appendChild(authorCTA);
+                // Add hover effect
+                authorLink.addEventListener('mouseover', () => {
+                    authorLink.style.color = '#ff6b6b';
+                });
+                authorLink.addEventListener('mouseout', () => {
+                    authorLink.style.color = '#333';
+                });
+
+                // Append the link to the author section
+                authorSection.appendChild(authorLink);
 
                 // Append the author section to the content section
                 contentSection.appendChild(authorSection);
@@ -343,7 +354,6 @@ function fetchQuotes() {
         });
 }
 
-// Fetch and display the quotes when the page loads
 document.addEventListener('DOMContentLoaded', fetchQuotes);
 </script>
     
