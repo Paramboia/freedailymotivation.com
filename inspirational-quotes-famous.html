@@ -16,12 +16,10 @@
     })(window,document,'script','dataLayer','GTM-PQ8LSCWN');</script>
     <!-- End Google Tag Manager -->
 
-    <link rel="stylesheet" href="styles.css"> <!-- Assuming the same styles.css is used for consistency -->
-
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9; /* Same background as about us */
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             margin: 0;
             padding: 0;
         }
@@ -31,7 +29,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background: inherit; /* Inherit background for consistency */
+            background: inherit;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -44,12 +42,6 @@
         .logo-container img {
             width: 40px;
             height: auto;
-        }
-
-        .site-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #333;
         }
 
         .home-button {
@@ -80,15 +72,16 @@
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background: white; /* White background for content section */
+            background: white;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center the title */
         }
 
         .content-section h1 {
-            font-size: 1.5em;
+            font-size: 2em;
             margin-bottom: 20px;
-            color: #333; /* Title color */
+            color: #333;
         }
 
         .content-section ul {
@@ -112,19 +105,13 @@
 
         footer {
             text-align: center;
-            padding: 10px;
-            background: inherit; /* Match footer background */
-            color: #333; /* Footer text color */
-            margin-top: 20px; /* Add margin to separate from content */
+            margin-top: 30px;
+            color: #555;
         }
 
         @media (max-width: 768px) {
-            .site-title {
-                display: none; /* Hide site title on small screens */
-            }
-
             .content-section {
-                margin: 10px; /* Reduce margin for smaller screens */
+                margin: 10px;
             }
         }
     </style>
@@ -134,14 +121,11 @@
 <header>
     <div class="logo-container">
         <img src="logo.webp" alt="Free Daily Motivation Logo">
-        <span class="site-title">Free Daily Motivation</span>
-    </div>
-    <nav>
         <a href="index.html" aria-label="Home" class="home-button">
             <img src="house-icon.webp" alt="Home Icon">
             <span>Home</span>
         </a>
-    </nav>
+    </div>
     <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
         <img src="dark-mode-icon.webp" alt="Dark Mode Icon" class="dark-mode-icon">
     </button>
