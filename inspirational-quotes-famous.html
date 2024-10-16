@@ -334,7 +334,9 @@ fetch('authors.json')
 }
 
 // Fetch and display the quotes when the page loads
-document.addEventListener('DOMContentLoaded', fetchQuotes);
+document.addEventListener('DOMContentLoaded', function() {
+    fetchQuotes();
+});
 </script>
     
 </body>
