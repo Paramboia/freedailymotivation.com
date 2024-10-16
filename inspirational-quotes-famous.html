@@ -281,10 +281,8 @@ function fetchQuotes() {
     fetch('authors.json')
         .then(response => response.json())
         .then(data => {
-            // Assuming the data structure is something like:
-            // { "authors": [ { "name": "Albert Einstein", "quotes": ["Quote 1", "Quote 2"] }, ... ] }
             const contentSection = document.querySelector('.content-section');
-            
+
             data.authors.forEach(author => {
                 // Create an author section
                 const authorSection = document.createElement('div');
@@ -297,14 +295,35 @@ function fetchQuotes() {
                 authorName.style.color = '#333'; // Adjust color if needed
                 authorSection.appendChild(authorName);
 
-                // Create and append the author's quotes
-                author.quotes.forEach(quote => {
-                    const quoteText = document.createElement('p');
-                    quoteText.textContent = `“${quote}”`;
-                    quoteText.style.fontStyle = 'italic';
-                    quoteText.style.marginBottom = '10px';
-                    authorSection.appendChild(quoteText);
+                // Create and append a button/link for the author
+                const authorCTA = document.createElement('a');
+                authorCTA.textContent = `View Quotes by ${author.name}`;
+                authorCTA.href = `famous-quotes/${author.name.toLowerCase().replace(/ /g, '-')}.html`; // Assumes your subpages follow this pattern
+                authorCTA.classList.add('author-cta');
+                authorCTA.style.display = 'inline-block';
+                authorCTA.style.marginTop = '10px';
+                authorCTA.style.padding = '10px 20px';
+                authorCTA.style.fontSize = '1em';
+                authorCTA.style.color = '#fff';
+                authorCTA.style.backgroundColor = '#ff6b6b'; // Button background color
+                authorCTA.style.textDecoration = 'none';
+                authorCTA.style.fontWeight = 'bold';
+                authorCTA.style.borderRadius = '12px';
+                authorCTA.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+                authorCTA.style.transition = 'background-color 0.3s, transform 0.3s';
+
+                // Add hover effect
+                authorCTA.addEventListener('mouseover', () => {
+                    authorCTA.style.backgroundColor = '#ff9a9e';
+                    authorCTA.style.transform = 'scale(1.05)';
                 });
+                authorCTA.addEventListener('mouseout', () => {
+                    authorCTA.style.backgroundColor = '#ff6b6b';
+                    authorCTA.style.transform = 'scale(1)';
+                });
+
+                // Append the CTA to the author section
+                authorSection.appendChild(authorCTA);
 
                 // Append the author section to the content section
                 contentSection.appendChild(authorSection);
