@@ -283,7 +283,7 @@ infoMenuButton.addEventListener("click", () => {
 function createAuthorCTA(author) {
     const authorCTA = document.createElement('a');
     authorCTA.textContent = `View Quotes by ${author.name}`;
-    authorCTA.href = `famous-quotes/${author.name.toLowerCase().replace(/ /g, '-')}.html`;
+    authorCTA.href = `inspirational-quotes-famous/${author.name.toLowerCase().replace(/ /g, '-')}.html`;
     
     // Apply consistent styling to the CTA
     authorCTA.classList.add('author-cta');
@@ -328,7 +328,7 @@ function fetchQuotes() {
                 // Create and append the author's name as a link
                 const authorLink = document.createElement('a');
                 authorLink.textContent = author.name;
-                authorLink.href = `famous-quotes/${author.name.toLowerCase().replace(/ /g, '-')}.html`; // Subpage pattern
+                authorLink.href = `inspirational-quotes-famous/${author.name.toLowerCase().replace(/ /g, '-')}.html`; // Subpage pattern
                 authorLink.style.fontSize = '1.2em';
                 authorLink.style.color = '#333'; // Adjust color as needed
                 authorLink.style.textDecoration = 'none';
