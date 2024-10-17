@@ -1,5 +1,12 @@
 const fs = require('fs');
+const path = require('path');
 const authors = require('./authors.json').authors;
+
+// Ensure the directory exists
+const outputDir = path.join(__dirname, 'inspirational-quotes-famous');
+if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir);
+}
 
 authors.forEach(author => {
     const pageContent = `
@@ -14,21 +21,4 @@ authors.forEach(author => {
     </head>
     <body>
         <header>
-            <a href="/index.html">Home</a>
-            <h1>${author.name}'s Inspirational Quotes</h1>
-        </header>
-        <div class="content-section">
-            <h2>Quotes by ${author.name}</h2>
-            <ul>
-                ${author.quotes.map(quote => `<li>${quote}</li>`).join('')}
-            </ul>
-            <a href="/inspirational-quotes-famous.html">Back to all famous quotes</a>
-        </div>
-        <footer>&copy; 2024 Free Daily Motivation</footer>
-    </body>
-    </html>`;
-    
-    const fileName = `inspirational-quotes-famous/${author.name.toLowerCase().replace(/ /g, '-')}.html`;
-    fs.writeFileSync(fileName, pageContent);
-});
-
+           
