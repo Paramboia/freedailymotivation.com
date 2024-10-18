@@ -12,13 +12,21 @@
         <a href="/index.html">Home</a>
         <h1 id="author-name">Loading...</h1>
     </header>
+    
     <div class="content-section">
-        <h2>Quotes by <span id="author-title">...</span></h2>
+        <!-- First block dynamically adjusted for the author -->
+        <h2 id="author-quotes-header">Famous Inspirational Quotes - <span id="author-title">...</span></h2>
+        <p id="author-intro">Looking for inspirational quotes from <span id="author-span">...</span>? Free Daily Motivation offers insights from legends like <span id="author-name-again">...</span> to help fuel your journey to success. Whether you're aiming to enhance your mindset, boost your social media content, or find daily motivation, explore the wisdom of famous personalities tailored to your goals.</p>
+
+        <!-- List of quotes dynamically populated -->
+        <h3>Quotes by <span id="author-title-again">...</span></h3>
         <ul id="quotes-list">
             <!-- Quotes will be populated here -->
         </ul>
+        
         <a href="/inspirational-quotes-famous.html">Back to all famous quotes</a>
     </div>
+    
     <footer>&copy; 2024 Free Daily Motivation</footer>
 
     <script>
@@ -35,9 +43,14 @@
 
                 // Populate the page with the author data
                 if (author) {
+                    // Set the author-related text dynamically
                     document.getElementById('author-name').textContent = author.name + "'s Inspirational Quotes";
                     document.getElementById('author-title').textContent = author.name;
+                    document.getElementById('author-title-again').textContent = author.name;
+                    document.getElementById('author-span').textContent = author.name;
+                    document.getElementById('author-name-again').textContent = author.name;
 
+                    // Populate quotes
                     const quotesList = document.getElementById('quotes-list');
                     author.quotes.forEach(quote => {
                         const li = document.createElement('li');
