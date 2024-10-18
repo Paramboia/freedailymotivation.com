@@ -301,7 +301,7 @@ function fetchQuotes() {
                 // Create a link for each author
                 const authorLink = document.createElement('a');
                 authorLink.textContent = author.name;
-                authorLink.href = `inspirational-quotes-famous.html?author=${author.name.toLowerCase().replace(/ /g, '-')}`;
+                authorLink.href = `inspirational-quotes-famous?author=${author.name.toLowerCase().replace(/ /g, '-')}`;
                 authorLink.style.color = 'inherit'; // Use the parent element's text color
                 authorLink.style.textDecoration = 'none'; // Remove underline
                 authorLink.style.marginRight = '15px';
