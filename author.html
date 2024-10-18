@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover inspiring quotes from famous people.">
+    <title>Author Quotes - Free Daily Motivation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="/index.html">Home</a>
+        <h1 id="author-name">Loading...</h1>
+    </header>
+    <div class="content-section">
+        <h2>Quotes by <span id="author-title">...</span></h2>
+        <ul id="quotes-list">
+            <!-- Quotes will be populated here -->
+        </ul>
+        <a href="/inspirational-quotes-famous.html">Back to all famous quotes</a>
+    </div>
+    <footer>&copy; 2024 Free Daily Motivation</footer>
+
+    <script>
+        // Fetch authors.json data
+        fetch('/path/to/authors.json')
+            .then(response => response.json())
+            .then(data => {
+                // Get the author name from the URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const authorName = urlParams.get('author');
+
+                // Find the author data
+                const author = data.authors.find(a => a.name.toLowerCase().replace(/ /g, '-') === authorName);
+
+                // Populate the page with the author data
+                if (author) {
+                    document.getElementById('author-name').textContent = author.name + "'s Inspirational Quotes";
+                    document.getElementById('author-title').textContent = author.name;
+
+                    const quotesList = document.getElementById('quotes-list');
+                    author.quotes.forEach(quote => {
+                        const li = document.createElement('li');
+                        li.textContent = quote;
+                        quotesList.appendChild(li);
+                    });
+                } else {
+                    document.getElementById('author-name').textContent = "Author not found.";
+                }
+            });
+    </script>
+</body>
+</html>
