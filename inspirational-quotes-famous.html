@@ -264,128 +264,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>&copy; 2024 Free Daily Motivation. All rights reserved.</p>
     </footer>
 
-    <script>
-    // Dark mode toggle
-    const darkModeToggle = document.getElementById("dark-mode-toggle");
-    darkModeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-    });
+<script>
+// Dark mode toggle
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});
 
-    const infoMenuButton = document.getElementById("info-menu");
-    infoMenuButton.addEventListener("click", () => {
-        window.location.href = "about-us.html";
-    });
+const infoMenuButton = document.getElementById("info-menu");
+infoMenuButton.addEventListener("click", () => {
+    window.location.href = "about-us.html";
+});
 
-    // Function to fetch and display content
-    function fetchAndDisplayContent() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const authorParam = urlParams.get('author');
+// Function to fetch and display quotes from authors.json
+function fetchQuotes() {
+    fetch('authors.json')
+        .then(response => response.json())
+        .then(data => {
+            const contentSection = document.querySelector('.content-section');
 
-        if (!authorParam) {
-            // Display general content when no author is specified
-            displayGeneralContent();
-        } else {
-            // Fetch author-specific content
-            fetchAuthorContent(authorParam);
-        }
-    }
+            // Add the new title
+            const titleElement = document.createElement('h2');
+            titleElement.textContent = "Check out the top inspirational quotes from famous people!";
+            titleElement.style.color = '#333';
+            titleElement.style.marginTop = '40px';
+            titleElement.style.fontSize = '1.5em';
+            contentSection.appendChild(titleElement);
 
-    function displayGeneralContent() {
-        const contentSection = document.getElementById('content-section');
-        contentSection.innerHTML = `
-            <h1>Famous Inspirational Quotes</h1>
-            <p>Looking for the perfect quote to inspire your next big move or connect with like-minded thinkers? Free Daily Motivation has you covered! With thousands of famous quotes at your fingertips, you'll discover insights from legends like Albert Einstein, Steve Jobs, and Oprah Winfrey. Whether you're looking to enhance your social media posts, presentations, or personal mindset, our platform makes it easy to find and share quotes that resonate with your goals. Explore categories like business, sport, and life, and let Free Daily Motivation fuel your journey to success.</p>
-            <a href="index.html">Find Quotes</a>
-        `;
-        fetchQuotes();
-    }
+            // Create a container for the author names
+            const authorContainer = document.createElement('div');
+            authorContainer.style.marginTop = '10px';
+            authorContainer.style.color = '#ffffff'
+            authorContainer.style.lineHeight = '0.9';
 
-    function fetchAuthorContent(authorParam) {
-        fetch('authors.json')
-            .then(response => response.json())
-            .then(data => {
-                const author = data.authors.find(a => a.name.toLowerCase().replace(/ /g, '-') === authorParam);
-                
-                if (author) {
-                    updatePageForAuthor(author);
-                } else {
-                    displayGeneralContent();
-                    console.error('Author not found:', authorParam);
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching author data:', error);
-                displayGeneralContent();
+            data.authors.forEach(author => {
+                // Create a link for each author
+                const authorLink = document.createElement('a');
+                authorLink.textContent = author.name;
+                authorLink.href = `inspirational-quotes-famous?author=${author.name.toLowerCase().replace(/ /g, '-')}`;
+                authorLink.style.color = 'inherit'; // Use the parent element's text color
+                authorLink.style.textDecoration = 'none'; // Remove underline
+                authorLink.style.marginRight = '15px';
+
+                // Append the author link to the container
+                authorContainer.appendChild(authorLink);
             });
-    }
 
-    function updatePageForAuthor(author) {
-        // Update page title
-        document.title = `Famous Inspirational Quotes - ${author.name} - Free Daily Motivation`;
-        
-        // Update meta description
-        document.querySelector('meta[name="description"]').setAttribute("content", `Discover inspiring quotes from ${author.name}. Get motivated and inspired to achieve greatness with Free Daily Motivation.`);
-        
-        // Update meta keywords
-        document.querySelector('meta[name="keywords"]').setAttribute("content", `inspirational quotes, famous quotes, ${author.name}, motivation, success, positivity, Free Daily Motivation`);
-        
-        // Update content section
-        const contentSection = document.getElementById('content-section');
-        contentSection.innerHTML = `
-            <h1>Famous Inspirational Quotes - ${author.name}</h1>
-            <p>Looking for inspirational quotes from ${author.name}? Free Daily Motivation offers insights from legends like ${author.name} to help fuel your journey to success. Whether you're aiming to enhance your mindset, boost your social media content, or find daily motivation, explore the wisdom of famous personalities tailored to your goals.</p>
-            <h2>Quotes by ${author.name}</h2>
-            <ul id="quotes-list">
-                ${author.quotes.map(quote => `<li>${quote}</li>`).join('')}
-            </ul>
-            <a href="inspirational-quotes-famous">Back to all famous quotes</a>
-        `;
-    }
+            // Append the author container to the content section
+            contentSection.appendChild(authorContainer);
+        })
+        .catch(error => {
+            console.error('Error fetching quotes:', error);
+        });
+}
 
-    // Function to fetch and display quotes from authors.json
-    function fetchQuotes() {
-        fetch('authors.json')
-            .then(response => response.json())
-            .then(data => {
-                const contentSection = document.getElementById('content-section');
-
-                // Add the new title
-                const titleElement = document.createElement('h2');
-                titleElement.textContent = "Check out the top inspirational quotes from famous people!";
-                titleElement.style.color = '#333';
-                titleElement.style.marginTop = '40px';
-                titleElement.style.fontSize = '1.5em';
-                contentSection.appendChild(titleElement);
-
-                // Create a container for the author names
-                const authorContainer = document.createElement('div');
-                authorContainer.style.marginTop = '10px';
-                authorContainer.style.color = '#ffffff'
-                authorContainer.style.lineHeight = '0.9';
-
-                data.authors.forEach(author => {
-                    // Create a link for each author
-                    const authorLink = document.createElement('a');
-                    authorLink.textContent = author.name;
-                    authorLink.href = `inspirational-quotes-famous?author=${author.name.toLowerCase().replace(/ /g, '-')}`;
-                    authorLink.style.color = 'inherit'; // Use the parent element's text color
-                    authorLink.style.textDecoration = 'none'; // Remove underline
-                    authorLink.style.marginRight = '15px';
-
-                    // Append the author link to the container
-                    authorContainer.appendChild(authorLink);
-                });
-
-                // Append the author container to the content section
-                contentSection.appendChild(authorContainer);
-            })
-            .catch(error => {
-                console.error('Error fetching quotes:', error);
-            });
-    }
-
-    document.addEventListener('DOMContentLoaded', fetchAndDisplayContent);
-    </script>
+document.addEventListener('DOMContentLoaded', fetchQuotes);
+</script>
     
 </body>
 </html>
