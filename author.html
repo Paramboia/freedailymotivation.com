@@ -3,53 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover inspiring quotes from famous people.">
-    <title>Author Quotes - Free Daily Motivation</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Discover inspiring quotes from famous people like [AUTHOR_NAME]. Get motivated and inspired to achieve greatness with Free Daily Motivation.">
+    <meta name="keywords" content="inspirational quotes, famous quotes, [AUTHOR_NAME], motivation, success, positivity, Free Daily Motivation">
+    <meta name="author" content="Free Daily Motivation">
+    <title>Famous Inspirational Quotes - [AUTHOR_NAME] - Free Daily Motivation</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PQ8LSCWN');</script>
+    <!-- End Google Tag Manager -->
+
+<style>
+        /* Use the same styles as the main page */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff6b6b, #fbc2eb, #a18cd1, #ff9a9e, #fcb69f);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        body.dark-mode {
+            background: linear-gradient(135deg, #000000, #1c1c1c, #000000);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #f5f5f5;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: inherit;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+        
+        header .logo-container img {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .title-header {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dark-mode .title-header {
+            color: #f5f5f5;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .dark-mode-icon {
+            width: 20px;
+            height: auto;
+            transition: filter 0.3s;
+        }
+        
+        /* When dark mode is active */
+        .dark-mode .dark-mode-icon {
+            filter: invert(1); /* Invert color for dark mode */
+        }
+        
+        .info-menu, .dark-mode-toggle {
+            background-color: transparent;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .dark-mode .info-menu, .dark-mode .dark-mode-toggle {
+            background-color: transparent;
+        }
+
+        .info-menu img, .dark-mode-toggle img {
+            width: 20px;
+            height: auto;
+        }
+
+        .dark-mode .info-menu img {
+            filter: invert(1);
+        }
+        
+        .info-menu:hover, .dark-mode-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .dark-mode .info-menu:hover, .dark-mode .dark-mode-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .content-section {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content-section h1 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .content-section p {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .content-section a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: #fff;
+            background-color: #ff6b6b; /* Button background color */
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 12px; /* Rounded square */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .content-section a:hover {
+            background-color: #ff9a9e; /* Change color on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+            transition: color 0.3s;
+        }
+
+        .dark-mode .footer {
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 10px;
+            }
+        }
+
+            .site-link {
+        color: #007bff; /* Adjust color as needed */
+        text-decoration: none;
+        }
+        
+        .site-link:hover {
+            text-decoration: underline;
+        }
+
+       .home-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px; /* Space between icon and text */
+        height: 40px; /* Match height with other buttons */
+        background-color: transparent;
+        border: none;
+        padding: 0 10px; /* Adjust padding to fit text and icon */
+        border-radius: 12px; /* Round square shape */
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none; /* Remove underlining */
+        }
+        
+        .home-button img {
+            width: 20px;
+            height: auto;
+        }
+        
+        .home-button span {
+            color: #333;
+        }
+        
+        .dark-mode .home-button span {
+            color: #f5f5f5;
+        }
+        
+        .dark-mode .home-button img {
+            filter: invert(1);
+        }
+        
+        .home-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        
+    </style>
+
 </head>
 <body>
-    <header>
-        <a href="/index.html">Home</a>
-        <h1 id="author-name">Loading...</h1>
-    </header>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQ8LSCWN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     
-    <div class="content-section">
-        <!-- First block dynamically adjusted for the author -->
-        <h2 id="author-quotes-header">Famous Inspirational Quotes - <span id="author-title">...</span></h2>
-        <p id="author-intro">Looking for inspirational quotes from <span id="author-span">...</span>? Free Daily Motivation offers insights from legends like <span id="author-name-again">...</span> to help fuel your journey to success. Whether you're aiming to enhance your mindset, boost your social media content, or find daily motivation, explore the wisdom of famous personalities tailored to your goals.</p>
+    <header>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div class="logo-container">
+                <img src="logo.webp" alt="Free Daily Motivation Logo">
+            </div>
+            <a href="index.html" aria-label="Home" class="home-button">
+                <img src="house-icon.webp" alt="Home Icon">
+                <span>Home</span>
+            </a>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
+                <img src="dark-mode-icon.webp" alt="Dark Mode Icon" class="dark-mode-icon">
+            </button>
+            <button class="info-menu" id="info-menu" aria-label="Menu">
+                <img src="info-icon.webp" alt="Info Menu Icon">
+            </button>
+        </div>
+    </header>
 
-        <!-- List of quotes dynamically populated -->
-        <h3>Quotes by <span id="author-title-again">...</span></h3>
+    <div class="content-section">
+        <h1 id="author-title">Famous Inspirational Quotes - [AUTHOR_NAME]</h1>
+        <p id="author-intro">Looking for the perfect quote to inspire your next big move or connect with like-minded thinkers? Free Daily Motivation has you covered! Discover insights from [AUTHOR_NAME], a legendary figure known for their wisdom and impact. Whether you're looking to enhance your social media posts, presentations, or personal mindset, our platform makes it easy to find and share quotes that resonate with your goals. Let [AUTHOR_NAME]'s words fuel your journey to success.</p>
+        <h2>Quotes by <span id="author-name"></span></h2>
         <ul id="quotes-list">
             <!-- Quotes will be populated here -->
         </ul>
-        
-        <a href="/inspirational-quotes-famous.html">Back to all famous quotes</a>
+        <a href="inspirational-quotes-famous.html">Back to all famous quotes</a>
     </div>
-    
-    <footer>&copy; 2024 Free Daily Motivation</footer>
+
+    <footer class="footer">
+        <p>&copy; 2024 Free Daily Motivation. All rights reserved.</p>
+    </footer>
 
     <script>
-        // Fetch authors.json data
-        fetch('/path/to/authors.json')
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+    });
+
+    const infoMenuButton = document.getElementById("info-menu");
+    infoMenuButton.addEventListener("click", () => {
+        window.location.href = "about-us.html";
+    });
+
+    // Function to fetch and display quotes for the specific author
+    function fetchAuthorQuotes() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const authorParam = urlParams.get('author');
+
+        if (!authorParam) {
+            document.querySelector('.content-section').innerHTML = '<h1>Author not specified</h1>';
+            return;
+        }
+
+        fetch('authors.json')
             .then(response => response.json())
             .then(data => {
-                // Get the author name from the URL
-                const urlParams = new URLSearchParams(window.location.search);
-                const authorName = urlParams.get('author');
-
-                // Find the author data
-                const author = data.authors.find(a => a.name.toLowerCase().replace(/ /g, '-') === authorName);
-
-                // Populate the page with the author data
+                const author = data.authors.find(a => a.name.toLowerCase().replace(/ /g, '-') === authorParam);
+                
                 if (author) {
-                    // Set the author-related text dynamically
-                    document.getElementById('author-name').textContent = author.name + "'s Inspirational Quotes";
-                    document.getElementById('author-title').textContent = author.name;
-                    document.getElementById('author-title-again').textContent = author.name;
-                    document.getElementById('author-span').textContent = author.name;
-                    document.getElementById('author-name-again').textContent = author.name;
-
+                    // Update page title
+                    document.title = `Famous Inspirational Quotes - ${author.name} - Free Daily Motivation`;
+                    
+                    // Update meta description
+                    document.querySelector('meta[name="description"]').setAttribute("content", `Discover inspiring quotes from ${author.name}. Get motivated and inspired to achieve greatness with Free Daily Motivation.`);
+                    
+                    // Update meta keywords
+                    document.querySelector('meta[name="keywords"]').setAttribute("content", `inspirational quotes, famous quotes, ${author.name}, motivation, success, positivity, Free Daily Motivation`);
+                    
+                    // Update h1 title
+                    document.getElementById('author-title').textContent = `Famous Inspirational Quotes - ${author.name}`;
+                    
+                    // Update intro paragraph
+                    const introParagraph = document.getElementById('author-intro');
+                    introParagraph.innerHTML = introParagraph.innerHTML.replace(/\[AUTHOR_NAME\]/g, author.name);
+                    
+                    // Update author name in h2
+                    document.getElementById('author-name').textContent = author.name;
+                    
                     // Populate quotes
                     const quotesList = document.getElementById('quotes-list');
                     author.quotes.forEach(quote => {
@@ -58,9 +323,16 @@
                         quotesList.appendChild(li);
                     });
                 } else {
-                    document.getElementById('author-name').textContent = "Author not found.";
+                    document.querySelector('.content-section').innerHTML = '<h1>Author not found</h1>';
                 }
+            })
+            .catch(error => {
+                console.error('Error fetching author data:', error);
+                document.querySelector('.content-section').innerHTML = '<h1>Error loading author data</h1>';
             });
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchAuthorQuotes);
     </script>
 </body>
 </html>
