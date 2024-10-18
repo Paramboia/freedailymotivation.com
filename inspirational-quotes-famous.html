@@ -21,7 +21,143 @@
 
     <style>
         /* Use the same styles as the main page */
-        /* ... (include all the styles from the original file) ... */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff6b6b, #fbc2eb, #a18cd1, #ff9a9e, #fcb69f);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        body.dark-mode {
+            background: linear-gradient(135deg, #000000, #1c1c1c, #000000);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #f5f5f5;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: inherit;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+        
+        header .logo-container img {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .content-section {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content-section h1 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .content-section p {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .content-section a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: #fff;
+            background-color: #ff6b6b;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 12px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .content-section a:hover {
+            background-color: #ff9a9e;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+            transition: color 0.3s;
+        }
+
+        .dark-mode .footer {
+            color: #aaa;
+        }
+
+        #quotes-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        #quotes-list li {
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode #quotes-list li {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .author-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .author-links a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .dark-mode .author-links a {
+            color: #f5f5f5;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .author-links a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -130,7 +266,7 @@
             <p>Looking for inspirational quotes from ${author.name}? Free Daily Motivation offers insights from legends like ${author.name} to help fuel your journey to success. Whether you're aiming to enhance your mindset, boost your social media content, or find daily motivation, explore the wisdom of famous personalities tailored to your goals.</p>
             <h2>Quotes by ${author.name}</h2>
             <ul id="quotes-list">
-                ${author.quotes.map(quote => `<li>${quote}</li>`).join('')}
+                ${author.quotes.map(quote => `<li>"${quote}"</li>`).join('')}
             </ul>
             <a href="inspirational-quotes-famous">Back to all famous quotes</a>
         `;
@@ -153,18 +289,13 @@
 
                 // Create a container for the author names
                 const authorContainer = document.createElement('div');
-                authorContainer.style.marginTop = '10px';
-                authorContainer.style.color = '#ffffff'
-                authorContainer.style.lineHeight = '0.9';
+                authorContainer.className = 'author-links';
 
                 data.authors.forEach(author => {
                     // Create a link for each author
                     const authorLink = document.createElement('a');
                     authorLink.textContent = author.name;
                     authorLink.href = `inspirational-quotes-famous?author=${author.name.toLowerCase().replace(/ /g, '-')}`;
-                    authorLink.style.color = 'inherit'; // Use the parent element's text color
-                    authorLink.style.textDecoration = 'none'; // Remove underline
-                    authorLink.style.marginRight = '15px';
 
                     // Append the author link to the container
                     authorContainer.appendChild(authorLink);
