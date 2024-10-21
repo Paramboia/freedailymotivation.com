@@ -186,7 +186,7 @@
             background-color: transparent;
             border: none;
             padding: 0 10px; /* Adjust padding to fit text and icon */
-            border-radius: 12px; /* Round square shape */
+            border-radius: 12px; /* Rounded square shape */
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -260,32 +260,31 @@
             color: #f5f5f5;
         }
 
-        /* Styles for the author links */
+        /* Styles for the author buttons */
         .author-container {
-            margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 20px;
         }
 
-        .author-container a {
-            color: #333;
-            text-decoration: none;
-            margin: 5px 10px;
+        .author-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
             font-size: 1em;
-            transition: color 0.3s;
+            color: #fff;
+            background-color: #ff6b6b;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 12px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-        .author-container a:hover {
-            color: #ff6b6b;
-        }
-
-        .dark-mode .author-container a {
-            color: #f5f5f5;
-        }
-
-        .dark-mode .author-container a:hover {
-            color: #ff9a9e;
+        .author-button:hover {
+            background-color: #ff9a9e;
+            transform: scale(1.05);
         }
 
         /* Animation for the background gradient */
@@ -336,10 +335,7 @@
             <!-- This section will be dynamically updated based on the 'author' parameter -->
         </div>
         <!-- Back button (only shown when viewing an author) -->
-        <a href="inspirational-quotes-famous.html" class="button-link" id="back-button" style="display: none;">Back to all famous quotes</a>
-
-        <!-- Added "Find More Quotes" CTA button -->
-        <a href="https://freedailymotivation.com/" class="button-link">Find More Quotes</a>
+        <a href="https://freedailymotivation.com/" class="button-link" id="back-button" style="display: none;">Find More Quotes</a>
     </div>
 
     <footer class="footer">
@@ -368,7 +364,7 @@
             fetch('authors.json')
                 .then(response => response.json())
                 .then(data => {
-                    const author = data.authors.find(a => a.name.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') === authorParam);
+                    const author = data.authors.find(a => a.name.toLowerCase().replace(/ /g, '-') === authorParam);
                     
                     if (author) {
                         // Update page title
@@ -378,7 +374,7 @@
                         document.querySelector('meta[name="description"]').setAttribute("content", `Discover inspiring quotes from ${author.name}. Get motivated and inspired to achieve greatness with Free Daily Motivation.`);
                         
                         // Update meta keywords
-                        document.querySelector('meta[name="keywords']").setAttribute("content", `inspirational quotes, famous quotes, ${author.name}, motivation, success, positivity, Free Daily Motivation`);
+                        document.querySelector('meta[name="keywords"]').setAttribute("content", `inspirational quotes, famous quotes, ${author.name}, motivation, success, positivity, Free Daily Motivation`);
                         
                         // Update h1 title
                         document.getElementById('page-title').textContent = `Famous Inspirational Quotes - ${author.name}`;
@@ -436,7 +432,7 @@
                     titleElement.style.fontSize = '1.5em';
                     dynamicContent.appendChild(titleElement);
 
-                    // Create a container for the author links
+                    // Create a container for the author buttons
                     const authorContainer = document.createElement('div');
                     authorContainer.className = 'author-container';
 
@@ -444,8 +440,8 @@
                         // Create a link for each author
                         const authorLink = document.createElement('a');
                         authorLink.textContent = author.name;
-                        authorLink.href = `inspirational-quotes-famous.html?author=${author.name.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '')}`;
-                        authorLink.title = `Read quotes by ${author.name}`;
+                        authorLink.href = `inspirational-quotes-famous.html?author=${author.name.toLowerCase().replace(/ /g, '-')}`;
+                        authorLink.className = 'author-button';
 
                         // Append the author link to the container
                         authorContainer.appendChild(authorLink);
