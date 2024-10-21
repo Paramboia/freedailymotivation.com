@@ -335,8 +335,6 @@
         <div id="dynamic-content">
             <!-- This section will be dynamically updated based on the 'author' parameter -->
         </div>
-        <!-- Back button (only shown when viewing an author) -->
-        <a href="inspirational-quotes-famous.html" class="button-link" id="back-button" style="display: none;">Back to all famous quotes</a>
     </div>
 
     <footer class="footer">
@@ -408,7 +406,18 @@
                         dynamicContent.appendChild(quotesContainer);
 
                         // Show back button
-                        document.getElementById('back-button').style.display = 'inline-block';
+                        const backButton = document.createElement('a');
+                        backButton.href = 'inspirational-quotes-famous.html';
+                        backButton.className = 'button-link';
+                        backButton.textContent = 'Back to all famous quotes';
+                        dynamicContent.appendChild(backButton);
+
+                        // Add "Find More Quotes" button
+                        const moreQuotesButton = document.createElement('a');
+                        moreQuotesButton.href = 'https://freedailymotivation.com/';
+                        moreQuotesButton.className = 'button-link';
+                        moreQuotesButton.textContent = 'Find More Quotes';
+                        dynamicContent.appendChild(moreQuotesButton);
                     } else {
                         document.getElementById('dynamic-content').innerHTML = '<h2>Author not found</h2>';
                     }
@@ -451,8 +460,12 @@
                     // Append the author container to the dynamic content section
                     dynamicContent.appendChild(authorContainer);
 
-                    // Hide back button
-                    document.getElementById('back-button').style.display = 'none';
+                    // Add "Find More Quotes" button
+                    const moreQuotesButton = document.createElement('a');
+                    moreQuotesButton.href = 'https://freedailymotivation.com/';
+                    moreQuotesButton.className = 'button-link';
+                    moreQuotesButton.textContent = 'Find More Quotes';
+                    dynamicContent.appendChild(moreQuotesButton);
                 })
                 .catch(error => {
                     console.error('Error fetching authors:', error);
