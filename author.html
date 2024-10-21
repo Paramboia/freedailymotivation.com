@@ -4,7 +4,7 @@
     <!-- Existing meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Updated meta description and keywords will be handled dynamically -->
+    <!-- The meta description and keywords will be dynamically updated -->
     <meta name="description" content="Discover inspiring quotes from famous people like [AUTHOR_NAME]. Get motivated and inspired to achieve greatness with Free Daily Motivation.">
     <meta name="keywords" content="inspirational quotes, famous quotes, [AUTHOR_NAME], motivation, success, positivity, Free Daily Motivation">
     <meta name="author" content="Free Daily Motivation">
@@ -21,7 +21,7 @@
     })(window,document,'script','dataLayer','GTM-PQ8LSCWN');</script>
     <!-- End Google Tag Manager -->
 
-<style>
+    <style>
         /* Use the same styles as the main page */
         body {
             font-family: 'Montserrat', sans-serif;
@@ -178,31 +178,36 @@
             }
         }
 
-            .site-link {
-        color: #007bff; /* Adjust color as needed */
-        text-decoration: none;
+        .site-link {
+            color: #007bff; /* Adjust color as needed */
+            text-decoration: none;
+            font-weight: bold;
         }
         
         .site-link:hover {
             text-decoration: underline;
         }
 
-       .home-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px; /* Space between icon and text */
-        height: 40px; /* Match height with other buttons */
-        background-color: transparent;
-        border: none;
-        padding: 0 10px; /* Adjust padding to fit text and icon */
-        border-radius: 12px; /* Round square shape */
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.3s;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        font-size: 14px;
-        font-weight: bold;
-        text-decoration: none; /* Remove underlining */
+        .dark-mode .site-link {
+            color: #66b2ff; /* Adjust link color in dark mode */
+        }
+
+        .home-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px; /* Space between icon and text */
+            height: 40px; /* Match height with other buttons */
+            background-color: transparent;
+            border: none;
+            padding: 0 10px; /* Adjust padding to fit text and icon */
+            border-radius: 12px; /* Round square shape */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none; /* Remove underlining */
         }
         
         .home-button img {
@@ -227,7 +232,7 @@
             transform: scale(1.05);
         }
 
-                /* Styles for the quotes container */
+        /* Styles for the quotes container */
         .quotes-container {
             background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
             border-radius: 12px; /* Rounded corners */
@@ -237,11 +242,13 @@
             margin-left: auto;
             margin-right: auto;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            text-align: left; /* Align text to the left */
         }
 
         .quotes-container h2 {
             color: #333;
             margin-bottom: 15px;
+            text-align: center; /* Center the heading */
         }
 
         .quotes-container ul {
@@ -275,31 +282,12 @@
             color: #f5f5f5;
         }
 
-        /* Styles for the Free Daily Motivation link */
-        .site-link {
-            color: #007bff; /* Link color */
-            text-decoration: none;
-            font-weight: bold;
+        /* Animation for the background gradient */
+        @keyframes gradientAnimation {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
-
-        .site-link:hover {
-            text-decoration: underline;
-        }
-
-        .dark-mode .site-link {
-            color: #66b2ff; /* Adjust link color in dark mode */
-        }
-
-                @media (max-width: 600px) {
-            .quotes-container {
-                padding: 15px;
-            }
-        
-            .quotes-container li {
-                font-size: 1em;
-            }
-        }
-    
     </style>
 
 </head>
@@ -329,18 +317,19 @@
         </div>
     </header>
 
- <div class="content-section">
+    <div class="content-section">
         <h1 id="author-title">Famous Inspirational Quotes - [AUTHOR_NAME]</h1>
         <p id="author-intro">
             Looking for the perfect quote to inspire your next big move or connect with like-minded thinkers?
-            <a href="https://freedailymotivation.com/">Free Daily Motivation</a> has you covered!
+            <a href="https://freedailymotivation.com/" class="site-link">Free Daily Motivation</a> has you covered!
             Discover insights from [AUTHOR_NAME], a legendary figure known for their wisdom and impact.
             Whether you're looking to enhance your social media posts, presentations, or personal mindset, our platform makes it easy to find and share quotes that resonate with your goals.
             Let [AUTHOR_NAME]'s words fuel your journey to success.
         </p>
         
-        <!-- New quotes container -->
+        <!-- Quotes container with white rounded box -->
         <div class="quotes-container">
+            <h2>Quotes by <span id="author-name"></span></h2>
             <ul id="quotes-list">
                 <!-- Quotes will be populated here -->
             </ul>
@@ -353,7 +342,7 @@
         <p>&copy; 2024 Free Daily Motivation. All rights reserved.</p>
     </footer>
 
-   <script>
+    <script>
         // Dark mode toggle
         const darkModeToggle = document.getElementById("dark-mode-toggle");
         darkModeToggle.addEventListener("click", () => {
