@@ -433,19 +433,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
             
         }
-
-        .cross-icon {
-    font-size: 12px;
-    color: red;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
-}
-.category-button {
-    position: relative; /* Ensure the cross icon is positioned relative to the button */
-}
-        
     </style>
 </head>
 <body>
@@ -486,24 +473,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 
-<div class="category-container">
-    <button class="category-button" id="category-business" onclick="toggleCategory('business')">
-        Business
-        <span class="cross-icon" onclick="clearCategory('business', event)">&#10005;</span>
-    </button>
-    <button class="category-button" id="category-sport" onclick="toggleCategory('sport')">
-        Sport
-        <span class="cross-icon" onclick="clearCategory('sport', event)">&#10005;</span>
-    </button>
-    <button class="category-button" id="category-science" onclick="toggleCategory('science')">
-        Science
-        <span class="cross-icon" onclick="clearCategory('science', event)">&#10005;</span>
-    </button>
-    <button class="category-button" id="category-life" onclick="toggleCategory('life')">
-        Life
-        <span class="cross-icon" onclick="clearCategory('life', event)">&#10005;</span>
-    </button>
-</div>
+    <div class="category-container">
+        <button class="category-button" id="category-business" onclick="logButtonClick('category-business', 'Business')">Business</button>
+        <button class="category-button" id="category-sport" onclick="logButtonClick('category-sport', 'Sport')">Sport</button>
+        <button class="category-button" id="category-science" onclick="logButtonClick('category-science', 'Science')">Science</button>
+        <button class="category-button" id="category-life" onclick="logButtonClick('category-life', 'Life')">Life</button>
+    </div>
 </div>
 
     <footer class="footer">
@@ -670,41 +645,6 @@ function showPopup() {
     document.body.appendChild(popup);
 }
 
-let currentCategory = null;
-
-// Function to toggle category selection
-function toggleCategory(category) {
-    if (currentCategory === category) {
-        clearCategory(category);
-    } else {
-        currentCategory = category;
-        updateQuote();
-        updateCategoryButtons(currentCategory);
-    }
-}
-
-// Function to clear category selection
-function clearCategory(category, event) {
-    event.stopPropagation(); // Prevents triggering the button click
-    if (currentCategory === category) {
-        currentCategory = null;
-        updateCategoryButtons(currentCategory);
-        // Optionally clear the displayed quote if desired
-        quoteElement.textContent = "Select a category to get inspired!";
-    }
-}
-
-// Function to update the selected state of buttons
-function updateCategoryButtons(selectedCategory) {
-    categoryButtons.forEach(button => {
-        if (selectedCategory && button.id === `category-${selectedCategory}`) {
-            button.classList.add("selected");
-        } else {
-            button.classList.remove("selected");
-        }
-    });
-}
-    
     // Function to track user clicks
     let clickCount = 0;
     function handleClick() {
