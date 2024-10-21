@@ -289,6 +289,16 @@
         .dark-mode .site-link {
             color: #66b2ff; /* Adjust link color in dark mode */
         }
+
+                @media (max-width: 600px) {
+            .quotes-container {
+                padding: 15px;
+            }
+        
+            .quotes-container li {
+                font-size: 1em;
+            }
+        }
     
     </style>
 
@@ -323,7 +333,7 @@
         <h1 id="author-title">Famous Inspirational Quotes - [AUTHOR_NAME]</h1>
         <p id="author-intro">
             Looking for the perfect quote to inspire your next big move or connect with like-minded thinkers?
-            <a href="https://freedailymotivation.com/" class="site-link">Free Daily Motivation</a> has you covered!
+            <a href="https://freedailymotivation.com/">Free Daily Motivation</a> has you covered!
             Discover insights from [AUTHOR_NAME], a legendary figure known for their wisdom and impact.
             Whether you're looking to enhance your social media posts, presentations, or personal mindset, our platform makes it easy to find and share quotes that resonate with your goals.
             Let [AUTHOR_NAME]'s words fuel your journey to success.
@@ -331,7 +341,6 @@
         
         <!-- New quotes container -->
         <div class="quotes-container">
-            <h2>Quotes by <span id="author-name"></span></h2>
             <ul id="quotes-list">
                 <!-- Quotes will be populated here -->
             </ul>
