@@ -28,7 +28,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
             margin: 0;
             background: linear-gradient(135deg, #ff6b6b, #fbc2eb, #a18cd1, #ff9a9e, #fcb69f);
@@ -142,7 +141,7 @@
             line-height: 1.6;
         }
 
-        .content-section a {
+        .content-section a.button-link {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
@@ -156,7 +155,7 @@
             transition: background-color 0.3s, transform 0.3s;
         }
         
-        .content-section a:hover {
+        .content-section a.button-link:hover {
             background-color: #ff9a9e; /* Change color on hover */
             transform: scale(1.05); /* Slightly enlarge on hover */
         }
@@ -176,20 +175,6 @@
             .content-section {
                 padding: 10px;
             }
-        }
-
-        .site-link {
-            color: #007bff; /* Adjust color as needed */
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .site-link:hover {
-            text-decoration: underline;
-        }
-
-        .dark-mode .site-link {
-            color: #66b2ff; /* Adjust link color in dark mode */
         }
 
         .home-button {
@@ -237,18 +222,12 @@
             background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
             border-radius: 12px; /* Rounded corners */
             padding: 20px;
-            margin-top: 30px;
+            margin-top: 20px;
             max-width: 800px; /* Optional: limit the width */
             margin-left: auto;
             margin-right: auto;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             text-align: left; /* Align text to the left */
-        }
-
-        .quotes-container h2 {
-            color: #333;
-            margin-bottom: 15px;
-            text-align: center; /* Center the heading */
         }
 
         .quotes-container ul {
@@ -277,7 +256,6 @@
             background-color: rgba(50, 50, 50, 0.9); /* Darker background in dark mode */
         }
 
-        .dark-mode .quotes-container h2,
         .dark-mode .quotes-container li {
             color: #f5f5f5;
         }
@@ -321,21 +299,23 @@
         <h1 id="author-title">Famous Inspirational Quotes - [AUTHOR_NAME]</h1>
         <p id="author-intro">
             Looking for the perfect quote to inspire your next big move or connect with like-minded thinkers?
-            <a href="https://freedailymotivation.com/" class="site-link">Free Daily Motivation</a> has you covered!
+            <a href="https://freedailymotivation.com/">Free Daily Motivation</a> has you covered!
             Discover insights from [AUTHOR_NAME], a legendary figure known for their wisdom and impact.
             Whether you're looking to enhance your social media posts, presentations, or personal mindset, our platform makes it easy to find and share quotes that resonate with your goals.
             Let [AUTHOR_NAME]'s words fuel your journey to success.
         </p>
-        
+
+        <!-- Moved the heading outside the quotes container -->
+        <h2>Quotes by <span id="author-name"></span></h2>
+
         <!-- Quotes container with white rounded box -->
         <div class="quotes-container">
-            <h2>Quotes by <span id="author-name"></span></h2>
             <ul id="quotes-list">
                 <!-- Quotes will be populated here -->
             </ul>
         </div>
 
-        <a href="inspirational-quotes-famous.html">Back to all famous quotes</a>
+        <a href="inspirational-quotes-famous.html" class="button-link">Back to all famous quotes</a>
     </div>
 
     <footer class="footer">
