@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ... existing head content ... -->
+    <!-- Existing meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated meta description and keywords will be handled dynamically -->
+    <meta name="description" content="Discover inspiring quotes from famous people like [AUTHOR_NAME]. Get motivated and inspired to achieve greatness with Free Daily Motivation.">
+    <meta name="keywords" content="inspirational quotes, famous quotes, [AUTHOR_NAME], motivation, success, positivity, Free Daily Motivation">
+    <meta name="author" content="Free Daily Motivation">
+    <title>Famous Inspirational Quotes - [AUTHOR_NAME] - Free Daily Motivation</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+    
+    <!-- Google Tag Manager -->
+    <!-- ... (existing GTM code) ... -->
+    <!-- End Google Tag Manager -->
 
     <style>
-        /* ... existing styles ... */
+        /* Existing styles */
+        /* ... (your existing CSS styles) ... */
 
         /* Styles for the quotes container */
         .quotes-container {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            border-radius: 12px; /* Rounded corners */
             padding: 20px;
             margin-top: 30px;
-            max-width: 800px;
+            max-width: 800px; /* Optional: limit the width */
             margin-left: auto;
             margin-right: auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
 
         .quotes-container h2 {
@@ -24,7 +39,7 @@
         }
 
         .quotes-container ul {
-            list-style-type: none;
+            list-style-type: none; /* Remove bullet points */
             padding: 0;
         }
 
@@ -42,11 +57,11 @@
             position: absolute;
             left: 0;
             top: -5px;
-            color: #ff6b6b;
+            color: #ff6b6b; /* Quote mark color */
         }
 
         .dark-mode .quotes-container {
-            background-color: rgba(50, 50, 50, 0.9);
+            background-color: rgba(50, 50, 50, 0.9); /* Darker background in dark mode */
         }
 
         .dark-mode .quotes-container h2,
@@ -56,7 +71,7 @@
 
         /* Styles for the Free Daily Motivation link */
         .site-link {
-            color: #007bff;
+            color: #007bff; /* Link color */
             text-decoration: none;
             font-weight: bold;
         }
@@ -66,14 +81,17 @@
         }
 
         .dark-mode .site-link {
-            color: #66b2ff;
+            color: #66b2ff; /* Adjust link color in dark mode */
         }
-
-        /* ... other existing styles ... */
     </style>
 </head>
 <body>
-    <!-- ... existing body content ... -->
+    <!-- Google Tag Manager (noscript) -->
+    <!-- ... (existing GTM noscript code) ... -->
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Existing header -->
+    <!-- ... (your existing header code) ... -->
 
     <div class="content-section">
         <h1 id="author-title">Famous Inspirational Quotes - [AUTHOR_NAME]</h1>
@@ -96,6 +114,76 @@
         <a href="inspirational-quotes-famous.html">Back to all famous quotes</a>
     </div>
 
-    <!-- ... existing scripts ... -->
+    <footer class="footer">
+        <p>&copy; 2024 Free Daily Motivation. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById("dark-mode-toggle");
+        darkModeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+
+        const infoMenuButton = document.getElementById("info-menu");
+        infoMenuButton.addEventListener("click", () => {
+            window.location.href = "about-us.html";
+        });
+
+        // Function to fetch and display quotes for the specific author
+        function fetchAuthorQuotes() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const authorParam = urlParams.get('author');
+
+            if (!authorParam) {
+                document.querySelector('.content-section').innerHTML = '<h1>Author not specified</h1>';
+                return;
+            }
+
+            fetch('authors.json')
+                .then(response => response.json())
+                .then(data => {
+                    const author = data.authors.find(a => a.name.toLowerCase().replace(/ /g, '-') === authorParam);
+                    
+                    if (author) {
+                        // Update page title
+                        document.title = `Famous Inspirational Quotes - ${author.name} - Free Daily Motivation`;
+                        
+                        // Update meta description
+                        document.querySelector('meta[name="description"]').setAttribute("content", `Discover inspiring quotes from ${author.name}. Get motivated and inspired to achieve greatness with Free Daily Motivation.`);
+                        
+                        // Update meta keywords
+                        document.querySelector('meta[name="keywords"]').setAttribute("content", `inspirational quotes, famous quotes, ${author.name}, motivation, success, positivity, Free Daily Motivation`);
+                        
+                        // Update h1 title
+                        document.getElementById('author-title').textContent = `Famous Inspirational Quotes - ${author.name}`;
+                        
+                        // Update intro paragraph
+                        const introParagraph = document.getElementById('author-intro');
+                        introParagraph.innerHTML = introParagraph.innerHTML.replace(/\[AUTHOR_NAME\]/g, author.name);
+                        
+                        // Update author name in h2
+                        document.getElementById('author-name').textContent = author.name;
+                        
+                        // Populate quotes
+                        const quotesList = document.getElementById('quotes-list');
+                        quotesList.innerHTML = ''; // Clear any existing content
+                        author.quotes.forEach(quote => {
+                            const li = document.createElement('li');
+                            li.textContent = quote;
+                            quotesList.appendChild(li);
+                        });
+                    } else {
+                        document.querySelector('.content-section').innerHTML = '<h1>Author not found</h1>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching author data:', error);
+                    document.querySelector('.content-section').innerHTML = '<h1>Error loading author data</h1>';
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchAuthorQuotes);
+    </script>
 </body>
 </html>
