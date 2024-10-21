@@ -487,7 +487,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
     let quotes = {};
-    let currentCategory = 'business';
+    let currentCategory = null; // Start with no category selected
 
     // Fetch the quotes from the JSON file
     fetch('quotes.json')
@@ -517,7 +517,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     // Function to get a random quote from the selected category
     function getRandomQuote(category) {
-        const selectedQuotes = quotes[category];
+        let selectedQuotes;
+        if (category && quotes[category]) {
+            selectedQuotes = quotes[category];
+        } else {
+            // Combine quotes from all categories
+            selectedQuotes = [];
+            for (let key in quotes) {
+                selectedQuotes = selectedQuotes.concat(quotes[key]);
+            }
+        }
         return selectedQuotes[Math.floor(Math.random() * selectedQuotes.length)];
     }
 
@@ -549,9 +558,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     categoryButtons.forEach(button => {
         button.addEventListener("click", (e) => {
-            currentCategory = e.target.id.replace('category-', '');
+            const clickedCategory = e.target.id.replace('category-', '');
+            if (currentCategory === clickedCategory) {
+                // Unselect the category
+                currentCategory = null;
+                updateCategoryButtons(null);
+            } else {
+                currentCategory = clickedCategory;
+                updateCategoryButtons(currentCategory);
+            }
             updateQuote();
-            updateCategoryButtons(currentCategory);
         });
     });
 
