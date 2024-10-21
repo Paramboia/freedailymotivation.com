@@ -186,7 +186,7 @@
             background-color: transparent;
             border: none;
             padding: 0 10px; /* Adjust padding to fit text and icon */
-            border-radius: 12px; /* Round square shape */
+            border-radius: 12px; /* Rounded square shape */
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -305,8 +305,7 @@
             Let [AUTHOR_NAME]'s words fuel your journey to success.
         </p>
 
-        <!-- Moved the heading outside the quotes container -->
-        <h2>Quotes by <span id="author-name"></span></h2>
+        <!-- Removed the "Quotes by [Author]" heading -->
 
         <!-- Quotes container with white rounded box -->
         <div class="quotes-container">
@@ -366,9 +365,7 @@
                         const introParagraph = document.getElementById('author-intro');
                         introParagraph.innerHTML = introParagraph.innerHTML.replace(/\[AUTHOR_NAME\]/g, author.name);
                         
-                        // Update author name in h2
-                        document.getElementById('author-name').textContent = author.name;
-                        
+                        // Remove the author name from h2 (since it's removed)
                         // Populate quotes
                         const quotesList = document.getElementById('quotes-list');
                         quotesList.innerHTML = ''; // Clear any existing content
