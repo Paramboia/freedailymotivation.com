@@ -441,7 +441,7 @@
                         // Create a link for each author
                         const authorLink = document.createElement('a');
                         authorLink.textContent = author.name;
-                        authorLink.href = `inspirational-quotes-famous.html?author=${author.name.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '')}`;
+                        authorLink.href = `inspirational-quotes-famous?author=${author.name.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '')}`;
                         authorLink.title = `Read quotes by ${author.name}`;
 
                         // Append the author link to the container
