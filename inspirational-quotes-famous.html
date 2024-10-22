@@ -336,7 +336,7 @@
             <!-- This section will be dynamically updated based on the 'author' parameter -->
         </div>
         <!-- Back button (only shown when viewing an author) -->
-        <a href="https://freedailymotivation.com/" class="button-link" id="back-button" style="display: none;">Find More Quotes</a>
+        <a href="https://freedailymotivation.com/" class="button-link" id="back-button">Find More Quotes</a>
     </div>
 
     <footer class="footer">
@@ -408,7 +408,7 @@
                         dynamicContent.appendChild(quotesContainer);
 
                         // Show back button
-                        document.getElementById('back-button').style.display = 'inline-block';
+                        //document.getElementById('back-button').style.display = 'inline-block';
                     } else {
                         document.getElementById('dynamic-content').innerHTML = '<h2>Author not found</h2>';
                     }
@@ -452,7 +452,7 @@
                     dynamicContent.appendChild(authorContainer);
 
                     // Hide back button
-                    document.getElementById('back-button').style.display = 'none';
+                    //document.getElementById('back-button').style.display = 'none';
                 })
                 .catch(error => {
                     console.error('Error fetching authors:', error);
