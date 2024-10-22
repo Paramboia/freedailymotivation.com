@@ -23,94 +23,129 @@
   <!-- Author Pages -->
   <!-- Start of Author Entries -->
   <url>
-    <loc>https://freedailymotivation.com/inspirational-quotes-famous.html?author=abraham-lincoln</loc>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=abraham-lincoln</loc>
     <lastmod>2024-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://freedailymotivation.com/inspirational-quotes-famous.html?author=adam-smith</loc>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=adam-smith</loc>
     <lastmod>2024-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://freedailymotivation.com/inspirational-quotes-famous.html?author=aisha-tyler</loc>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=aisha-tyler</loc>
     <lastmod>2024-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Continue with all authors -->
-
-  <!-- Alan Kay -->
   <url>
-    <loc>https://freedailymotivation.com/inspirational-quotes-famous.html?author=alan-kay</loc>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=alan-kay</loc>
     <lastmod>2024-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Alan Watts -->
   <url>
-    <loc>https://freedailymotivation.com/inspirational-quotes-famous.html?author=alan-watts</loc>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=alan-watts</loc>
     <lastmod>2024-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Albert Einstein -->
   <url>
-    <loc>https://freedailymotivation.com/inspirational-quotes-famous.html?author=albert-einstein</loc>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=albert-einstein</loc>
     <lastmod>2024-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority> <!-- Increased priority for a popular author -->
   </url>
-  <!-- Albert Schweitzer -->
   <url>
-    <loc>https://freedailymotivation.com/inspirational-quotes-famous.html?author=albert-schweitzer</loc>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=albert-schweitzer</loc>
     <lastmod>2024-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Anaïs Nin -->
   <url>
-    <loc>https://freedailymotivation.com/inspirational-quotes-famous.html?author=anais-nin</loc>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=anais-nin</loc>
     <lastmod>2024-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Ann Landers -->
   <url>
-    <loc>https://freedailymotivation.com/inspirational-quotes-famous.html?author=ann-landers</loc>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=ann-landers</loc>
     <lastmod>2024-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Anonymous -->
   <url>
-    <loc>https://freedailymotivation.com/inspirational-quotes-famous.html?author=anonymous</loc>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=anonymous</loc>
     <lastmod>2024-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority> <!-- Slightly lower priority -->
   </url>
-  <!-- Aristotle -->
   <url>
-    <loc>https://freedailymotivation.com/inspirational-quotes-famous.html?author=aristotle</loc>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=aristotle</loc>
     <lastmod>2024-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Continue adding entries for each author -->
-
-  <!-- Note: For authors with special characters, like accents or apostrophes, ensure they are properly URL-encoded or converted to ASCII equivalents. For example, "Anaïs Nin" becomes "anais-nin". -->
-
-  <!-- ... [Continue the pattern for all authors in your list] ... -->
-
-  <!-- Example for "Zig Ziglar" -->
   <url>
-    <loc>https://freedailymotivation.com/inspirational-quotes-famous.html?author=zig-ziglar</loc>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=zig-ziglar</loc>
     <lastmod>2024-10-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- End of Author Entries -->
+  <url>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=gary-vaynerchuk</loc>
+    <lastmod>2024-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=joe-rogan</loc>
+    <lastmod>2024-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=jeff-bezos</loc>
+    <lastmod>2024-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=steve-jobs</loc>
+    <lastmod>2024-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=oprah-winfrey</loc>
+    <lastmod>2024-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=mahatma-gandhi</loc>
+    <lastmod>2024-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=walt-disney</loc>
+    <lastmod>2024-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=michael-jordan</loc>
+    <lastmod>2024-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freedailymotivation.com/inspirational-quotes-famous?author=warren-buffett</loc>
+    <lastmod>2024-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
