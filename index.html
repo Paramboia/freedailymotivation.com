@@ -11,20 +11,18 @@
     <!-- Meta Description -->
     <meta name="description" content="Find inspirational quotes. Search famous motivational sayings from Albert Einstein, Steve Jobs and others to enhance your presentations and social media.">
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PQ8LSCWN');</script>
-    <!-- End Google Tag Manager -->
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQ8LSCWN');</script>
+<!-- End Google Tag Manager -->
 
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap">
     
-    <!-- Include Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -34,24 +32,24 @@
             justify-content: center;
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #ff6b6b, #fbc2eb, #a18cd1, #ff9a9e, #fcb69f);
+            background: linear-gradient(135deg, #ff6b6b, #fbc2eb, #a18cd1, #ff9a9e, #fcb69f); /* Vibrant gradient */
             background-size: 400% 400%;
             animation: gradientAnimation 15s ease infinite;
             transition: background 0.3s, color 0.3s;
         }
-
-        body.dark-mode {
-            background: linear-gradient(135deg, #000000, #1c1c1c, #000000);
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite;
-            color: #f5f5f5;
-        }
-
-        body.dark-mode header {
-            background: linear-gradient(135deg, #000000, #1c1c1c, #000000);
-            box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
-        }
-
+        
+            body.dark-mode {
+                background: linear-gradient(135deg, #000000, #1c1c1c, #000000); /* Use shades of black and dark gray */
+                background-size: 400% 400%;
+                animation: gradientAnimation 15s ease infinite;
+                color: #f5f5f5;
+            }
+            
+            body.dark-mode header {
+                background: linear-gradient(135deg, #000000, #1c1c1c, #000000); /* Updated header background */
+                box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
+            }
+        
         @keyframes gradientAnimation {
             0% {
                 background-position: 0% 50%;
@@ -63,14 +61,14 @@
                 background-position: 0% 50%;
             }
         }
-
+        
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            background: inherit;
-            padding: 10px 20px;
+            background: inherit; /* Inherit gradient from body */
+            padding: 10px 20px; /* Reduce padding in header */
             position: fixed;
             top: 0;
             z-index: 100;
@@ -83,9 +81,9 @@
             height: auto;
             margin-right: 10px;
         }
-
+        
         .dark-mode header {
-            background: linear-gradient(135deg, #001f3f, #4a0d67, #e94f37, #000000);
+            background: linear-gradient(135deg, #001f3f, #4a0d67, #e94f37, #000000); /* Matching gradient for header */
             box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
         }
 
@@ -95,35 +93,35 @@
         }
 
         .logo-container img {
-            width: 30px;
+            width: 30px; /* Adjust logo size for mobile */
             height: auto;
             margin-right: 10px;
         }
 
         .title-header {
-            font-size: 1.2em;
+            font-size: 1.2em; /* Adjust font size for mobile */
             font-weight: bold;
             color: #333;
             transition: color 0.3s;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for readability */
         }
-
+        
         .dark-mode .title-header {
             color: #f5f5f5;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .category-button.selected {
-            background-color: #333;
-            color: #fff;
-            font-weight: bold;
+            background-color: #333; /* Darker background for selected state */
+            color: #fff; /* White text for better contrast */
+            font-weight: bold; /* Optional: make the text bold */
         }
 
         .dark-mode .category-button.selected {
-            background-color: #333;
-            color: #fff;
+            background-color: #333; /* Slightly lighter gray for selected state in dark mode */
+            color: #fff; /* White text color for better contrast */
         }
-
+        
         .info-menu, .dark-mode-toggle {
             background-color: transparent;
             border: none;
@@ -143,6 +141,15 @@
             background-color: transparent;
         }
 
+        .info-menu img, .dark-mode-toggle img {
+            width: 20px;
+            height: auto;
+        }
+
+        .dark-mode .info-menu img {
+            filter: invert(1);
+        }
+        
         .info-menu:hover, .dark-mode-toggle:hover {
             background-color: rgba(255, 255, 255, 0.2);
             transform: scale(1.05);
@@ -152,40 +159,28 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
 
-        .button-icon {
-            width: 30px;
-            height: 30px;
-            stroke: currentColor;
-            stroke-width: 2;
-            transition: color 0.3s;
-        }
-
-        .dark-mode .button-icon {
-            color: #fff;
-        }
-
         .quote-section {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            width: 100%;
+            width: 100%; /* Ensure the section takes the full width */
         }
 
         .title {
             font-size: 3em;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif; /* Apply Poppins font */
             color: #333;
             margin-bottom: 20px;
             font-weight: 700;
             text-align: center;
             transition: color 0.3s;
-            background: inherit;
+            background: inherit; /* Match title background with the gradient */
             padding: 10px;
             border-radius: 20px;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Text shadow to ensure readability */
         }
-
+        
         .dark-mode .title {
             color: #f5f5f5;
             background: inherit;
@@ -193,24 +188,24 @@
         }
 
         .quote-box {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            width: 800px;
-            min-height: 150px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
-            margin: 0 10px;
-            transition: background-color 0.3s, box-shadow 0.3s;
-            overflow: auto;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 20px;
+        width: 800px;
+        min-height: 150px; /* Minimum height to ensure it's not too small */
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+        margin: 0 10px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        overflow: auto; /* Keeps scrollbar if needed */
         }
 
         .dark-mode .quote-box {
-            background-color: #333;
+            background-color: #333; /* Dark background for quote box */
             box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
         }
 
@@ -220,9 +215,9 @@
             margin: 0;
             line-height: 1.5;
             transition: opacity 0.5s, color 0.3s;
-            max-width: 100%;
-            padding: 0 15px;
-            word-wrap: break-word;
+            max-width: 100%; /* Ensure text doesn't overflow horizontally */
+            padding: 0 15px; /* Add some padding for mobile */
+            word-wrap: break-word; /* Ensure text doesn't overflow the container */
         }
 
         .dark-mode #quote {
@@ -254,7 +249,17 @@
         }
 
         .dark-mode .quote-button {
-            background-color: #444;
+            background-color: #444; /* Dark background for buttons */
+        }
+
+        .button-icon {
+            width: 30px;
+            height: 30px;
+            transition: filter 0.3s;
+        }
+
+        .dark-mode .button-icon {
+            filter: invert(1);
         }
 
         .quote-button:hover {
@@ -274,23 +279,23 @@
         }
 
         .category-button {
-            background-color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 20px;
-            width: 80px;
-            height: 40px;
-            font-size: 0.8em;
-            cursor: pointer;
-            text-align: center;
-            color: #333;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, transform 0.3s, color 0.3s;
+        background-color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 20px;
+        width: 80px;
+        height: 40px;
+        font-size: 0.8em;
+        cursor: pointer;
+        text-align: center;
+        color: #333; /* Default text color */
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, transform 0.3s, color 0.3s; /* Add transition for color */
         }
 
         .dark-mode .category-button {
-            background-color: #444;
-            color: #fff;
+            background-color: #444; /* Dark background for category buttons */
+            color: #fff; /* White text color in dark mode */
         }
 
         .dark-mode .category-button:hover {
@@ -305,7 +310,7 @@
         }
 
         .dark-mode .footer {
-            color: #aaa;
+            color: #aaa; /* Lighter text color for the footer in dark mode */
         }
 
         @media (max-width: 768px) {
@@ -319,16 +324,16 @@
 
             .quote-box {
                 padding: 20px;
-                width: 90%;
-                max-width: 100%;
-                box-sizing: border-box;
-                height: 350px;
-                margin: 0 auto;
+                width: 90%; /* Make it responsive to the viewport width */
+                max-width: 100%; /* Ensure it doesn't exceed viewport width */
+                box-sizing: border-box; /* Ensure padding is included in the width calculation */
+                height: 350px; /* Increased height for mobile */
+                margin: 0 auto; /* Center the box horizontally */
                 position: relative;
             }
 
             .button-container {
-                top: 20px;
+                top: 20px; /* Ensure button container fits well in the increased height */
                 right: 20px;
                 gap: 8px;
             }
@@ -348,8 +353,8 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                background-color: #f1c40f !important;
-                color: #333;
+                background-color: #f1c40f !important; /* Bright yellow with !important */
+                color: #333; /* Dark text for contrast */
                 border-radius: 12px;
                 padding: 20px;
                 box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
@@ -358,12 +363,12 @@
                 width: 300px;
                 text-align: center;
             }
-
+            
             .popup.show {
                 visibility: visible;
                 opacity: 1;
             }
-
+            
             .popup-content {
                 background-color: #fff;
                 padding: 20px;
@@ -373,17 +378,17 @@
                 max-width: 400px;
                 width: 100%;
             }
-
+            
             .popup-content h2 {
                 font-size: 1.8em;
                 margin-bottom: 10px;
             }
-
+            
             .popup-content p {
                 font-size: 1.2em;
                 margin-bottom: 20px;
             }
-
+            
             .popup-content button {
                 padding: 10px 20px;
                 background-color: #007bff;
@@ -393,11 +398,12 @@
                 cursor: pointer;
                 font-size: 1em;
             }
-
+            
             .popup-content button:hover {
                 background-color: #0056b3;
             }
-
+            
+            /* Hidden class to hide the pop-up */
             .hidden {
                 visibility: hidden;
                 opacity: 0;
@@ -409,16 +415,23 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0, 0, 0, 0.5);
-                z-index: 9998;
+                background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+                z-index: 9998; /* Slightly lower than the pop-up */
                 display: none;
-                backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px); /* Optional: Apply a blur effect */
             }
 
-            #popup {
-                width: 90%;
-                max-width: 600px;
-            }
+#popup {
+    width: 80%; /* Default width for desktop */
+    max-width: 600px;
+}
+
+@media (max-width: 768px) {
+    #popup {
+        width: 90%; /* Increased width for mobile */
+    }
+}
+            
         }
     </style>
 </head>
@@ -430,254 +443,241 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     
     <header>
-        <div class="logo-container">
-            <img src="logo.webp" alt="Logo">
-        </div>
-        <div style="display: flex; gap: 10px;">
-            <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode" onclick="logButtonClick('dark-mode-toggle', 'Toggle dark mode')">
-                <svg class="button-icon" data-icon="moon" aria-hidden="true"></svg>
-            </button>
-            <button class="info-menu" id="info-menu" aria-label="Menu" onclick="logButtonClick('info-menu', 'Menu')">
-                <svg class="button-icon" data-icon="info" aria-hidden="true"></svg>
-            </button>
-        </div>
-    </header>
+    <div class="logo-container">
+        <img src="logo.webp" alt="Logo">
+    </div>
+    <div style="display: flex; gap: 10px;">
+        <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode" onclick="logButtonClick('dark-mode-toggle', 'Toggle dark mode')">
+            <img src="dark-mode-icon.webp" alt="Dark Mode" class="button-icon">
+        </button>
+        <button class="info-menu" id="info-menu" aria-label="Menu" onclick="logButtonClick('info-menu', 'Menu')">
+            <img src="info-icon.webp" alt="Menu">
+        </button>
+    </div>
+</header>
 
-    <div class="quote-section">
-        <h1 class="title">Free Daily Motivation</h1>
-        <div class="quote-box">
-            <div id="quote" aria-live="polite">Talent wins games, but teamwork and intelligence wins championships. – Michael Jordan</div>
-            <div class="button-container">
-                <button class="quote-button" id="new-quote" title="New Quote" aria-label="Get new quote" onclick="logButtonClick('new-quote', 'New Quote')">
-                    <svg class="button-icon" data-icon="refresh-ccw" aria-hidden="true"></svg>
-                </button>
-                <button class="quote-button" id="copy-quote" title="Copy to Clipboard" aria-label="Copy quote to clipboard" onclick="logButtonClick('copy-quote', 'Copy to Clipboard')">
-                    <svg class="button-icon" data-icon="copy" aria-hidden="true"></svg>
-                </button>
-                <button class="quote-button" id="share-quote" title="Share on WhatsApp" aria-label="Share quote on WhatsApp" onclick="logButtonClick('share-quote', 'Share on WhatsApp')">
-                    <svg class="button-icon" data-icon="share-2" aria-hidden="true"></svg>
-                </button>
-            </div>
-        </div>
-
-        <div class="category-container">
-            <button class="category-button" id="category-business" onclick="logButtonClick('category-business', 'Business')">Business</button>
-            <button class="category-button" id="category-sport" onclick="logButtonClick('category-sport', 'Sport')">Sport</button>
-            <button class="category-button" id="category-science" onclick="logButtonClick('category-science', 'Science')">Science</button>
-            <button class="category-button" id="category-life" onclick="logButtonClick('category-life', 'Life')">Life</button>
+<div class="quote-section">
+    <h1 class="title">Free Daily Motivation</h1>
+    <div class="quote-box">
+        <div id="quote" aria-live="polite">Talent wins games, but teamwork and intelligence wins championships. – Michael Jordan</div>
+        <div class="button-container">
+            <button class="quote-button" id="new-quote" title="New Quote" aria-label="Get new quote" onclick="logButtonClick('new-quote', 'New Quote')">
+                <img src="new-quote-icon.webp" alt="New Quote" class="button-icon">
+            </button>
+            <button class="quote-button" id="copy-quote" title="Copy to Clipboard" aria-label="Copy quote to clipboard" onclick="logButtonClick('copy-quote', 'Copy to Clipboard')">
+                <img src="copy-icon.webp" alt="Copy Quote" class="button-icon">
+            </button>
+            <button class="quote-button" id="share-quote" title="Share on WhatsApp" aria-label="Share quote on WhatsApp" onclick="logButtonClick('share-quote', 'Share on WhatsApp')">
+                <img src="whatsapp-icon.webp" alt="Share Quote" class="button-icon">
+            </button>
         </div>
     </div>
+
+    <div class="category-container">
+        <button class="category-button" id="category-business" onclick="logButtonClick('category-business', 'Business')">Business</button>
+        <button class="category-button" id="category-sport" onclick="logButtonClick('category-sport', 'Sport')">Sport</button>
+        <button class="category-button" id="category-science" onclick="logButtonClick('category-science', 'Science')">Science</button>
+        <button class="category-button" id="category-life" onclick="logButtonClick('category-life', 'Life')">Life</button>
+    </div>
+</div>
 
     <footer class="footer">
         <p>&copy; 2024 Free Daily Motivation. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+<script>
+    let quotes = {};
+    let currentCategory = null; // Start with no category selected
 
-        let quotes = {};
-        let currentCategory = null;
+    // Fetch the quotes from the JSON file
+    fetch('quotes.json')
+        .then(response => response.json())
+        .then(data => {
+            quotes = data;
+            updateQuote();
+        })
+        .catch(error => console.error('Error fetching quotes:', error));
 
-        // Fetch the quotes from the JSON file
-        fetch('quotes.json')
-            .then(response => response.json())
-            .then(data => {
-                quotes = data;
-                updateQuote();
-            })
-            .catch(error => console.error('Error fetching quotes:', error));
+    const quoteElement = document.getElementById("quote");
+    const newQuoteButton = document.getElementById("new-quote");
+    const copyQuoteButton = document.getElementById("copy-quote");
+    const shareQuoteButton = document.getElementById("share-quote");
+    const categoryButtons = document.querySelectorAll(".category-button");
 
-        const quoteElement = document.getElementById("quote");
-        const newQuoteButton = document.getElementById("new-quote");
-        const copyQuoteButton = document.getElementById("copy-quote");
-        const shareQuoteButton = document.getElementById("share-quote");
-        const categoryButtons = document.querySelectorAll(".category-button");
-
-        // Function to update the selected state of buttons
-        function updateCategoryButtons(selectedCategory) {
-            categoryButtons.forEach(button => {
-                if (button.id === `category-${selectedCategory}`) {
-                    button.classList.add("selected");
-                } else {
-                    button.classList.remove("selected");
-                }
-            });
-        }
-
-        // Function to get a random quote from the selected category
-        function getRandomQuote(category) {
-            let selectedQuotes;
-            if (category && quotes[category]) {
-                selectedQuotes = quotes[category];
-            } else {
-                // Combine quotes from all categories
-                selectedQuotes = [];
-                for (let key in quotes) {
-                    selectedQuotes = selectedQuotes.concat(quotes[key]);
-                }
-            }
-            return selectedQuotes[Math.floor(Math.random() * selectedQuotes.length)];
-        }
-
-        // Function to update the displayed quote
-        function updateQuote() {
-            const newQuote = getRandomQuote(currentCategory);
-            quoteElement.style.opacity = 0;
-            setTimeout(() => {
-                quoteElement.textContent = newQuote;
-                quoteElement.style.opacity = 1;
-            }, 300);
-        }
-
-        newQuoteButton.addEventListener("click", updateQuote);
-
-        copyQuoteButton.addEventListener("click", () => {
-            navigator.clipboard.writeText(quoteElement.textContent).then(() => {
-                alert("Quote copied to clipboard!");
-            });
-        });
-
-        shareQuoteButton.addEventListener("click", () => {
-            const quote = quoteElement.textContent;
-            const extraLine = "Visit www.freedailymotivation.com for more inspirational quotes!";
-            const message = `${quote}\n\n${extraLine} ✨`; 
-            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, "_blank");
-        });
-
+    // Function to update the selected state of buttons
+    function updateCategoryButtons(selectedCategory) {
         categoryButtons.forEach(button => {
-            button.addEventListener("click", (e) => {
-                const clickedCategory = e.target.id.replace('category-', '');
-                if (currentCategory === clickedCategory) {
-                    currentCategory = null;
-                    updateCategoryButtons(null);
-                } else {
-                    currentCategory = clickedCategory;
-                    updateCategoryButtons(currentCategory);
-                }
-                updateQuote();
-            });
-        });
-
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById("dark-mode-toggle");
-        const darkModeIcon = darkModeToggle.querySelector('svg');
-        let isDarkMode = document.body.classList.contains('dark-mode');
-
-        function updateDarkModeIcon() {
-            const iconName = isDarkMode ? 'sun' : 'moon';
-            darkModeIcon.dataset.icon = iconName;
-            lucide.createIcons({ icons: [iconName], node: darkModeIcon });
-        }
-
-        darkModeToggle.addEventListener("click", () => {
-            isDarkMode = !isDarkMode;
-            document.body.classList.toggle("dark-mode");
-            updateDarkModeIcon();
-        });
-
-        // Initialize the dark mode icon on page load
-        updateDarkModeIcon();
-
-        const infoMenuButton = document.getElementById("info-menu");
-        infoMenuButton.addEventListener("click", () => {
-            window.location.href = "about-us.html";
-        });
-
-        // Function to show the pop-up with overlay
-        function showPopup() {
-            const isDarkMode = document.body.classList.contains('dark-mode');
-
-            // Create overlay
-            const overlay = document.createElement('div');
-            overlay.id = 'overlay';
-            overlay.style.position = 'fixed';
-            overlay.style.top = '0';
-            overlay.style.left = '0';
-            overlay.style.width = '100%';
-            overlay.style.height = '100%';
-            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-            overlay.style.zIndex = '9998';
-
-            // Apply different styles based on screen size
-            if (window.innerWidth > 768) {
-                overlay.style.backdropFilter = 'blur(5px)';
-                overlay.style.webkitBackdropFilter = 'blur(5px)';
-                overlay.style.opacity = '0.9';
+            if (button.id === `category-${selectedCategory}`) {
+                button.classList.add("selected");
             } else {
-                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                button.classList.remove("selected");
             }
+        });
+    }
 
-            document.body.appendChild(overlay);
-
-            // Create popup
-            const popup = document.createElement('div');
-            popup.id = 'popup';
-            popup.style.position = 'fixed';
-            popup.style.top = '50%';
-            popup.style.left = '50%';
-            popup.style.transform = 'translate(-50%, -50%)';
-            popup.style.padding = '20px';
-            popup.style.backgroundColor = isDarkMode ? '#000' : '#fff';
-            popup.style.color = isDarkMode ? '#fff' : '#000';
-            popup.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
-            popup.style.borderRadius = '10px';
-            popup.style.textAlign = 'center';
-            popup.style.zIndex = '9999';
-            popup.style.width = window.innerWidth > 768 ? '80%' : '90%';
-            popup.style.maxWidth = '600px';
-
-            // Main message
-            const message = document.createElement('p');
-            message.textContent = 'Having fun? Save this page so you can find us anytime! ⭐';
-            message.style.fontSize = '18px';
-            message.style.marginBottom = '10px';
-
-            // Additional message
-            const additionalMessage = document.createElement('p');
-            additionalMessage.textContent = 'Since you are still here, go ahead and share some motivation with your loved ones!';
-            additionalMessage.style.fontSize = '16px';
-            additionalMessage.style.marginBottom = '20px';
-
-            // Close button
-            const closeButton = document.createElement('button');
-            closeButton.textContent = 'Close';
-            closeButton.style.padding = '10px 20px';
-            closeButton.style.backgroundColor = '#ff6b6b';
-            closeButton.style.color = '#fff';
-            closeButton.style.border = 'none';
-            closeButton.style.borderRadius = '5px';
-            closeButton.style.cursor = 'pointer';
-
-            closeButton.addEventListener('click', () => {
-                document.body.removeChild(popup);
-                document.body.removeChild(overlay);
-            });
-
-            popup.appendChild(message);
-            popup.appendChild(additionalMessage);
-            popup.appendChild(closeButton);
-
-            document.body.appendChild(popup);
-        }
-
-        // Function to track user clicks
-        let clickCount = 0;
-        function handleClick() {
-            clickCount++;
-            if (clickCount === 3) {
-                showPopup();
+    // Function to get a random quote from the selected category
+    function getRandomQuote(category) {
+        let selectedQuotes;
+        if (category && quotes[category]) {
+            selectedQuotes = quotes[category];
+        } else {
+            // Combine quotes from all categories
+            selectedQuotes = [];
+            for (let key in quotes) {
+                selectedQuotes = selectedQuotes.concat(quotes[key]);
             }
         }
+        return selectedQuotes[Math.floor(Math.random() * selectedQuotes.length)];
+    }
 
-        // Attach the click event listener to the document
-        document.addEventListener('click', handleClick);
+    // Function to update the displayed quote
+    function updateQuote() {
+        const newQuote = getRandomQuote(currentCategory);
+        quoteElement.style.opacity = 0;
+        setTimeout(() => {
+            quoteElement.textContent = newQuote;
+            quoteElement.style.opacity = 1;
+        }, 300);
+    }
 
-        // GA$ track clicks
-        function logButtonClick(buttonId, buttonText) {
-            console.log('Click ID:', buttonId, 'Click text:', buttonText);
+    newQuoteButton.addEventListener("click", updateQuote);
+
+    copyQuoteButton.addEventListener("click", () => {
+        navigator.clipboard.writeText(quoteElement.textContent).then(() => {
+            alert("Quote copied to clipboard!");
+        });
+    });
+
+    shareQuoteButton.addEventListener("click", () => {
+        const quote = quoteElement.textContent;
+        const extraLine = "Visit www.freedailymotivation.com for more inspirational quotes!";
+        const message = `${quote}\n\n${extraLine} ✨`; 
+        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, "_blank");
+    });
+
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const clickedCategory = e.target.id.replace('category-', '');
+            if (currentCategory === clickedCategory) {
+                // Unselect the category
+                currentCategory = null;
+                updateCategoryButtons(null);
+            } else {
+                currentCategory = clickedCategory;
+                updateCategoryButtons(currentCategory);
+            }
+            updateQuote();
+        });
+    });
+
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+    });
+
+    const infoMenuButton = document.getElementById("info-menu");
+    infoMenuButton.addEventListener("click", () => {
+        window.location.href = "about-us.html";
+    });
+
+    // Function to show the pop-up with overlay
+function showPopup() {
+    const isDarkMode = document.body.classList.contains('dark-mode');
+
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    overlay.style.zIndex = '9998';
+
+    // Apply different styles based on screen size
+    if (window.innerWidth > 768) {
+        // Desktop styles
+        overlay.style.backdropFilter = 'blur(5px)';
+        overlay.style.webkitBackdropFilter = 'blur(5px)';
+        overlay.style.opacity = '0.9';
+    } else {
+        // Mobile styles
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // Darker background for mobile
+    }
+
+    document.body.appendChild(overlay);
+
+    // Create popup
+    const popup = document.createElement('div');
+    popup.id = 'popup';
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.padding = '20px';
+    popup.style.backgroundColor = isDarkMode ? '#000' : '#fff';
+    popup.style.color = isDarkMode ? '#fff' : '#000';
+    popup.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+    popup.style.borderRadius = '10px';
+    popup.style.textAlign = 'center';
+    popup.style.zIndex = '9999';
+    popup.style.width = window.innerWidth > 768 ? '80%' : '90%'; // Adjust width for mobile
+    popup.style.maxWidth = '600px';
+
+    // Main message
+    const message = document.createElement('p');
+    message.textContent = 'Having fun? Save this page so you can find us anytime! ⭐';
+    message.style.fontSize = '18px';
+    message.style.marginBottom = '10px';
+
+    // Additional message
+    const additionalMessage = document.createElement('p');
+    additionalMessage.textContent = 'Since you are still here, go ahead and share some motivation with your loved ones!';
+    additionalMessage.style.fontSize = '16px';
+    additionalMessage.style.marginBottom = '20px';
+
+    // Close button
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Close';
+    closeButton.style.padding = '10px 20px';
+    closeButton.style.backgroundColor = '#ff6b6b';
+    closeButton.style.color = '#fff';
+    closeButton.style.border = 'none';
+    closeButton.style.borderRadius = '5px';
+    closeButton.style.cursor = 'pointer';
+
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(popup);
+        document.body.removeChild(overlay);
+    });
+
+    popup.appendChild(message);
+    popup.appendChild(additionalMessage);
+    popup.appendChild(closeButton);
+
+    document.body.appendChild(popup);
+}
+
+    // Function to track user clicks
+    let clickCount = 0;
+    function handleClick() {
+        clickCount++;
+        if (clickCount === 3) {
+            showPopup();
         }
-    </script>
+    }
+
+    // Attach the click event listener to the document
+    document.addEventListener('click', handleClick);
+
+     // GA$ track clicks
+    function logButtonClick(buttonId, buttonText) {
+    console.log('Click ID:', buttonId, 'Click text:', buttonText);
+    }
+    
+</script>
 </body>
 </html>
